@@ -6,7 +6,175 @@
   </head>
   <body>
 
-    <p>Репозиторий создан для обучения на интенсивном онлайн‑курсе «<a href="https://htmlacademy.ru/intensive/htmlcss">Базовый HTML и CSS</a>».</p>
+    <!--Заголовок-->
+    <header class="main-header">
+
+      <!--Логотип и кнопки быстрого перехода-->
+      <div class="main-header-logo">
+        <p>Техномарт</p>
+      </div>
+      <nav class="fast-navigation">
+        <ul>
+          <li>
+            <div class="fast-button">
+              <p>Поиск:</p>
+            </div>
+            <div class="fast-button">
+              <p>Закладки: 0</p>
+            </div>
+            <div class="fast-button">
+              <p>Корзина: 0</p>
+            </div>
+            <div class="fast-button highlighted">
+              <p>Оформить заказ</p>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+      <!--Адрес магазина и кнопки авторизации пользователя-->
+      <div class="private-navigation">
+        <p class="mission">Интернет-магазин строительных материалов и инструментов для ремонта</p>
+        <div class="callbutton">
+          <p>+7 (812) 555-05-55</p>
+        </div>
+        <div class="ouraddress">
+           <p>г.Санкт-Петербург, ул. Б. Конюшенная, д.19/8</p>
+        </div>
+        <div class="authorization-button">
+           <p>Войти</p>
+        </div>
+        <div class="authorization-button">
+           <p>Регистрация</p>
+        </div>
+      </div>
+
+      <!--Главное меню-->
+      <nav class="main-navigation">
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="company.html">Компания</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="news.html">Новости</a></li>
+          <li><a href="special_proposals.html">Спецпредложения</a></li>
+          <li><a href="delivery.html">Доставка</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+
+    </header>
+
+    <!--Основное содержимое-->
+    <main class="container">
+      <h1 class="visually-hidden">Магазин "Техномарт"</h1>
+
+      <!--Категории товаров-->
+      <section class="offering">
+        <h2 class="visually-hidden">Категории товаров</h2>
+        <div class="materials">
+          <h3>Материалы</h3>
+          <a class="category-button" href="materials.html">На любой вкус</a>
+        </div>
+        <div class="tools">
+          <h3>Инструмент</h3>
+          <a class="category-button" href="tools.html">На все случаи</a>
+        </div>
+        <div class="machines">
+          <h3>Техника</h3>
+          <a class="category-button" href="machines.html">Для стройки</a>
+        </div>
+        <div class="revolver">
+          <h3>Перфораторы</h3>
+          <a class="category-button" href="selected.html">Настоящие мужские игрушки</a>
+        </div>
+        <div class="discount">
+          <h3>Скидки 50%</h3>
+          <a class="category-button" href="discount.html">На 350 товаров</a>
+        </div>
+        <div class="delivery">
+          <h3>Доставка</h3>
+          <a class="category-button" href="delivery.html">Бесплатно</a>
+        </div>
+      </section>
+
+      <!--Популярные товары-->
+      <section class="popular">
+        <header class="popular-header">
+          <h2>Популярные товары</h2>
+          <a class="category-button" href="all_popular_products.html">Все популярные товары</a>
+        </header>
+        <ul class="popular-list">
+          <li class="popular-1">
+            <a href="#"><img src="assets/img/p1.jpg" alt="Изображение товара"></a>
+            <p class="popular-category">Перфоратор BOSCH</p>
+            <p class="popular-name">BFG 9000</p>
+            <p class="popular-oldprice">32500 Р.</p>
+            <p class="popular-actualprice">25500 Р.</p>
+          </li>
+          <li class="popular-2">
+            <a href="#"><img src="assets/img/p2.jpg" alt="Изображение товара"></a>
+            <p class="popular-category">Перфоратор BOSCH</p>
+            <p class="popular-name">BFG 3000</p>
+            <p class="popular-oldprice">22500 Р.</p>
+            <p class="popular-actualprice">15500 Р.</p>
+          </li>
+          <li class="popular-3">
+            <a href="#"><img src="assets/img/p3.jpg" alt="Изображение товара"></a>
+            <p class="popular-category">Перфоратор BOSCH</p>
+            <p class="popular-name">BFG 6000</p>
+            <p class="popular-oldprice">30500 Р.</p>
+            <p class="popular-actualprice">25500 Р.</p>
+          </li>
+          <li class="popular-4 popular-new">
+            <a href="#"><img src="assets/img/p4.jpg" alt="Изображение товара"></a>
+            <p class="popular-category">Перфоратор BOSCH</p>
+            <p class="popular-name">BFG 2000</p>
+
+            <p class="popular-actualprice">12500 Р.</p>
+          </li>
+        </ul>
+      </section>
+
+      <!--Популярные бренды-->
+      <section class="popular">
+        <header class="popular-header">
+          <h2>Популярные производители</h2>
+        </header>
+          <a class="category-button" href="all_popular_vendors.html">Все популярные производители</a>
+          <ul class="popular-list">
+            <li class="vendor-1">
+              <a href="#"><img src="assets/img/l1.jpg" alt="Логотип производителя"></a>
+            </li>
+            <li class="vendor-2">
+              <a href="#"><img src="assets/img/l2.jpg" alt="Логотип производителя"></a>
+            </li>
+            <li class="vendor-3">
+              <a href="#"><img src="assets/img/l3.jpg" alt="Логотип производителя"></a>
+            </li>
+            <li class="vendor-4">
+              <a href="#"><img src="assets/img/l4.jpg" alt="Логотип производителя"></a>
+            </li>
+            <li class="vendor-5">
+              <a href="#"><img src="assets/img/l5.jpg" alt="Логотип производителя"></a>
+            </li>
+            <li class="vendor-6">
+              <a href="#"><img src="assets/img/l6.jpg" alt="Логотип производителя"></a>
+            </li>
+            <li class="vendor-7">
+              <a href="#"><img src="assets/img/l7.jpg" alt="Логотип производителя"></a>
+            </li>
+            <li class="vendor-8">
+              <a href="#"><img src="assets/img/l8.jpg" alt="Логотип производителя"></a>
+            </li>
+          </ul>
+      </section>
+
+    </main>
+
+    <!--Футер-->
+    <footer>
+
+    </footer>
 
   </body>
 </html>
