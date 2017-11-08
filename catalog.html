@@ -8,33 +8,42 @@
 
     <!--Заголовок-->
     <header class="main-header">
-     <!--Логотип и кнопки быстрого перехода-->
-     <div class="header-logo">
-      <p>Техномарт</p>
-      </div>
-      <nav class="header-fastnavigation">
+
+      <!--Логотип и кнопки быстрого перехода-->
+      <div class="header-top">
         <ul>
-          <li><button class="header-button">Поиск:</button></li>
-          <li><button class="header-button">Закладки: 0</button></li>
-          <li><button class="header-button">Корзина: 0</button></li>
-          <li><button class="header-button highlighted">Оформить заказ</button></li>
+          <li class="header-logo">Техномарт<li>
+          <li class="header-search">
+            <form name="search" method="post" action="search.php">>
+              <p>
+                Поиск:
+                <input type="text" name="search">
+              </p>
+            </form>
+          </li>
+          <li class="header-shortcuts"><a>Закладки: 0</a></li>
+          <li class="header-basket"><a>Корзина: 0</a></li>
+          <li class="header-makeorder highlighted"><a>Оформить заказ</a></li>
         </ul>
-      </nav>
+      </div>
 
       <!--Адрес магазина и кнопки авторизации-->
-      <p class="header-mission">Интернет-магазин строительных материалов и инструментов для ремонта</p>
-      <button class="header-callbutton">+7 (812) 555-05-55</button>
-      <div class="header-address">
-        <p>г.Санкт-Петербург, ул. Б. Конюшенная, д.19/8</p>
+      <div class="header-middle">
+        <ul>
+          <li class="header-mission">Интернет-магазин строительных материалов и инструментов для ремонта</li>
+          <li>
+            <div class="header-middle-address">
+              <a class="header-calllink" href="call.html">+7 (812) 555-05-55</a>
+              <p>г.Санкт-Петербург, ул. Б. Конюшенная, д.19/8</p>
+            </div>
+          </li>
+          <li class="header-enterlink"><a href="enter.html">Войти</a></li>
+          <li class="header-registerlink"><a href="register.html">Регистрация</a></li>
+        </ul>
       </div>
-      <button class="header-authbutton">Равшан Джамшутович</button>
-      <ul class="header-link">
-        <li><a href="myorders.html">Мои заказы</a></li>
-        <li><a href="personal.html">Личный кабинет</a></li>
-      </ul>
 
       <!--Главное меню в хедере-->
-      <nav class="header-mainnavigation">
+      <nav class="header-bottom">
         <ul>
           <li><a href="index.html">Главная</a></li>
           <li><a href="company.html">Компания</a></li>
@@ -45,6 +54,7 @@
           <li><a href="contacts.html">Контакты</a></li>
         </ul>
       </nav>
+
     </header>
 
     <!--  ********  Основное содержимое   ********  -->
