@@ -12,46 +12,45 @@
       <!--Логотип и кнопки быстрого перехода-->
       <div class="header-top">
         <ul>
-          <li class="header-logo">Техномарт<li>
+          <li class="header-logo">
+            <a href="#">Техномарт</a>
+            <img src="img/logo_tehnomart_big.png" alt="Логотип Техномарт">
+          </li>
           <li class="header-search">
             <form name="search" method="post" action="search.php">>
-              <p>
-                Поиск:
-                <input type="text" name="search">
-              </p>
+              <label for="search-text">Поиск:</label>
+              <input type="search" name="search" id="search-text" value="ищу товар">
             </form>
           </li>
-          <li class="header-shortcuts"><a>Закладки: 0</a></li>
-          <li class="header-basket"><a>Корзина: 0</a></li>
-          <li class="header-makeorder highlighted"><a>Оформить заказ</a></li>
+          <li class="header-shortcuts"><a href="#">Закладки: <span>0</span></a></li>
+          <li class="header-basket"><a href="#">Корзина: <span>0</span></a></li>
+          <li class="header-makeorder highlighted"><a href="#">Оформить заказ</a></li>
         </ul>
       </div>
 
       <!--Адрес магазина и кнопки авторизации-->
       <div class="header-middle">
-        <ul>
-          <li class="header-mission">Интернет-магазин строительных материалов и инструментов для ремонта</li>
-          <li>
-            <div class="header-middle-address">
-              <a class="header-calllink" href="call.html">+7 (812) 555-05-55</a>
-              <p>г.Санкт-Петербург, ул. Б. Конюшенная, д.19/8</p>
-            </div>
-          </li>
-          <li class="header-enterlink"><a href="enter.html">Войти</a></li>
-          <li class="header-registerlink"><a href="register.html">Регистрация</a></li>
-        </ul>
+        <div class="header-mission">
+          <p>Интернет-магазин строительных материалов и инструментов для ремонта</p>
+        </div>
+        <div class="header-address">
+          <a class="header-calllink" href="call.html">+7 (812) 555-05-55</a>
+          <p>г.Санкт-Петербург, ул. Б. Конюшенная, д.19/8</p>
+        </div>
+        <div class="header-enterlink"><a href="enter.html">Войти</a></div>
+        <div class="header-registerlink"><a href="register.html">Регистрация</a></div>
       </div>
 
       <!--Главное меню в хедере-->
       <nav class="header-bottom">
-        <ul>
-          <li><a href="index.html">Главная</a></li>
-          <li><a href="company.html">Компания</a></li>
-          <li><a href="catalog.html">Каталог</a></li>
-          <li><a href="news.html">Новости</a></li>
-          <li><a href="special_proposals.html">Спецпредложения</a></li>
-          <li><a href="delivery.html">Доставка</a></li>
-          <li><a href="contacts.html">Контакты</a></li>
+        <ul class="mainmenu">
+          <li class="mainmenu-index"><a href="index.html">Главная</a></li>
+          <li class="mainmenu-company"><a href="company.html">Компания</a></li>
+          <li class="mainmenu-catalog"><a href="catalog.html">Каталог</a></li>
+          <li class="mainmenu-news"><a href="news.html">Новости</a></li>
+          <li class="mainmenu-special"><a href="special.html">Спецпредложения</a></li>
+          <li class="mainmenu-delivery"><a href="delivery.html">Доставка</a></li>
+          <li class="mainmenu-contacts"><a href="contacts.html">Контакты</a></li>
         </ul>
       </nav>
 
@@ -131,34 +130,34 @@
       <section class="popular">
         <header class="popular-header">
           <h2>Популярные производители</h2>
+          <a class="mainpage-link" href="all_popular_vendors.html">Все производители</a>
         </header>
-          <a class="mainpage-link" href="all_popular_vendors.html">Все популярные производители</a>
-          <ul class="popular-list">
-            <li class="vendor-1">
-              <a href="#"><img src="assets/img/l1.jpg" alt="Логотип производителя"></a>
-            </li>
-            <li class="vendor-2">
-              <a href="#"><img src="assets/img/l2.jpg" alt="Логотип производителя"></a>
-            </li>
-            <li class="vendor-3">
-              <a href="#"><img src="assets/img/l3.jpg" alt="Логотип производителя"></a>
-            </li>
-            <li class="vendor-4">
-              <a href="#"><img src="assets/img/l4.jpg" alt="Логотип производителя"></a>
-            </li>
-            <li class="vendor-5">
-              <a href="#"><img src="assets/img/l5.jpg" alt="Логотип производителя"></a>
-            </li>
-            <li class="vendor-6">
-              <a href="#"><img src="assets/img/l6.jpg" alt="Логотип производителя"></a>
-            </li>
-            <li class="vendor-7">
-              <a href="#"><img src="assets/img/l7.jpg" alt="Логотип производителя"></a>
-            </li>
-            <li class="vendor-8">
-              <a href="#"><img src="assets/img/l8.jpg" alt="Логотип производителя"></a>
-            </li>
-          </ul>
+        <ul class="popular-list">
+          <li class="vendor-1">
+            <a href="#"><img src="assets/img/l1.jpg" alt="Логотип производителя"></a>
+          </li>
+          <li class="vendor-2">
+            <a href="#"><img src="assets/img/l2.jpg" alt="Логотип производителя"></a>
+          </li>
+          <li class="vendor-3">
+            <a href="#"><img src="assets/img/l3.jpg" alt="Логотип производителя"></a>
+          </li>
+          <li class="vendor-4">
+            <a href="#"><img src="assets/img/l4.jpg" alt="Логотип производителя"></a>
+          </li>
+          <li class="vendor-5">
+            <a href="#"><img src="assets/img/l5.jpg" alt="Логотип производителя"></a>
+          </li>
+          <li class="vendor-6">
+            <a href="#"><img src="assets/img/l6.jpg" alt="Логотип производителя"></a>
+          </li>
+          <li class="vendor-7">
+            <a href="#"><img src="assets/img/l7.jpg" alt="Логотип производителя"></a>
+          </li>
+          <li class="vendor-8">
+            <a href="#"><img src="assets/img/l8.jpg" alt="Логотип производителя"></a>
+          </li>
+        </ul>
       </section>
 
       <!--Сервисы-->
@@ -211,7 +210,8 @@
     <footer class="main-footer">
       <!--Логотип и кнопки быстрого перехода-->
       <div class="main-footer-logo">
-        <p>Техномарт</p>
+        <a href="index.html">Техномарт</a>
+        <img src="img/logo_tehnomart_footer.png" alt="Логотип Техномарт">
       </div>
       <div class="footer-address">
         <p>г.Санкт-Петербург, ул. Б. Конюшенная, д.19/8</p>
@@ -219,21 +219,21 @@
       <!--Меню в футере-->
       <nav class="footer-navigation">
         <ul>
-          <li><a href="company.html">Компания</a></li>
-          <li><a href="news.html">Новости</a></li>
-          <li><a href="catalog.html">Каталог</a></li>
-          <li><a href="delivery.html">Доставка</a></li>
-          <li><a href="contacts.html">Контакты</a></li>
-          <li><a class="footernav-highlighted" href="materials.html">Материалы</a></li>
-          <li><a class="footernav-highlighted" href="machines.html">Техника</a></li>
-          <li><a class="footernav-highlighted" href="tools.html">Инструмент</a></li>
-          <li><a class="footernav-highlighted" href="special_proposals.html">Спецпредложения</a></li>
+          <li class="footer-navigation-company"><a href="company.html">Компания</a></li>
+          <li class="footer-navigation-news"><a href="news.html">Новости</a></li>
+          <li class="footer-navigation-catalog"><a href="catalog.html">Каталог</a></li>
+          <li class="footer-navigation-delivery"><a href="delivery.html">Доставка</a></li>
+          <li class="footer-navigation-contacts"><a href="contacts.html">Контакты</a></li>
+          <li class="footer-navigation-materials footernav-highlighted"><a href="materials.html">Материалы</a></li>
+          <li class="footer-navigation-machines footernav-highlighted"><a href="machines.html">Техника</a></li>
+          <li class="footer-navigation-tools footernav-highlighted"><a href="tools.html">Инструмент</a></li>
+          <li class="footer-navigation-special footernav-highlighted"><a href="special.html">Спецпредложения</a></li>
         </ul>
       </nav>
       <!--Копирайт-->
       <p class="copyright">
-        (c) 2010-2017 Компания «Техномарт»<br>
-        Все права защищены<br>
+        (c) 2010-2017 Компания «Техномарт»
+        Все права защищены
       </p>
       <div class="footer-social">
         <ul>
@@ -244,14 +244,14 @@
       </div>
       <div class="footer-links">
         <p>
-          Обратная связь:<br>
+          Обратная связь:
           <a class="footer-highlightedlink" href="#">mail@htmlacademy.ru</a>
         </p>
       </div>
       <div class="footer-links">
         <p>
-          Разработано - <br>
-          <a class="footer-highlightedlink" href="#">htmlacademy.ru</a>
+          Разработано -
+          <a class="footer-highlightedlink" href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a>
         </p>
       </div>
   </footer>
