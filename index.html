@@ -13,11 +13,11 @@
       <div class="header-top">
         <ul>
           <li class="header-logo">
-            <a href="#">Техномарт</a>
+            <a href="index.html">Техномарт</a>
             <img src="img/logo_tehnomart_big.png" alt="Логотип Техномарт">
           </li>
           <li class="header-search">
-            <form name="search" method="post" action="search.php">
+            <form name="search" method="get" action="#">
               <label for="search-text">Поиск:</label>
               <input type="search" name="search" id="search-text" value="ищу товар">
             </form>
@@ -37,8 +37,25 @@
           <a class="header-calllink" href="call.html">+7 (812) 555-05-55</a>
           <p>г. Санкт-Петербург, ул. Б. Конюшенная, д.19/8</p>
         </div>
-        <div class="header-enterlink"><a href="enter.html">Войти</a></div>
-        <div class="header-registerlink"><a href="register.html">Регистрация</a></div>
+        <div class="not-logged-in">
+          <div class="header-enterlink"><a href="enter.html">Войти</a></div>
+          <div class="header-registerlink"><a href="register.html">Регистрация</a></div>
+        </div>
+        <div class="logged-in">
+          <div class="header-username">
+            <a href="logout.html">
+              Равшан Джамшутович
+              <span class="visually-hidden">Выйти</span>
+            </a>
+          </div>
+          <div class="user-links">
+            <a href="#">Мои заказы</a>
+            <!--точка-->
+            <span></span>
+            <a href="#">Личный кабинет</a>
+          </div>
+        </div>
+
       </div>
 
       <!--Главное меню в хедере-->
@@ -99,6 +116,12 @@
           <li class="popular-item">
             <article class="product-card">
               <a href="#"><img src="img/BFG_9000.png" width="184" height="163" alt="Изображение товара"></a>
+              <form method="get" action="#">
+                <!--Указываем скрытый идентификатор товара для обработки в корзине-->
+                <input type="hidden" name="productID" value="G7Xrjqp8Kthewt">
+                <button type="submit" class="buy hide-it" name="buy" value="add">Купить</button>
+                <button type="submit" class="to-favorities hide-it" name="to-favorities" value="add">В закладки</button>
+              </form>
               <h4 class="product-name">Перфоратор BOSCH BFG 9000</h4>
               <p class="product-oldprice"><del>32500 Р.</del></p>
               <p class="product-price">25500 Р.</p>
@@ -107,6 +130,12 @@
           <li class="popular-item">
             <article class="product-card">
               <a href="#"><img src="img/BFG_3000.png" width="126" height="112" alt="Изображение товара"></a>
+              <form method="get" action="#">
+                <!--Указываем скрытый идентификатор товара для обработки в корзине-->
+                <input type="hidden" name="productID" value="CMzkyKQqz5F3ur">
+                <button type="submit" class="buy hide-it" name="buy" value="add">Купить</button>
+                <button type="submit" class="to-favorities hide-it" name="to-favorities" value="add">В закладки</button>
+              </form>
               <h4 class="product-name">Перфоратор BOSCH BFG 3000</h4>
               <p class="product-oldprice"><del>22500 Р.</del></p>
               <p class="product-price">15500 Р.</p>
@@ -115,6 +144,12 @@
           <li class="popular-item">
             <article class="product-card">
               <a href="#"><img src="img/BFG_6000.png" width="144" height="128" alt="Изображение товара"></a>
+              <form method="get" action="#">
+                <!--Указываем скрытый идентификатор товара для обработки в корзине-->
+                <input type="hidden" name="productID" value="xrmTe4JfhtJPmk">
+                <button type="submit" class="buy hide-it" name="buy" value="add">Купить</button>
+                <button type="submit" class="to-favorities hide-it" name="to-favorities" value="add">В закладки</button>
+              </form>
               <h4 class="product-name">Перфоратор BOSCH BFG 6000</h4>
               <p class="product-oldprice"><del>30500 Р.</del></p>
               <p class="product-price">25500 Р.</p>
@@ -123,6 +158,12 @@
           <li class="popular-item newproduct">
             <article class="product-card">
               <a href="#"><img src="img/BFG_2000.png" width="126" height="112" alt="Изображение товара"></a>
+              <form method="get" action="#">
+                <!--Указываем скрытый идентификатор товара для обработки в корзине-->
+                <input type="hidden" name="productID" value="DevN2YhpX7nycG">
+                <button type="submit" class="buy hide-it" name="buy" value="add">Купить</button>
+                <button type="submit" class="to-favorities hide-it" name="to-favorities" value="add">В закладки</button>
+              </form>
               <h4 class="product-name">Перфоратор BOSCH BFG 2000</h4>
               <p class="product-price">12500 Р.</p>
             </article>
@@ -175,11 +216,23 @@
             <li><a class="services-link-inv" href="warranty.html">Гарантия</a></li>
             <li><a class="services-link-inv" href="loan.html">Кредит</a></li>
           </ul>
-          <div class="services-description">
+          <div class="services-description show-it">
             <h3>Доставка</h3>
             <p>
               Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно!
               Ведь мы неплохо заработаем, поднимая его на ваш этаж!
+            </p>
+          </div>
+          <div class="services-description hide-it">
+            <h3>Гарантия</h3>
+            <p>
+              Если купленный у нас товар поломается или заискрит, а также в случае пожара, спровоцированного его возгоранием, вы всегда можете быть уверены в нашей гарантии. Мы обменяем сгоревший товар на новый. Дом уж восстановите как-нибудь сами.
+            </p>
+          </div>
+          <div class="services-description hide-it">
+            <h3>Кредит</h3>
+            <p>
+              Залезть в долговую яму стало проще! Кредитные консультанты придут вам на помощь.
             </p>
           </div>
         </section>
@@ -258,6 +311,21 @@
           <a class="footer-highlightedlink" href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a>
         </p>
       </div>
-  </footer>
+
+      <div class="hide-write-us">
+        <form name="write-us-form" method="post" action="#">
+          <div class="write-us-header">
+            <label class="write-us-label" for="write-us-name">Ваше имя:</label>
+            <input type="text" id="write-us-name" minlength="3" pattern="[A-я]+">
+            <label class="write-us-label" for="write-us-mail">Ваш e-mail:</label>
+            <input type="email" id="write-us-mail">
+          </div>
+          <label class="write-us-label" for="write-us-text">Текст письма:</label>
+          <textarea id="write-us-text" cols="60" rows="5"></textarea>
+          <button type="submit" class="write-us-button" name="write-us">Отправить</button>
+        </form>
+      </div>
+
+    </footer>
   </body>
 </html>
