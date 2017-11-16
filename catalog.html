@@ -43,15 +43,11 @@
         </div>
         <div class="logged-in">
           <div class="header-username">
-            <a href="logout.html">
-              Равшан Джамшутович
-              <span class="visually-hidden">Выйти</span>
-            </a>
+            <span>Равшан Джамшутович</span>
+            <a class="logout-icon" href="logout.html"><span class="visually-hidden">Выйти</span></a>
           </div>
           <div class="user-links">
             <a href="#">Мои заказы</a>
-            <!--точка-->
-            <span></span>
             <a href="#">Личный кабинет</a>
           </div>
         </div>
@@ -77,16 +73,16 @@
     <main class="catalog-container">
       <h1 class="visually-hidden">Каталог товаров</h1>
       <!--Дерево каталога-->
-      <nav class="catalog-tree">
+      <nav class="breadcrumbs">
         <ul>
-          <li><a href="catalog.html">Каталог</a></li>
-          <li><a href="#">Инструмент</a></li>
-          <li><a href="#">Перфораторы</a></li>
+          <li class="breadcrumbs-item"><a href="catalog.html">Каталог</a></li>
+          <li class="breadcrumbs-item"><a href="#">Инструмент</a></li>
+          <li class="breadcrumbs-item"><a href="#">Перфораторы</a></li>
         </ul>
       </nav>
 
       <!--Текущий раздел-->
-      <h2 class="catalog-currentsection">Перфораторы</h2>
+      <h2 class="section-title catalog-section">Перфораторы</h2>
       <form id="filter-and-sort" method="get" action="#">
 
         <!--aside - Фильтр-->
@@ -98,9 +94,9 @@
             <p class="filter-display-name">Цена:</p>
             <label class="price-slider" for="price-slider">Price slider</label>
             <input type="range" id="price-slider" min="0" max="30000" step="100">
-            <span class="price-minvalue">0</span>
+            <input type="number" class="price-minvalue" name="filter-minprice" value="0">
             <span class="price-dash">-</span>
-            <span class="price-maxvalue">30000</span>
+            <input type="number" class="price-maxvalue" name="filter-maxprice" value="30000">
           </div>
 
           <!-- Фильтр по производителю -->
@@ -186,12 +182,8 @@
             <li class="catalog-item">
               <article class="product-card">
                 <a href="#"><img src="img/BFG_3000.png" width="126" height="112" alt="Изображение товара"></a>
-                <form method="get" action="#">
-                  <!--Указываем скрытый идентификатор товара для обработки в корзине-->
-                  <input type="hidden" name="productID" value="CMzkyKQqz5F3ur">
-                  <button type="submit" class="buy hide-it" name="buy" value="add">Купить</button>
-                  <button type="submit" class="to-favorities hide-it" name="to-favorities" value="add">В закладки</button>
-                </form>
+                <button type="submit" class="buy hide-it" name="buy" value="CMzkyKQqz5F3ur">Купить</button>
+                <button type="submit" class="to-favorities hide-it" name="to-favorities" value="CMzkyKQqz5F3ur">В закладки</button>
                 <h4 class="product-name">Перфоратор BOSCH BFG 3000</h4>
                 <p class="product-oldprice"><del>22500 Р.</del></p>
                 <p class="product-price">15500 Р.</p>
@@ -200,11 +192,8 @@
             <li class="catalog-item">
               <article class="product-card">
                 <a href="#"><img src="img/BFG_6000.png" width="144" height="128" alt="Изображение товара"></a>
-                <form method="get" action="#">
-                  <input type="hidden" name="productID" value="xrmTe4JfhtJPmk">
-                  <button type="submit" class="buy hide-it" name="buy" value="add">Купить</button>
-                  <button type="submit" class="to-favorities hide-it" name="to-favorities" value="add">В закладки</button>
-                </form>
+                <button type="submit" class="buy hide-it" name="buy" value="xrmTe4JfhtJPmk">Купить</button>
+                <button type="submit" class="to-favorities hide-it" name="to-favorities" value="xrmTe4JfhtJPmk">В закладки</button>
                 <h4 class="product-name">Перфоратор BOSCH BFG 6000</h4>
                 <p class="product-oldprice"><del>30500 Р.</del></p>
                 <p class="product-price">25500 Р.</p>
@@ -318,7 +307,7 @@
 
       <!--Комментарий к категории товаров-->
       <section class="category-comment">
-        <h2>Пара слов о перфораторах</h2>
+      <h2 class="section-title catalog-section">Пара слов о перфораторах</h2>
         <p>
           Перфоратор - универсальный строительный инструмент. Предназначен для сверления и долбления отверстий в кирпиче, бетоне и камне.
           Существуют электромеханические и пневматические перфораторы. Современные модели могут выполнять функции дрели, шуруповёрта и отбойного молотка.
@@ -375,7 +364,7 @@
         </p>
       </div>
 
-      <div class="hide-write-us">
+      <div class="modal-window">
         <form name="write-us-form" method="post" action="#">
           <div class="write-us-header">
             <label class="write-us-label" for="write-us-name">Ваше имя:</label>
@@ -388,7 +377,6 @@
           <button type="submit" class="write-us-button" name="write-us">Отправить</button>
         </form>
       </div>
-
 
     </footer>
   </body>

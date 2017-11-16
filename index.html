@@ -108,8 +108,8 @@
 
       <!--Популярные товары-->
       <section class="popular">
-        <header class="popular-header">
-          <h2>Популярные товары</h2>
+        <header>
+          <h2 class="section-title">Популярные товары</h2>
           <a class="mainpage-link" href="all_popular_products.html">Все популярные товары</a>
         </header>
         <ul class="popular-list">
@@ -119,8 +119,8 @@
               <form method="get" action="#">
                 <!--Указываем скрытый идентификатор товара для обработки в корзине-->
                 <input type="hidden" name="productID" value="G7Xrjqp8Kthewt">
-                <button type="submit" class="buy hide-it" name="buy" value="add">Купить</button>
-                <button type="submit" class="to-favorities hide-it" name="to-favorities" value="add">В закладки</button>
+                <button type="submit" class="buy" name="buy" value="add">Купить</button>
+                <button type="submit" class="to-favorities " name="to-favorities" value="add">В закладки</button>
               </form>
               <h4 class="product-name">Перфоратор BOSCH BFG 9000</h4>
               <p class="product-oldprice"><del>32500 Р.</del></p>
@@ -133,8 +133,8 @@
               <form method="get" action="#">
                 <!--Указываем скрытый идентификатор товара для обработки в корзине-->
                 <input type="hidden" name="productID" value="CMzkyKQqz5F3ur">
-                <button type="submit" class="buy hide-it" name="buy" value="add">Купить</button>
-                <button type="submit" class="to-favorities hide-it" name="to-favorities" value="add">В закладки</button>
+                <button type="submit" class="buy" name="buy" value="add">Купить</button>
+                <button type="submit" class="to-favorities " name="to-favorities" value="add">В закладки</button>
               </form>
               <h4 class="product-name">Перфоратор BOSCH BFG 3000</h4>
               <p class="product-oldprice"><del>22500 Р.</del></p>
@@ -147,8 +147,8 @@
               <form method="get" action="#">
                 <!--Указываем скрытый идентификатор товара для обработки в корзине-->
                 <input type="hidden" name="productID" value="xrmTe4JfhtJPmk">
-                <button type="submit" class="buy hide-it" name="buy" value="add">Купить</button>
-                <button type="submit" class="to-favorities hide-it" name="to-favorities" value="add">В закладки</button>
+                <button type="submit" class="buy" name="buy" value="add">Купить</button>
+                <button type="submit" class="to-favorities " name="to-favorities" value="add">В закладки</button>
               </form>
               <h4 class="product-name">Перфоратор BOSCH BFG 6000</h4>
               <p class="product-oldprice"><del>30500 Р.</del></p>
@@ -161,8 +161,8 @@
               <form method="get" action="#">
                 <!--Указываем скрытый идентификатор товара для обработки в корзине-->
                 <input type="hidden" name="productID" value="DevN2YhpX7nycG">
-                <button type="submit" class="buy hide-it" name="buy" value="add">Купить</button>
-                <button type="submit" class="to-favorities hide-it" name="to-favorities" value="add">В закладки</button>
+                <button type="submit" class="buy" name="buy" value="add">Купить</button>
+                <button type="submit" class="to-favorities " name="to-favorities" value="add">В закладки</button>
               </form>
               <h4 class="product-name">Перфоратор BOSCH BFG 2000</h4>
               <p class="product-price">12500 Р.</p>
@@ -173,8 +173,8 @@
 
       <!--Популярные производители-->
       <section class="popular">
-        <header class="popular-header">
-          <h2>Популярные производители</h2>
+        <header>
+          <h2 class="section-title">Популярные производители</h2>
           <a class="mainpage-link" href="all_popular_vendors.html">Все производители</a>
         </header>
         <ul class="vendor-list">
@@ -207,39 +207,39 @@
 
       <!--Сервисы-->
       <section class="services">
-          <h2>Сервисы</h2>
+        <h2 class="section-title">Сервисы</h2>
+        <p>
+          Хороший интернет-магазин отличается от плохого не только ценами!
+          Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.</p>
+        <ul>
+          <li><a class="services-link" href="delivery.html">Доставка</a></li>
+          <li><a class="services-link-inv" href="warranty.html">Гарантия</a></li>
+          <li><a class="services-link-inv" href="loan.html">Кредит</a></li>
+        </ul>
+        <div class="services-description show">
+          <h3>Доставка</h3>
           <p>
-            Хороший интернет-магазин отличается от плохого не только ценами!
-            Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.</p>
-          <ul>
-            <li><a class="services-link" href="delivery.html">Доставка</a></li>
-            <li><a class="services-link-inv" href="warranty.html">Гарантия</a></li>
-            <li><a class="services-link-inv" href="loan.html">Кредит</a></li>
-          </ul>
-          <div class="services-description show-it">
-            <h3>Доставка</h3>
-            <p>
-              Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно!
-              Ведь мы неплохо заработаем, поднимая его на ваш этаж!
-            </p>
-          </div>
-          <div class="services-description hide-it">
-            <h3>Гарантия</h3>
-            <p>
-              Если купленный у нас товар поломается или заискрит, а также в случае пожара, спровоцированного его возгоранием, вы всегда можете быть уверены в нашей гарантии. Мы обменяем сгоревший товар на новый. Дом уж восстановите как-нибудь сами.
-            </p>
-          </div>
-          <div class="services-description hide-it">
-            <h3>Кредит</h3>
-            <p>
-              Залезть в долговую яму стало проще! Кредитные консультанты придут вам на помощь.
-            </p>
-          </div>
-        </section>
+            Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно!
+            Ведь мы неплохо заработаем, поднимая его на ваш этаж!
+          </p>
+        </div>
+        <div class="services-description">
+          <h3>Гарантия</h3>
+          <p>
+            Если купленный у нас товар поломается или заискрит, а также в случае пожара, спровоцированного его возгоранием, вы всегда можете быть уверены в нашей гарантии. Мы обменяем сгоревший товар на новый. Дом уж восстановите как-нибудь сами.
+          </p>
+        </div>
+        <div class="services-description">
+          <h3>Кредит</h3>
+          <p>
+            Залезть в долговую яму стало проще! Кредитные консультанты придут вам на помощь.
+          </p>
+        </div>
+      </section>
 
         <!--О компании Техномарт-->
         <section class="ourcompany">
-          <h2>Компания Техномарт</h2>
+          <h2 class="section-title">Компания Техномарт</h2>
           <p>
             Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для ремонта и
             строительства не оставит равнодушными любителей сэкономить на гастарбайтерах.
@@ -254,13 +254,13 @@
             <li>ЖелДорЭкспедиция</li>
           </ul>
           <a class="mainpage-link" href="ourcompany.html">Подробнее о компании</a>
-        </section>
-        <section class="ourcontacts">
-          <h2>Контакты</h2>
-          <p>Вы можете забрать товар сами, заехав в наш офис:</p>
-          <a href="#"><img src="img/map_small.jpg" width="300" height="158" alt="Расположение офиса на карте"></a>
-          <a class="mainpage-link" href="feedback.html">Заблудились? Напишите нам!</a>
-        </section>
+      </section>
+      <section class="ourcontacts">
+        <h2 class="section-title">Контакты</h2>
+        <p>Вы можете забрать товар сами, заехав в наш офис:</p>
+        <a href="#"><img src="img/map_small.jpg" width="300" height="158" alt="Расположение офиса на карте"></a>
+        <a class="mainpage-link" href="feedback.html">Заблудились? Напишите нам!</a>
+      </section>
     </main>
 
     <!--Футер-->
@@ -312,7 +312,7 @@
         </p>
       </div>
 
-      <div class="hide-write-us">
+      <div class="modal-window">
         <form name="write-us-form" method="post" action="#">
           <div class="write-us-header">
             <label class="write-us-label" for="write-us-name">Ваше имя:</label>
