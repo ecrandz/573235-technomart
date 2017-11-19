@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Техномарт: каталог инструментов</title>
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
 
@@ -18,7 +20,7 @@
           </li>
           <li class="header-search">
             <form name="search" method="get" action="#">
-              <label for="search-text">Поиск:</label>
+              <label class="header-search-label" for="search-text">Поиск:</label>
               <input type="search" name="search" id="search-text" value="ищу товар">
             </form>
           </li>
@@ -34,7 +36,9 @@
           <p>Интернет-магазин строительных материалов и инструментов для ремонта</p>
         </div>
         <div class="header-address">
-          <a class="header-calllink" href="call.html">+7 (812) 555-05-55</a>
+          <div class="header-call">
+            <a class="header-calllink" href="call.html">+7 (812) 555-05-55</a>
+          </div>
           <p>г. Санкт-Петербург, ул. Б. Конюшенная, д.19/8</p>
         </div>
         <div class="logged-in">
@@ -62,6 +66,8 @@
           <li class="mainmenu-contacts"><a href="contacts.html">Контакты</a></li>
         </ul>
       </nav>
+      <div class="mainmenu-bar">
+      </div>
 
     </header>
 
@@ -71,6 +77,7 @@
       <!--Дерево каталога-->
       <nav class="breadcrumbs">
         <ul>
+          <li class="breadcrumbs-item-home"><a href="catalog.html" title="Домой"></a></li>
           <li class="breadcrumbs-item"><a href="catalog.html">Каталог</a></li>
           <li class="breadcrumbs-item"><a href="#">Инструмент</a></li>
           <li class="breadcrumbs-item"><a href="#">Перфораторы</a></li>
@@ -78,8 +85,9 @@
       </nav>
 
       <!--Текущий раздел-->
-      <h2 class="section-title catalog-section">Перфораторы</h2>
-
+      <div class="catalog-header-box">
+        <h2 class="section-title catalog-section">Перфораторы</h2>
+      </div>
       <!--aside - Фильтр-->
       <aside class="catalog-filter">
         <h3 class="catalog-header">Фильтр:</h3>
@@ -181,7 +189,9 @@
                 </div>
                 <h4 class="product-name">Перфоратор BOSCH BFG 3000</h4>
                 <p class="product-oldprice"><del>22500 Р.</del></p>
-                <p class="product-price">15500 Р.</p>
+                <div class="product-price-box">
+                  <p class="product-price">15500 Р.</p>
+                </div>
               </article>
             </li>
             <li class="catalog-item">
@@ -193,7 +203,9 @@
                 </div>
                 <h4 class="product-name">Перфоратор BOSCH BFG 6000</h4>
                 <p class="product-oldprice"><del>30500 Р.</del></p>
-                <p class="product-price">25500 Р.</p>
+                <div class="product-price-box">
+                  <p class="product-price">25500 Р.</p>
+                </div>
               </article>
             </li>
             <li class="catalog-item newproduct">
@@ -204,7 +216,9 @@
                   <button type="button" class="to-favorities-button">В закладки</button>
                 </div>
                 <h4 class="product-name">Перфоратор BOSCH BFG 2000</h4>
-                <p class="product-price">12500 Р.</p>
+                <div class="product-price-box">
+                  <p class="product-price">12500 Р.</p>
+                </div>
               </article>
             </li>
             <li class="catalog-item">
@@ -216,7 +230,9 @@
                 </div>
                 <h4 class="product-name">Перфоратор BOSCH BFG 3000</h4>
                 <p class="product-oldprice"><del>22500 Р.</del></p>
-                <p class="product-price">15500 Р.</p>
+                <div class="product-price-box">
+                  <p class="product-price">15500 Р.</p>
+                </div>
               </article>
             </li>
             <li class="catalog-item newproduct">
@@ -228,7 +244,9 @@
                 </div>
                 <h4 class="product-name">Перфоратор BOSCH BFG 6000</h4>
                 <p class="product-oldprice"><del>30500 Р.</del></p>
-                <p class="product-price">25500 Р.</p>
+                <div class="product-price-box">
+                  <p class="product-price">25500 Р.</p>
+                </div>
               </article>
             </li>
             <li class="catalog-item">
@@ -239,7 +257,9 @@
                   <button type="button" class="to-favorities-button">В закладки</button>
                 </div>
                 <h4 class="product-name">Перфоратор BOSCH BFG 2000</h4>
-                <p class="product-price">12500 Р.</p>
+                <div class="product-price-box">
+                  <p class="product-price">12500 Р.</p>
+                </div>
               </article>
             </li>
             <li class="catalog-item">
@@ -251,7 +271,9 @@
                 </div>
                 <h4 class="product-name">Перфоратор BOSCH BFG 3000</h4>
                 <p class="product-oldprice"><del>22500 Р.</del></p>
-                <p class="product-price">15500 Р.</p>
+                <div class="product-price-box">
+                  <p class="product-price">15500 Р.</p>
+                </div>
               </article>
             </li>
             <li class="catalog-item">
@@ -263,7 +285,9 @@
                 </div>
                 <h4 class="product-name">Перфоратор BOSCH BFG 6000</h4>
                 <p class="product-oldprice"><del>30500 Р.</del></p>
-                <p class="product-price">25500 Р.</p>
+                <div class="product-price-box">
+                  <p class="product-price">25500 Р.</p>
+                </div>
               </article>
             </li>
             <li class="catalog-item">
@@ -274,7 +298,9 @@
                   <button type="button" class="to-favorities-button">В закладки</button>
                 </div>
                 <h4 class="product-name">Перфоратор BOSCH BFG 2000</h4>
-                <p class="product-price">12500 Р.</p>
+                <div class="product-price-box">
+                  <p class="product-price">12500 Р.</p>
+                </div>
               </article>
             </li>
           </ul>
@@ -284,11 +310,11 @@
         <!--Навигация по страницам-->
         <nav class="pagenumber">
           <ul>
-            <li class="hide-it"><a href="#">Предыдущая</a></li>
+            <li class="visually-hidden"><a href="#">Предыдущая</a></li>
             <li class="pagenumber-active"><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">Следующая</a></li>
+            <li class="pagenumber-inactive"><a href="#">2</a></li>
+            <li class="pagenumber-inactive"><a href="#">3</a></li>
+            <li class="pagenumber-inactive"><a href="#">Следующая</a></li>
           </ul>
         </nav>
 
@@ -307,64 +333,82 @@
     </main>
     <!--Футер-->
     <footer class="main-footer">
-      <!--Логотип и кнопки быстрого перехода-->
-      <div class="main-footer-logo">
-        <a href="index.html">Техномарт</a>
-        <img src="img/logo_tehnomart_footer.png" alt="Логотип Техномарт">
+      <div class="footer-top">
+        <!--Логотип и кнопки быстрого перехода-->
+        <div class="main-footer-logo">
+          <a href="index.html">Техномарт</a>
+          <img src="img/logo_tehnomart_footer.png" alt="Логотип Техномарт">
+        </div>
+        <div class="footer-address">
+          <p>г. Санкт-Петербург, ул. Б. Конюшенная, д.19/8</p>
+        </div>
+        <!--Меню в футере-->
+        <nav class="footer-navigation">
+          <ul>
+            <li><a class="footer-navigation-item" href="company.html">Компания</a></li>
+            <li><a class="footer-navigation-item" href="news.html">Новости</a></li>
+            <li><a class="footer-navigation-item" href="catalog.html">Каталог</a></li>
+            <li><a class="footer-navigation-item" href="delivery.html">Доставка</a></li>
+            <li><a class="footer-navigation-item" href="contacts.html">Контакты</a></li>
+            <li><a class="footer-navigation-item footernav-highlighted" href="materials.html">Материалы</a></li>
+            <li><a class="footer-navigation-item footernav-highlighted" href="machines.html">Техника</a></li>
+            <li><a class="footer-navigation-item footernav-highlighted" href="tools.html">Инструмент</a></li>
+            <li><a class="footer-navigation-item footernav-highlighted" href="special.html">Спецпредложения</a></li>
+          </ul>
+        </nav>
       </div>
-      <div class="footer-address">
-        <p>г. Санкт-Петербург, ул. Б. Конюшенная, д.19/8</p>
-      </div>
-      <!--Меню в футере-->
-      <nav class="footer-navigation">
-        <ul>
-          <li class="footer-navigation-company"><a href="company.html">Компания</a></li>
-          <li class="footer-navigation-news"><a href="news.html">Новости</a></li>
-          <li class="footer-navigation-catalog"><a href="catalog.html">Каталог</a></li>
-          <li class="footer-navigation-delivery"><a href="delivery.html">Доставка</a></li>
-          <li class="footer-navigation-contacts"><a href="contacts.html">Контакты</a></li>
-          <li class="footer-navigation-materials footernav-highlighted"><a href="materials.html">Материалы</a></li>
-          <li class="footer-navigation-machines footernav-highlighted"><a href="machines.html">Техника</a></li>
-          <li class="footer-navigation-tools footernav-highlighted"><a href="tools.html">Инструмент</a></li>
-          <li class="footer-navigation-special footernav-highlighted"><a href="special.html">Спецпредложения</a></li>
-        </ul>
-      </nav>
-      <!--Копирайт-->
-      <p class="copyright">
-        (c) 2010-2017 Компания «Техномарт»
-        Все права защищены
-      </p>
-      <div class="footer-social">
-        <ul>
-          <li><a class="social-link" href="#">Вконтакте</a></li>
-          <li><a class="social-link" href="#">Фейсбук</a></li>
-          <li><a class="social-link" href="#">Инстаграм</a></li>
-        </ul>
-      </div>
-      <div class="footer-links">
-        <p>
-          Обратная связь:
-          <a class="footer-highlightedlink" href="#">mail@htmlacademy.ru</a>
+      <div class="footer-bottom">
+        <!--Копирайт-->
+        <p class="copyright">
+          (c) 2010-2017 Компания «Техномарт»
+          Все права защищены
         </p>
-      </div>
-      <div class="footer-links">
-        <p>
-          Разработано -
-          <a class="footer-highlightedlink" href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a>
-        </p>
+        <div class="footer-social">
+          <ul>
+            <li class="social-link"><a class="vkontante" href="#" title="Вконтакте"></a></li>
+            <li class="social-link"><a class="facebook" href="#" title="Фейсбук"></a></li>
+            <li class="social-link"><a class="instagram" href="#" title="Инстаграм"></a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <p>
+            Обратная связь:
+            <a class="footer-highlightedlink" href="#">mail@htmlacademy.ru</a>
+          </p>
+        </div>
+        <div class="footer-links">
+          <p>
+            Разработано -
+            <a class="footer-highlightedlink" href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a>
+          </p>
+        </div>
       </div>
 
+      <!--Модальное окно-->
       <div class="modal-window">
         <form name="write-us-form" method="post" action="#">
-          <div class="write-us-header">
-            <label class="write-us-label" for="write-us-name">Ваше имя:</label>
-            <input type="text" id="write-us-name" minlength="3" pattern="[A-я]+">
-            <label class="write-us-label" for="write-us-mail">Ваш e-mail:</label>
-            <input type="email" id="write-us-mail">
+
+          <!--Красная линия-->
+          <div class="write-us-bar">
           </div>
-          <label class="write-us-label" for="write-us-text">Текст письма:</label>
-          <textarea id="write-us-text" cols="60" rows="5"></textarea>
-          <button type="submit" class="write-us-button" name="write-us">Отправить</button>
+
+          <!--Центральная белая часть-->
+          <div class="write-us-central">
+            <div class="write-us-header">
+              <label class="write-us-label" for="write-us-name">Ваше имя:</label>
+              <input type="text" id="write-us-name" minlength="3" pattern="[A-я]+">
+              <label class="write-us-label" for="write-us-mail">Ваш e-mail:</label>
+              <input type="email" id="write-us-mail">
+            </div>
+            <label class="write-us-label" for="write-us-text">Текст письма:</label>
+            <textarea id="write-us-text" cols="60" rows="5"></textarea>
+          </div>
+
+          <!--Нижняя серая часть-->
+          <div class="write-us-bottom">
+            <button type="submit" class="write-us-button" name="write-us">Отправить</button>
+          </div>
+
         </form>
       </div>
 
