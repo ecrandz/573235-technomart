@@ -47,10 +47,6 @@ body {
   padding:0;
 }
 
-a {
-  text-decoration: none;
-}
-
 .visually-hidden {
   position: absolute;
   clip: rect(0, 0, 0, 0);
@@ -68,12 +64,15 @@ a {
 /* --------------             Заголовок             --------------*/
 /* ---------------------------------------------------------------*/
 
-/* Верхняя тёмная часть */
+/* --------------    Верхняя тёмная часть           --------------*/
 .header-top {
-  color: #fff; background-color: rgb(41, 52, 73);
+  color: #fff;
+  background-color: rgb(41, 52, 73);
   font-size: 17px;
 }
 .header-top ul {
+  margin:0;
+  padding: 0;
   list-style: none;
 }
 /* Закладки, корзина и "оформить заказ". Кроме логотипа */
@@ -82,75 +81,155 @@ a {
 }
 /* Логотип */
 .header-logo {
-  color: #fff; background-color: rgb(238, 54, 67);
+  color: #fff;
+  background-color: rgb(238, 54, 67);
   font-size: 24px;
   text-transform: uppercase;
+}
+.header-logo:hover {
+  color: #fff;
+  background-color: rgb(202, 44, 55);
+}
+.header-logo:active {
+  color: #fff;
+  background-color: rgb(186, 39, 50);
 }
 .header-logo a {
   color: inherit; background-color: inherit;
 }
-
+/* Поле поиска */
+.header-search-label {
+  color: #fff;
+  background-color: rgb(41, 52, 73);
+}
+.header-search-label:hover {
+  color: #fff;
+  background-color: rgb(33,42,58);
+}
+.header-search-label:active {
+  color: #fff;
+  background-color: rgb(41, 52, 73);
+}
 .header-search-label::before {
-  content: url("../img/icon-search.png");
+  content: url("../img/icon-search.svg");
+}
+/* Закладки и корзина */
+.header-shortcuts, .header-basket {
+  color: #fff;
+  background-color: rgb(41, 52, 73);
+}
+.header-shortcuts:hover, .header-basket:hover {
+  color: #fff;
+  background-color: rgb(33,42,58);
+}
+.header-shortcuts:active, .header-basket:active {
+  color: #fff;
+  opacity: 60%;
+  background-color: rgb(22,29,41);
 }
 .header-shortcuts::before {
-  content: url("../img/icon-bookmark.png");
+  content: url("../img/icon-bookmark.svg");
 }
 .header-basket::before {
-  content: url("../img/icon-cart.png");
+  content: url("../img/icon-cart.svg");
 }
 .highlighted {
-  color: inherit; background-color: rgb(99, 166, 62);
+  color: #fff;
+  background-color: rgb(99, 166, 62);
 }
-/* Средняя часть */
+.highlighted:hover {
+  color: #fff;
+  background-color: rgb(95, 187, 45);
+}
+.highlighted:active {
+  color: #fff;
+  opacity: 60%;
+  background-color: rgb(81, 133, 52);
+}
+
+/* --------------            Средняя часть           --------------*/
 .header-middle, .header-bottom {
-  color: #fff; background-color: rgb(243, 247, 248);
+  color: #fff;
+  background-color: rgb(241, 245, 247);
 }
+/* Миссия */
 .header-mission {
-  color:rgb(238, 54, 67); background-color: rgb(243, 247, 248);
+  color:rgb(238, 54, 67);
+  background-color: rgb(241, 245, 247);
   font-family: "Cuprum Italic", "Arial", sans-serif;
   font-size: 16px;
   line-height: 23px;
 }
+/* Адрес - телефон */
 .header-address {
-  color: rgb(41, 52, 73); background-color: rgb(243, 247, 248);
+  color: rgb(41, 52, 73);
+  background-color: rgb(241, 245, 247);
   font-size: 14px;
   line-height: 24px;
 }
 .header-calllink {
-  color:rgb(238, 54, 67); background-color: rgb(243, 247, 248);
+  color:rgb(233, 41, 42);
+  background-color: rgb(241, 245, 247);
   font-size: 21px;
 }
 .header-calllink::before {
-  content: url("../img/icon-phone.png");
+  content: url("../img/icon-phone.svg");
 }
-.header-enterlink a, .header-registerlink a {
-  color:#000; background-color: #fff;
+/* Логин и регистрация */
+.header-enterlink, .header-registerlink {
+  color:#000;
+  background-color: #fff;
   font-size: 21px;
 }
+.header-enterlink:hover, .header-registerlink:hover {
+  color: rgb(238, 53, 67);
+  background-color: #fff;
+}
+.header-enterlink:active, .header-registerlink:active {
+  color: #000;
+  opacity: 30%;
+  background-color: #fff;
+}
+.header-enterlink a, .header-registerlink a {
+  color: inherit;
+  background-color: inherit;
+}
+.header-enterlink::before {
+  content: url("../img/icon-login.svg");
+}
 
-/* Главное меню */
+/* --------------            Главное меню           --------------*/
 .mainmenu {
-  color: #fff; background-color: rgb(50,66,92);
+  color: #fff;
+  background-color: rgb(50,66,92);
   font-size: 17px;
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
-.mainmenu a {
-  color: inherit; background-color: inherit;
+.mainmenu-item:hover {
+  color: #fff;
+  background-color: rgb(41, 52, 73);
 }
-.mainmenu-bar {
-    color: #fff; background-color: rgb(41, 52, 73);
+.mainmenu-item:active {
+  color: #fff;
+  opacity: 50%;
+  background-color: rgb(29, 39, 57);
+
+}
+.mainmenu-item a {
+  color: inherit;
+  background-color: inherit;
 }
 
 /* ---------------------------------------------------------------*/
 /* --------------         Основное содержимое       --------------*/
 /* ---------------------------------------------------------------*/
 
-.container {
+.index-container {
   color: #fff;
 }
-
-/* Таблица без названия */
+/* Таблица без названия, материалы, инструмент и прочее... */
 .offering h3 {
   font-size: 24px;
 }
@@ -185,12 +264,26 @@ a {
 .mainpage-link {
   color: #fff;
   font-size: 14px;
+  text-transform: uppercase;
 }
 .mainpage-link-transparentbox {
   background-color: rgba(0, 0, 0, 0.1);
 }
+.mainpage-link-transparentbox:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.mainpage-link-transparentbox:active {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
 .mainpage-link-box {
   background-color: rgb(238, 54, 67);
+}
+.mainpage-link-box:hover {
+  background-color: rgb(202, 44, 55);
+}
+.mainpage-link-box:active {
+  background-color: rgb(186, 39, 50);
 }
 
 /* ---------------------------------------------------------------*/
