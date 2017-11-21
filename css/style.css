@@ -80,22 +80,24 @@ body {
   color: inherit; background-color: inherit;
 }
 /* Логотип */
-.header-logo {
+.header-logo-item {
   color: #fff;
   background-color: rgb(238, 54, 67);
-  font-size: 24px;
-  text-transform: uppercase;
 }
-.header-logo:hover {
+.header-logo-item:hover {
   color: #fff;
   background-color: rgb(202, 44, 55);
 }
-.header-logo:active {
+.header-logo-item:active {
   color: #fff;
   background-color: rgb(186, 39, 50);
 }
-.header-logo a {
-  color: inherit; background-color: inherit;
+.header-logo {
+  color: inherit;
+  background-color: inherit;
+  font-size: 24px;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 /* Поле поиска */
 .header-search-label {
@@ -124,7 +126,7 @@ body {
 }
 .header-shortcuts:active, .header-basket:active {
   color: #fff;
-  opacity: 60%;
+  opacity: 0.6;
   background-color: rgb(22,29,41);
 }
 .header-shortcuts::before {
@@ -143,7 +145,7 @@ body {
 }
 .highlighted:active {
   color: #fff;
-  opacity: 60%;
+  opacity: 0.6;
   background-color: rgb(81, 133, 52);
 }
 
@@ -187,7 +189,7 @@ body {
 }
 .header-enterlink:active, .header-registerlink:active {
   color: #000;
-  opacity: 30%;
+  opacity: 0.3;
   background-color: #fff;
 }
 .header-enterlink a, .header-registerlink a {
@@ -201,7 +203,7 @@ body {
 /* --------------            Главное меню           --------------*/
 .mainmenu {
   color: #fff;
-  background-color: rgb(50,66,92);
+  background-color: rgb(50, 66, 92);
   font-size: 17px;
   margin: 0;
   padding: 0;
@@ -213,7 +215,7 @@ body {
 }
 .mainmenu-item:active {
   color: #fff;
-  opacity: 50%;
+  opacity: 0.5;
   background-color: rgb(29, 39, 57);
 
 }
@@ -263,123 +265,219 @@ body {
 }
 .mainpage-link {
   color: #fff;
+  background-color: rgb(238, 54, 67);
   font-size: 14px;
   text-transform: uppercase;
+  text-decoration:none;
 }
-.mainpage-link-transparentbox {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-.mainpage-link-transparentbox:hover {
-  background-color: rgba(0, 0, 0, 0.2);
-}
-.mainpage-link-transparentbox:active {
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-.mainpage-link-box {
-  background-color: rgb(238, 54, 67);
-}
-.mainpage-link-box:hover {
+.mainpage-link:hover {
   background-color: rgb(202, 44, 55);
 }
-.mainpage-link-box:active {
+.mainpage-link:active {
   background-color: rgb(186, 39, 50);
 }
 
+.mainpage-link.transparentbox {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.mainpage-link.transparentbox:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.mainpage-link.transparentbox:active {
+  background-color: rgba(0, 0, 0, 0.3);
+}
 /* ---------------------------------------------------------------*/
 /* --------------        Популярные товары          --------------*/
 /* ---------------------------------------------------------------*/
+/* Розовый бар, заголовок раздела популярные товары*/
 .popular header {
-  color: rgb(50, 66, 92); background-color: rgb(249, 245, 240);
+  color: rgb(50, 66, 92);
+  background-color: rgb(249, 245, 240);
 }
 .section-title {
   font-size: 30px;
   text-transform: uppercase;
 }
-
+/* ----------------------- Карточка товара -----------------------*/
+/* Общее описание карточки */
 .product-card {
   color:#000; background-color: #fff;
   font-family: "PT Sans Bold", "Arial", sans-serif;
   font-size: 18px;
 }
+.product-card:hover {
+    /* сделать тень и кнопки вместо фото*/
+}
+
+/* Модальный блок с кнопками */
+
+/* Кнопка "Купить" */
+.buy-button {
+  color: #fff;
+  background-color: rgb(99, 166, 62);
+  font-family: "Cuprum", "Arial", sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  border: none;
+  padding:0;
+}
+.buy-button::before {
+  content: url("../img/icon-cart.svg");
+  /*color: rgb(146, 193, 120);*/
+}
+.buy-button:hover {
+  color: #fff;
+  background-color: rgb(95, 187, 45);
+}
+.buy-button:active {
+  color: #fff;
+  background-color: rgb(81, 133, 52);
+}
+
+/* Кнопка "Добавить в закладки" */
+.to-favorities-button {
+  color: rgb(50, 66, 92);
+  background-color: #fff;
+  font-family: "Cuprum", "Arial", sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-color: rgb(99, 166, 62);
+  padding:0;
+}
+.to-favorities-button:hover {
+  border-color: rgb(50, 66, 92);
+}
+.to-favorities-button:active {
+  color: rgba(50, 66, 92, 0.3);
+  border-color: rgb(193, 198, 206);
+}
+
+/* Зачёркнутая старая цена" */
 .product-oldprice {
   color: rgb(169, 169, 169);
   font-size: 17px;
+  text-transform: uppercase;
 }
-.product-price-box {
-  color: #fff; background-color: rgb(238, 54, 67);
+/* Новая цена на красном флажке" */
+.product-price {
+  color: #fff;
+  background-color: rgb(238, 54, 67);
   font-size: 17px;
-  background-image: url("../img/price_label_nt.png");
-  background-repeat: no-repeat;
+  text-transform: uppercase;
+
+}
+/* Здесь добавить псевдоэлемент - красный флажок" */
+
+/* Популярные производители */
+.vendor-item {
+  background-color: white;
+}
+.vendor-item:hover {
+  /* сделать тень */
+}
+.vendor-item:active {
+  opacity: 0.3;
+  /* Написать что-то какой-то фильтр для старого IE */
 }
 
 /* ---------------------------------------------------------------*/
 /* --------------             Сервисы               --------------*/
 /* ---------------------------------------------------------------*/
 .services {
-  color: #000; background-color: rgb(243, 247, 248);
+  color: #000;
+  background-color: rgb(242, 246, 248);
   background-image: url("../img/delivery.png"),
                     url("../img/delivery_shade.png");
   background-repeat: no-repeat;
   background-position: right;
+  font-family: "Cuprum", "Arial", sans-serif;
+  font-size: 13px;
+  line-height: 24px;
 }
+
 .services-menu {
-  background-image: url("../img/vertical_bar.png");
-  background-repeat: no-repeat;
-  background-position: right;
   list-style: none;
+  padding:0;
 }
-.services-menu-item-inv {
-  color: #fff; background-color: rgb(41, 52, 73);
-}
+/* Нажатая кнопка на hover не реагирует */
 .services-menu-item {
-  color: rgb(41, 52, 73); background-color: #fff;
+  color: rgb(50, 66, 92);
+  background-color: #fff;
+  font-family: "Cuprum Bold", "Arial", sans-serif;
+  font-size: 21px;
 }
+/* Не нажатая кнопка в покое*/
+.services-menu-item-inactive {
+  color: #fff;
+  background-color: rgb(50, 66, 92);
+  font-family: "Cuprum Bold", "Arial", sans-serif;
+  font-size: 21px;
+}
+/* Не нажатая кнопка реагирует на hover */
+.services-menu-item-inactive:hover {
+  color: #fff;
+  background-color: rgb(41, 52, 73);
+}
+.services-menu-item-inactive:active {
+  color: rgb(50, 66, 92);
+  background-color: #fff;
+}
+
 .services-link {
-  color:inherit; background-color: inherit;
+  color:inherit;
+  background-color: inherit;
+  text-decoration: none;
 }
+/*  Описание сервиса */
 .services-description h3 {
-  color: rgb(41, 52, 73); background-color: rgb(243, 247, 248);
+  color: rgb(50, 66, 92);
+  background-color: rgb(242, 246, 248);
   font-size: 36px;
   text-transform: uppercase;
 }
 .services-description p {
   font-size: 13px;
 }
-
+/*  Белая дополнительная секция - о компании Техномарт - и контакты*/
 .ourcompany, .ourcontacts {
-  color:#000; background-color: #fff;
+  color:#000;
+  background-color: #fff;
   font-size: 13px;
 }
-.transport-list li {
+/* почтовые компании */
+.transport-list {
   font-size: 18px;
+  padding: 0;
+  list-style: none;
 }
 
 /* ---------------------------------------------------------------*/
 /* --------------              Футер                --------------*/
 /* ---------------------------------------------------------------*/
 
-/* Верхняя светлая часть */
+/* Верхняя немного более светлая часть */
 .footer-top {
   color: #fff; background-color: rgb(50, 66, 92);
   font-size: 18px;
 }
 .main-footer-logo {
-  color: #fff; background-color: rgb(238, 54, 67);
-  font-size: 24px;
+  color: #fff;
+  background-color: rgb(238, 54, 67);
+  font-size: 30px;
   text-transform: uppercase;
+  text-decoration: none;
 }
-.main-footer-logo a {
-  color: inherit; background-color: inherit;
-}
+
 .footer-navigation ul {
   list-style: none;
 }
 .footer-navigation-item {
-  color: inherit; background-color: inherit;
+  color: inherit;
+  background-color: inherit;
 }
 .footernav-highlighted, .footer-highlightedlink {
-  color: #ffd180; background-color: inherit;
+  color: #ffd180;
+  background-color: inherit;
 }
 
 /* Нижняя темная часть */

@@ -17,8 +17,8 @@
       <!--Логотип и кнопки быстрого перехода-->
       <div class="header-top">
         <ul>
-          <li class="header-logo">
-            <a href="index.html" title="Логотип Техномарт">Техномарт</a>
+          <li class="header-logo-item">
+            <a class="header-logo" href="index.html" title="Логотип Техномарт">Техномарт</a>
           </li>
           <li class="header-search">
             <form name="search" method="get" action="#">
@@ -73,40 +73,28 @@
         <h2 class="visually-hidden">Категории товаров</h2>
         <div class="materials">
           <h3>Материалы</h3>
-          <div class="mainpage-link-transparentbox">
-            <a class="mainpage-link" href="materials.html">На любой вкус</a>
-          </div>
+          <a class="mainpage-link transparentbox" href="materials.html">На любой вкус</a>
         </div>
         <div class="tools">
           <h3>Инструмент</h3>
-          <div class="mainpage-link-transparentbox">
-            <a class="mainpage-link" href="tools.html">На все случаи</a>
-          </div>
+          <a class="mainpage-link transparentbox" href="tools.html">На все случаи</a>
         </div>
         <div class="machines">
           <h3>Техника</h3>
-          <div class="mainpage-link-transparentbox">
-            <a class="mainpage-link" href="machines.html">Для стройки</a>
-          </div>
+          <a class="mainpage-link transparentbox" href="machines.html">Для стройки</a>
         </div>
         <div class="revolver">
           <h3>Перфораторы</h3>
           <p>Настоящие мужские игрушки</p>
-          <div class="mainpage-link-box">
-            <a class="mainpage-link" href="selected.html">Открыть каталог</a>
-          </div>
+          <a class="mainpage-link" href="selected.html">Открыть каталог</a>
         </div>
         <div class="discount">
           <h3>Скидки 50%</h3>
-          <div class="mainpage-link-transparentbox">
-            <a class="mainpage-link" href="discount.html">На 350 товаров</a>
-          </div>
+          <a class="mainpage-link transparentbox" href="discount.html">На 350 товаров</a>
         </div>
         <div class="delivery">
           <h3>Доставка</h3>
-          <div class="mainpage-link-transparentbox">
-            <a class="mainpage-link" href="delivery.html">Бесплатно</a>
-          </div>
+          <a class="mainpage-link transparentbox" href="delivery.html">Бесплатно</a>
         </div>
       </section>
 
@@ -114,11 +102,10 @@
       <section class="popular">
         <header>
           <h2 class="section-title">Популярные товары</h2>
-          <div class="mainpage-link-box">
-            <a class="mainpage-link" href="all_popular_products.html">Все популярные товары</a>
-          </div>
+          <a class="mainpage-link" href="all_popular_products.html">Все популярные товары</a>
         </header>
         <ul class="popular-list">
+          <!-- каждый элемент списка содержит карточку товара -->
           <li class="popular-item">
             <article class="product-card">
               <a href="#"><img src="img/BFG_9000.png" width="184" height="163" alt="Изображение товара"></a>
@@ -128,9 +115,7 @@
               </div>
               <h4 class="product-name">Перфоратор BOSCH BFG 9000</h4>
               <p class="product-oldprice"><del>32500 Р.</del></p>
-              <div class="product-price-box">
-                <p class="product-price">25500 Р.</p>
-              </div>
+              <p class="product-price">25500 Р.</p>
             </article>
           </li>
           <li class="popular-item">
@@ -142,9 +127,7 @@
               </div>
               <h4 class="product-name">Перфоратор BOSCH BFG 3000</h4>
               <p class="product-oldprice"><del>22500 Р.</del></p>
-              <div class="product-price-box">
-                <p class="product-price">15500 Р.</p>
-              </div>
+              <p class="product-price">15500 Р.</p>
             </article>
           </li>
           <li class="popular-item">
@@ -156,9 +139,7 @@
               </div>
               <h4 class="product-name">Перфоратор BOSCH BFG 6000</h4>
               <p class="product-oldprice"><del>30500 Р.</del></p>
-              <div class="product-price-box">
-                <p class="product-price">25500 Р.</p>
-              </div>
+              <p class="product-price">25500 Р.</p>
             </article>
           </li>
           <li class="popular-item newproduct">
@@ -169,9 +150,7 @@
                 <button type="button" class="to-favorities-button">В закладки</button>
               </div>
               <h4 class="product-name">Перфоратор BOSCH BFG 2000</h4>
-              <div class="product-price-box">
-                <p class="product-price">12500 Р.</p>
-              </div>
+              <p class="product-price">12500 Р.</p>
             </article>
           </li>
         </ul>
@@ -181,9 +160,7 @@
       <section class="popular">
         <header>
           <h2 class="section-title">Популярные производители</h2>
-          <div class="mainpage-link-box">
-            <a class="mainpage-link" href="all_popular_vendors.html">Все производители</a>
-          </div>
+          <a class="mainpage-link" href="all_popular_vendors.html">Все производители</a>
         </header>
         <ul class="vendor-list">
           <li class="vendor-item">
@@ -223,10 +200,10 @@
           <li class="services-menu-item">
             <a class="services-link" href="delivery.html">Доставка</a>
           </li>
-          <li class="services-menu-item-inv">
+          <li class="services-menu-item-inactive">
             <a class="services-link" href="warranty.html">Гарантия</a>
           </li>
-          <li class="services-menu-item-inv">
+          <li class="services-menu-item-inactive">
             <a class="services-link" href="loan.html">Кредит</a>
           </li>
         </ul>
@@ -267,17 +244,13 @@
             <li>Автотрейдинг</li>
             <li>ЖелДорЭкспедиция</li>
           </ul>
-          <div class="mainpage-link-box">
-            <a class="mainpage-link" href="ourcompany.html">Подробнее о компании</a>
-          </div>
+          <a class="mainpage-link" href="ourcompany.html">Подробнее о компании</a>
       </section>
       <section class="ourcontacts">
         <h2 class="section-title">Контакты</h2>
         <p>Вы можете забрать товар сами, заехав в наш офис:</p>
         <a href="#"><img src="img/map_small.jpg" width="300" height="158" alt="Расположение офиса на карте"></a>
-        <div class="mainpage-link-box">
-          <a class="mainpage-link" href="feedback.html">Заблудились? Напишите нам!</a>
-        </div>
+        <a class="mainpage-link" href="feedback.html">Заблудились? Напишите нам!</a>
       </section>
     </main>
 
@@ -285,13 +258,10 @@
     <footer class="main-footer">
       <div class="footer-top">
         <!--Логотип и кнопки быстрого перехода-->
-        <div class="main-footer-logo">
-          <a href="index.html">Техномарт</a>
-          <img src="img/logo_tehnomart_footer.png" alt="Логотип Техномарт">
-        </div>
-        <div class="footer-address">
-          <p>г. Санкт-Петербург, ул. Б. Конюшенная, д.19/8</p>
-        </div>
+        <aside class="main-footer-aside">
+          <a class="main-footer-logo" href="index.html" title="Логотип Техномарт">Техномарт</a>
+          <p class="footer-address">г. Санкт-Петербург, ул. Б. Конюшенная, д.19/8</p>
+        </aside>
         <!--Меню в футере-->
         <nav class="footer-navigation">
           <ul>
