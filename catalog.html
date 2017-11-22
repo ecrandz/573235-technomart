@@ -19,8 +19,8 @@
           </li>
           <li class="header-search">
             <form name="search" method="get" action="#">
-              <label class="header-search-label" for="search-text">Поиск:</label>
-              <input type="search" name="search" id="search-text" value="ищу товар">
+              <label class="header-search-label" for="search-text"></label>
+              <input type="search" class="search" name="search" id="search-text" placeholder="Поиск:">
             </form>
           </li>
           <li class="header-shortcuts"><a href="#">Закладки: <span>0</span></a></li>
@@ -45,9 +45,9 @@
             <span>Равшан Джамшутович</span>
             <a class="logout-icon" href="logout.html" title="Выйти"></a>
           </div>
-          <div class="user-links">
-            <a href="#">Мои заказы</a>
-            <a href="#">Личный кабинет</a>
+          <div>
+            <a class="user-links" href="#">Мои заказы</a>
+            <a class="user-links" href="#">Личный кабинет</a>
           </div>
         </div>
 
@@ -87,7 +87,9 @@
       </div>
       <!--aside - Фильтр-->
       <aside class="catalog-filter">
-        <h3 class="catalog-header">Фильтр:</h3>
+        <div class="catalog-header">
+          <h3>Фильтр:</h3>
+        </div>
         <form id="filter-form" method="get" action="#">
           <!-- Фильтр по цене -->
           <div class="filter-price">
@@ -101,43 +103,43 @@
 
           <!-- Фильтр по производителю -->
           <!-- Если мы специально не укажем атрибут value в элементе, то получим переменную с значение "on" -->
-          <div class="filter-list">
+          <div class="filter-section">
             <p class="filter-display-name">Производители</p>
-            <ul>
+            <ul class="filter-list">
               <li class="filter-item">
+                <input class="filter-input-checkbox" type="checkbox" id="filter-vendor-Bosch" name="filter-by-vendor-Bosch">
                 <label class="filter-label-checkbox" for="filter-vendor-Bosch">Bosch</label>
-                <input type="checkbox" id="filter-vendor-Bosch" name="filter-by-vendor-Bosch">
               </li>
               <li class="filter-item">
+                <input class="filter-input-checkbox" type="checkbox" id="filter-vendor-Interskol" name="filter-by-vendor-Interskol">
                 <label class="filter-label-checkbox" for="filter-vendor-Interskol">Интерскол</label>
-                <input type="checkbox" id="filter-vendor-Interskol" name="filter-by-vendor-Interskol">
               </li>
               <li class="filter-item">
+                <input class="filter-input-checkbox" type="checkbox" id="filter-vendor-Makita" name="filter-by-vendor-Makita">
                 <label class="filter-label-checkbox" for="filter-vendor-Makita">Makita</label>
-                <input type="checkbox" id="filter-vendor-Makita" name="filter-by-vendor-Makita">
               </li>
               <li class="filter-item">
+                <input class="filter-input-checkbox" type="checkbox" id="filter-vendor-Dewalt" name="filter-by-vendor-Dewalt">
                 <label class="filter-label-checkbox" for="filter-vendor-Dewalt">Dewalt</label>
-                <input type="checkbox" id="filter-vendor-Dewalt" name="filter-by-vendor-Dewalt">
               </li>
               <li class="filter-item">
+                <input class="filter-input-checkbox" type="checkbox" id="filter-vendor-Hitachi" name="filter-by-vendor-Hitachi">
                 <label class="filter-label-checkbox" for="filter-vendor-Hitachi">Hitachi</label>
-                <input type="checkbox" id="filter-vendor-Hitachi" name="filter-by-vendor-Hitachi">
               </li>
             </ul>
           </div>
 
           <!-- Фильтр по питанию -->
-          <div class="filter-list">
+          <div class="filter-section">
             <p class="filter-display-name">Питание</p>
-            <ul>
+            <ul class="filter-list">
               <li class="filter-item">
+                <input class="filter-input-radio" type="radio" id="filter-poweroption-battery" name="filter-by-poweroption" value="battery">
                 <label class="filter-label-radio" for="filter-poweroption-battery">Аккумуляторные</label>
-                <input type="radio" id="filter-poweroption-battery" name="filter-by-poweroption" value="battery">
               </li>
               <li class="filter-item">
+                <input class="filter-input-radio" type="radio" id="filter-poweroption-grid" name="filter-by-poweroption" value="grid" checked>
                 <label class="filter-label-radio" for="filter-poweroption-grid">Сетевые</label>
-                <input type="radio" id="filter-poweroption-grid" name="filter-by-poweroption" value="grid" checked>
               </li>
             </ul>
           </div>
@@ -148,25 +150,23 @@
       </aside>
 
         <!--Сортировка-->
-      <section class="catalog-sorter">
-        <h3 class="catalog-header">Сортировка:</h3>
-        <ul>
-          <li class="catalog-header sorter-item">
-            <button type="button" id="sorter-by-price" class="sorter-button" name="sort-by-price">По цене</button>
+      <section class="catalog-header">
+        <h3>Сортировка:</h3>
+        <ul class="sorter-list">
+          <li class="sorter-item">
+            <a class="sorter-radio sorter-selected" href="#">По цене</a>
           </li>
-          <li class="catalog-header sorter-item">
-            <button type="button" id="sorter-by-type" class="sorter-button" name="sort-by-type">По типу</button>
+          <li class="sorter-item">
+            <a class="sorter-radio" href="#">По типу</a>
           </li>
-          <li class="catalog-header sorter-item">
-            <button type="button" id="sorter-by-function" class="sorter-button" name="sort-by-function">По функционалу</button>
+          <li class="sorter-item">
+            <a class="sorter-radio" href="#">По функционалу</a>
           </li>
-          <li class="catalog-header sorter-ascending">
-            <label class="visually-hidden" for="sorter-ascending">По возрастанию</label>
-            <button type="button" id="sorter-ascending" class="button-ascending" name="sort-ascending"></button>
+          <li class="sorter-item">
+            <a class="sorter-ascending order-selected" href="#" title="По возрастанию"></a>
           </li>
-          <li class="catalog-header sorter-descending">
-            <label class="visually-hidden" for="sorter-descending">По убыванию</label>
-            <button type="button" id="sorter-descending" class="button-descending" name="sort-descending"></button>
+          <li class="sorter-item">
+            <a class="sorter-descending" href="#" title="sorter-descending"></a>
           </li>
         </ul>
       </section>
@@ -289,12 +289,12 @@
 
         <!--Навигация по страницам-->
         <nav class="pagenumber">
-          <ul>
-            <li class="visually-hidden"><a href="#">Предыдущая</a></li>
-            <li class="pagenumber-active"><a href="#">1</a></li>
-            <li class="pagenumber-inactive"><a href="#">2</a></li>
-            <li class="pagenumber-inactive"><a href="#">3</a></li>
-            <li class="pagenumber-inactive"><a href="#">Следующая</a></li>
+          <ul class="pagenumber-list">
+            <li class="visually-hidden"><a class="pagenumber-item" href="#">Предыдущая</a></li>
+            <li><a class="pagenumber-item pagenumber-active" href="#">1</a></li>
+            <li><a class="pagenumber-item" href="#">2</a></li>
+            <li><a class="pagenumber-item" href="#">3</a></li>
+            <li><a class="pagenumber-item" href="#">Следующая</a></li>
           </ul>
         </nav>
 
@@ -364,11 +364,6 @@
       <!--Модальное окно-->
       <div class="modal-window">
         <form name="write-us-form" method="post" action="#">
-
-          <!--Красная линия-->
-          <div class="write-us-bar">
-          </div>
-
           <!--Центральная белая часть-->
           <div class="write-us-central">
             <div class="write-us-header">
@@ -385,8 +380,8 @@
           <div class="write-us-bottom">
             <button type="submit" class="write-us-button" name="write-us">Отправить</button>
           </div>
-
         </form>
+        <button class="modal-window-close" name="close-write-us"></button>
       </div>
 
     </footer>

@@ -56,13 +56,13 @@ body {
   overflow: hidden;
 }
 
-/* ---------------------------------------------------------------*/
+/* ****************************************************************/
 /* --------------      Правила для index.html       --------------*/
 /* ---------------------------------------------------------------*/
 
 /* ---------------------------------------------------------------*/
 /* --------------             Заголовок             --------------*/
-/* ---------------------------------------------------------------*/
+/* ****************************************************************/
 
 /* --------------    Верхняя тёмная часть           --------------*/
 .header-top {
@@ -77,7 +77,8 @@ body {
 }
 /* Закладки, корзина и "оформить заказ". Кроме логотипа */
 .header-top a {
-  color: inherit; background-color: inherit;
+  color: inherit;
+  background-color: inherit;
 }
 /* Логотип */
 .header-logo-item {
@@ -99,22 +100,42 @@ body {
   text-transform: uppercase;
   text-decoration: none;
 }
-/* Поле поиска */
+/* Поле поиска - иконка*/
 .header-search-label {
   color: #fff;
+  /*лупа должна быть бледно серая*/
   background-color: rgb(41, 52, 73);
 }
 .header-search-label:hover {
   color: #fff;
+  /*становится белая, бекграунд более синий*/
   background-color: rgb(33,42,58);
 }
 .header-search-label:active {
-  color: #fff;
-  background-color: rgb(41, 52, 73);
+  color: rgb(234, 58, 67);
+  background-color: #fff;
 }
 .header-search-label::before {
   content: url("../img/icon-search.svg");
 }
+/* Поле поиска */
+.search {
+  color: #fff;
+  font-family: "Cuprum", "Arial", sans-serif;
+  background-color: rgb(41, 52, 73);
+  border: none;
+}
+/* непонятно, как сделать буквы в поле поиска белыми по умолчанию */
+.search:hover {
+  color: #fff;
+  background-color: rgb(33,42,58);
+}
+.search:active {
+  color: #000;
+  background-color: #fff;
+}
+/*непонятно, как заставить менять цвет поле поиска при установке в него курсора*/
+
 /* Закладки и корзина */
 .header-shortcuts, .header-basket {
   color: #fff;
@@ -134,6 +155,9 @@ body {
 }
 .header-basket::before {
   content: url("../img/icon-cart.svg");
+}
+.header-shortcuts a, .header-basket a, .header-makeorder a {
+  text-decoration: none;
 }
 .highlighted {
   color: #fff;
@@ -164,7 +188,7 @@ body {
 }
 /* Адрес - телефон */
 .header-address {
-  color: rgb(41, 52, 73);
+  color: rgb(50, 66, 92);
   background-color: rgb(241, 245, 247);
   font-size: 14px;
   line-height: 24px;
@@ -173,15 +197,18 @@ body {
   color:rgb(233, 41, 42);
   background-color: rgb(241, 245, 247);
   font-size: 21px;
+  text-decoration: none;
 }
 .header-calllink::before {
   content: url("../img/icon-phone.svg");
 }
+
 /* Логин и регистрация */
 .header-enterlink, .header-registerlink {
   color:#000;
   background-color: #fff;
   font-size: 21px;
+  text-decoration: none;
 }
 .header-enterlink:hover, .header-registerlink:hover {
   color: rgb(238, 53, 67);
@@ -222,6 +249,7 @@ body {
 .mainmenu-item a {
   color: inherit;
   background-color: inherit;
+  text-decoration: none;
 }
 
 /* ---------------------------------------------------------------*/
@@ -298,6 +326,10 @@ body {
   font-size: 30px;
   text-transform: uppercase;
 }
+.popular-list {
+  padding: 0;
+  list-style: none;
+}
 /* ----------------------- Карточка товара -----------------------*/
 /* Общее описание карточки */
 .product-card {
@@ -369,6 +401,10 @@ body {
 /* Здесь добавить псевдоэлемент - красный флажок" */
 
 /* Популярные производители */
+.vendor-list {
+  list-style: none;
+  padding: 0
+}
 .vendor-item {
   background-color: white;
 }
@@ -455,9 +491,10 @@ body {
 /* --------------              Футер                --------------*/
 /* ---------------------------------------------------------------*/
 
-/* Верхняя немного более светлая часть */
+/* -----------  Верхняя немного более светлая часть --------------*/
 .footer-top {
   color: #fff; background-color: rgb(50, 66, 92);
+  font-family: "Cuprum", "Arial", sans-serif;
   font-size: 18px;
 }
 .main-footer-logo {
@@ -469,31 +506,49 @@ body {
 }
 
 .footer-navigation ul {
+  padding: 0;
   list-style: none;
 }
+/*верхняя строка меню в футере*/
 .footer-navigation-item {
   color: inherit;
   background-color: inherit;
+  text-decoration: none;
 }
+.footer-navigation-item:hover {
+  text-decoration: underline;
+}
+.footer-navigation-item:active {
+  text-decoration: none;
+  opacity: 0.5;
+}
+/*нижняя строка меню в более светлом футере*/
 .footernav-highlighted, .footer-highlightedlink {
-  color: #ffd180;
+  color: rgb(255, 208, 128);
   background-color: inherit;
 }
 
-/* Нижняя темная часть */
+/* ------------ Нижняя немного более темная часть -------------- */
 .footer-bottom {
-  color: #fff; background-color: rgb(41, 52, 73);
+  color: #fff;
+  background-color: rgb(41, 52, 73);
   font-size: 16px;
 }
 .footer-social ul {
+  padding: 0;
   list-style: none;
 }
 .social-link {
-  color: #fff; background-color: rgb(33, 42, 58);
-  width: 35px; height:35px;
+  color: #fff;
+  background-color: rgb(33, 42, 58);
+  width: 35px;
+  height:35px;
   border-radius: 50%;
 }
-
+.social-link:hover {
+  color: #fff;
+  background-color: rgb(238, 54, 67);
+}
 .vkontante::before {
   content: url("../img/icon-vk.png");
     width: 30px; height:30px;
@@ -506,16 +561,26 @@ body {
   content: url("../img/icon-insta.png");
     width: 30px; height:30px;
 }
+/*линки с e-mail адресами*/
+.footer-highlightedlink {
+  text-decoration: none;
+}
+.footer-highlightedlink:hover {
+  text-decoration: underline;
+}
+.footer-highlightedlink:hover {
+  text-decoration: none;
+  color: rgb(238, 54, 67);
+}
 
 /* ---------------------------------------------------------------*/
 /* --------------          Модальное окно           --------------*/
 /* ---------------------------------------------------------------*/
 /* Красная линия */
-.write-us-bar {
-  color:#fff; background-color: rgb(238, 54, 67);
-}
-.write-us-central {
-  color:#000; background-color: #fff;
+.modal-window {
+  color:#000;
+  background-color: #fff;
+  border-top: 3px solid rgb(255, 83, 87);
 }
 
 .write-us-label {
@@ -523,18 +588,32 @@ body {
 }
 
 .write-us-bottom {
-  color:#000; background-color: rgb(244, 244, 244);
+  color:#000;
+  background-color: rgb(244, 244, 244);
 }
+.write-us-button {
+  color:#fff;
+  background-color: rgb(238, 54, 67);
+  text-transform: uppercase;
+  font-family: "Cuprum", "Arial", sans-serif;
+  padding: 0;
+  border: none;
+}
+/* дописать крест для закрытия окна */
+.modal-window-close {
 
-/* ---------------------------------------------------------------*/
-/* --------------      Правила для catalog.html       --------------*/
+}
+/* ****************************************************************/
+/* --------------      Правила для catalog.html       ------------*/
 /* ---------------------------------------------------------------*/
 
 /* ---------------------------------------------------------------*/
 /* --------------             Заголовок             --------------*/
-/* ---------------------------------------------------------------*/
+/* ****************************************************************/
+/* окно с залогиненным пользователем*/
 .header-username {
-  color:#000; background-color: #fff;
+  color:#000;
+  background-color: #fff;
   font-size: 21px;
 }
 .header-username::before {
@@ -543,34 +622,38 @@ body {
 .logout-icon::before {
   content: url("../img/icon-logout.png");
 }
+/* линки на мои заказы и личный кабинет*/
 .user-links {
-  color: rgb(50, 66, 92); background-color: #fff;
+  color: rgb(50, 66, 92);
+  background-color: #fff;
   font-size:16px;
   text-decoration: underline;
-}
-
-.user-links a {
-  color: inherit; background-color: inherit;
 }
 
 /* ---------------------------------------------------------------*/
 /* --------------     Центральная часть экрана      --------------*/
 /* ---------------------------------------------------------------*/
 .catalog-container {
-  color:#000; background-color: #fff;
+  color:#000;
+  background-color: #fff;
   font-family: "PT Sans", "Arial", sans-serif;
   font-size: 13px;
   text-transform: uppercase;
 }
 /* breadcrumbs */
 .breadcrumbs ul {
+  padding: 0;
    list-style: none;
 }
 .breadcrumbs-item a {
-  color: inherit; background-color: inherit;
+  color: inherit;
+  background-color: inherit;
+  text-decoration: none;
 }
 .breadcrumbs-item::before {
-  content: url("../img/icon-right-small.png");
+  /* content: url("../img/icon-right-small.png"); -заменено по рекомендации наставника */
+  content: ">";
+  color: rgb(193, 198, 206);
 }
 .breadcrumbs-item-home::before {
   content: url("../img/icon-home.png");
@@ -578,18 +661,23 @@ body {
 
 /* фон наименования раздела */
 .catalog-header-box {
-  color: rgb(50, 66, 92); background-color: rgb(243, 247, 248);
+  color: rgb(50, 66, 92);
+  background-color: rgb(243, 247, 248);
 }
-/* фон фильтра */
+/* класс действует и для фильтра и для сортера*/
 .catalog-header {
-  color: inherit; background-color: rgb(247, 243, 236);
+  color: inherit;
+  background-color: rgb(247, 243, 236);
 }
-/* фильтр по... */
+/* подраздел фильтр по... */
 .filter-display-name {
   font-family: "PT Sans Bold", "Arial", sans-serif;
   font-size: 17px;
 }
-.filter-list ul {
+
+/* фильтры */
+.filter-list {
+  padding: 0;
   list-style: none;
 }
 .filter-label-checkbox {
@@ -598,41 +686,74 @@ body {
 .filter-label-radio {
   font-size: 14px;
 }
+/*непонятно, как заменить стандартные чекбоксы и радиокнопки на картинки*/
+
 /* сортировка */
-.catalog-sorter ul {
+.sorter-list {
+  padding: 0;
+  list-style: none;
+}
+/* --------------- кнопки сортировки -----------------*/
+
+.sorter-radio {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: rgb(238, 64, 67);
+  font-family: "PT Sans", "Arial", sans-serif;
+  font-size: 13px;
+  color: #000;
+  opacity: 0.3;
+}
+.sorter-selected {
+  text-decoration: none;
+  color: rgb(238, 64, 67);
+  opacity: 1;
+}
+
+/*сюда вставить треугольники*/
+.sorter-ascending {
+
+}
+
+.sorter-descending {
+
+}
+
+.order-selected {
+
+}
+
+/* ----------- Детали товара, главная центральная часть экрана -------- */
+.catalog-list {
+  padding: 0;
   list-style: none;
 }
 
-/* Кнопки "Купить" и "Добавить в закладки" */
-/*.buy-button {
-  color: #fff; background-color: rgb(99, 166, 92);
-}
-.to-favorities-button{
-  color: #000; background-color: #fff;
-} */
-
-/* --------------- сюда вставить кнопки сортировки -----------------*/
-
-/* Кнопки листания страниц*/
-.pagenumber ul {
+/* Навигация по страницам */
+.pagenumber-list {
+  padding: 0;
   list-style: none;
+}
+
+.pagenumber-item {
+  color: #000;
+  background-color: #fff;
+  border: 1px solid rgb(229, 229, 229);
+  text-decoration: none;
 }
 .pagenumber-active {
-  color: #fff; background-color: rgb(238, 54, 67);
-}
-.pagenumber-inactive {
-  color: #000; background-color: #fff;
-}
-.pagenumber-active a, .pagenumber-inactive a {
-  color: inherit; background-color: inherit;
+  color: #fff;
+  background-color: rgb(238, 54, 67);
 }
 
 
 /* Комментарий к категории*/
 .category-comment {
-  color: #000; background-color: rgb(242, 246,248);
+  color: #000;
+  background-color: rgb(242, 246, 248);
   font-family: "Cuprum", "Arial", sans-serif;
   font-size: 13px;
+  line-height: 24px;
 }
 .category-comment {
   text-transform: none;

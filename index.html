@@ -22,8 +22,8 @@
           </li>
           <li class="header-search">
             <form name="search" method="get" action="#">
-              <label class="header-search-label" for="search-text">Поиск:</label>
-              <input type="search" name="search" id="search-text" value="ищу товар">
+              <label class="header-search-label" for="search-text"></label>
+              <input type="search" class="search" name="search" id="search-text" placeholder="Поиск:">
             </form>
           </li>
           <li class="header-shortcuts"><a href="#">Закладки: <span>0</span></a></li>
@@ -44,8 +44,8 @@
           <p>г. Санкт-Петербург, ул. Б. Конюшенная, д.19/8</p>
         </div>
         <div class="not-logged-in">
-          <div class="header-enterlink"><a href="enter.html">Войти</a></div>
-          <div class="header-registerlink"><a href="register.html">Регистрация</a></div>
+          <a class="header-enterlink" href="enter.html">Войти</a>
+          <a class="header-registerlink" href="register.html">Регистрация</a>
         </div>
       </div>
 
@@ -307,11 +307,6 @@
       <!--Модальное окно-->
       <div class="modal-window">
         <form name="write-us-form" method="post" action="#">
-
-          <!--Красная линия-->
-          <div class="write-us-bar">
-          </div>
-
           <!--Центральная белая часть-->
           <div class="write-us-central">
             <div class="write-us-header">
@@ -328,8 +323,8 @@
           <div class="write-us-bottom">
             <button type="submit" class="write-us-button" name="write-us">Отправить</button>
           </div>
-
         </form>
+        <button class="modal-window-close" name="close-write-us"></button>
       </div>
 
     </footer>
