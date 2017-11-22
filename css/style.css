@@ -758,3 +758,68 @@ body {
 .category-comment {
   text-transform: none;
 }
+
+
+/* ****************************************************************/
+
+/* --------------              С Е Т К А            --------------*/
+
+/* ---------------------------------------------------------------*/
+
+/*верхняя чиняя часть футера*/
+.header-top ul {
+  display: flex;
+  flex-direction: row;
+  width:1200px;
+  min-height: 42px;
+}
+
+/*логотип Техномарт*/
+.header-logo-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 130px;
+  width: 220px;
+  /* как сделать полосу снизу, чтобы выпадала */
+}
+.header-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left:0;
+  margin-right:auto;
+  width: 270px;
+}
+.header-shortcuts, .header-basket {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0;
+  width: 150px;
+}
+.header-shortcuts::before {
+  margin-right: 15px;
+}
+.header-basket::before {
+  margin-right: 15px;
+}
+
+.header-makeorder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right:130px;
+  width: 150px;
+}
+
+
+.header-middle {
+  display: flex;
+  flex-direction: row;
+}
+
+.mainmenu {
+  display: flex;
+  flex-direction: row;
+}
