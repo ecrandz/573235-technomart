@@ -200,7 +200,14 @@ body {
   text-decoration: none;
 }
 .header-calllink::before {
-  content: url("../img/icon-phone.svg");
+  position: absolute;
+  content: "";
+  background-image: url("../img/icon-phone.svg");
+  background-repeat: no-repeat;
+  width: 19px;
+  height: 19px;
+  left: 16px;
+  top:12px;
 }
 
 /* Логин и регистрация */
@@ -224,7 +231,14 @@ body {
   background-color: inherit;
 }
 .header-enterlink::before {
-  content: url("../img/icon-login.svg");
+  position: absolute;
+  content: "";
+  background-image: url("../img/icon-login.svg");
+  background-repeat: no-repeat;
+  width:20px;
+  height: 20px;
+  top:15px;
+  left: 10px;
 }
 
 /* --------------            Главное меню           --------------*/
@@ -813,10 +827,72 @@ body {
   width: 150px;
 }
 
-
+/*средняя синяя часть футера*/
 .header-middle {
   display: flex;
   flex-direction: row;
+  min-height: 158px;
+  align-items: flex-start;
+}
+.header-middle p {
+  margin: 0;
+}
+/*миссия*/
+.header-mission {
+  /*border: 1px dashed black;*/
+  width: 197px;
+  margin-top: 50px;
+  margin-left: 180px;
+}
+/*телефон*/
+.header-address {
+  margin-top: 50px;
+  margin-left: 68px;
+  width: 264px;
+  /*border: 1px dashed black;*/
+}
+.header-calllink {
+  display: block;
+  position: relative;
+  border: 3px solid white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 72px;
+}
+/*адрес*/
+.header-address p {
+  margin-top: 10px;
+  text-align: center;
+}
+
+/*обёртка для "войти" и "регистрация"*/
+.not-logged-in {
+  display: flex;
+  flex-direction: row;
+  margin-left: 67px;
+  margin-top: 50px;
+  /*border: 1px dashed black;*/
+}
+.header-enterlink {
+  position: relative;
+  display: flex;
+  width: 121px;
+  height: 45px;
+  align-items: center;
+  justify-content: flex-end;
+}
+/*войти*/
+.header-enterlink span {
+  margin-right: 25px;
+}
+/*регистрация*/
+.header-registerlink {
+  display: flex;
+  width: 150px;
+  height: 45px;
+  margin-left: 10px;
+  align-items: center;
+  justify-content: center;
 }
 
 .mainmenu {
