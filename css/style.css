@@ -102,6 +102,7 @@ body {
 }
 /* Поле поиска - иконка*/
 .header-search-label {
+  position: relative;
   color: #fff;
   /*лупа должна быть бледно серая*/
   background-color: rgb(41, 52, 73);
@@ -116,7 +117,15 @@ body {
   background-color: #fff;
 }
 .header-search-label::before {
-  content: url("../img/icon-search.svg");
+  position: absolute;
+  content: "";
+  background-image: url("../img/icon-search.svg");
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+  left: -30px;
+  top:2px;
+
 }
 /* Поле поиска */
 .search {
@@ -130,7 +139,7 @@ body {
   color: #fff;
   background-color: rgb(33,42,58);
 }
-.search:active {
+.search:focus {
   color: #000;
   background-color: #fff;
 }
@@ -138,6 +147,7 @@ body {
 
 /* Закладки и корзина */
 .header-shortcuts, .header-basket {
+  position: relative;
   color: #fff;
   background-color: rgb(41, 52, 73);
 }
@@ -151,10 +161,24 @@ body {
   background-color: rgb(22,29,41);
 }
 .header-shortcuts::before {
-  content: url("../img/icon-bookmark.svg");
+  position: absolute;
+  content: "";
+  background-image: url("../img/icon-bookmark.svg");
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+  left: 8px;
+  top: 12px;
 }
 .header-basket::before {
-  content: url("../img/icon-cart.svg");
+  position: absolute;
+  content: "";
+  background-image: url("../img/icon-cart.svg");
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+  left: 8px;
+  top: 12px;
 }
 .header-shortcuts a, .header-basket a, .header-makeorder a {
   text-decoration: none;
@@ -237,7 +261,7 @@ body {
   background-repeat: no-repeat;
   width:20px;
   height: 20px;
-  top:15px;
+  top:14px;
   left: 10px;
 }
 
@@ -274,37 +298,66 @@ body {
   color: #fff;
 }
 /* Таблица без названия, материалы, инструмент и прочее... */
-.offering h3 {
-  font-size: 24px;
-}
-.offering div {
+.offering-item {
   background-repeat: no-repeat;
-  background-position: right;
+  text-decoration: none;
 }
 .materials {
   color: #fff; background-color: rgb(255, 191, 71);
   background-image: url("../img/symbol_bucket.png");
+  background-position: right 45px top 30px;
 }
 .tools{
   color: #fff; background-color: rgb(59, 188, 227);
   background-image: url("../img/symbol_drill.png");
+  background-position: right 25px top 30px;
 }
 .machines {
   color: #fff; background-color: rgb(220, 145, 216);
   background-image: url("../img/symbol_tractor.png");
+  background-position: right 30px top 30px;
 }
 .revolver {
+  position: relative;
   color: #fff; background-color: rgb(157, 140, 119);
   background-image: url("../img/slider_1-min.jpg");
+  background-repeat: no-repeat;
+  width: 620px;
+  height: 264px;
+  z-index: -2;
+}
+.revolver::after {
+  position: absolute;
+  content: "";
+  background-image: url("../img/slider_1_mask.png");
+  background-repeat: no-repeat;
+  z-index: -1;
+  width: 620px;
+  height: 264px;
+  opacity: 0.3;
+  top:0;
+  left: 0;
+}
+.revolver-header {
+
+}
+.revolver-description {
+  
 }
 .discount {
   color: #fff; background-color: rgb(142, 215, 143);
   background-image: url("../img/symbol_basket.png");
+  background-position: right 35px top 25px;
 }
 .delivery {
   color: #fff; background-color: rgb(255, 192, 71);
   background-image: url("../img/symbol_car.png");
+  background-position: right 30px top 30px;
 }
+.offering-category {
+  font-size: 24px;
+}
+
 .mainpage-link {
   color: #fff;
   background-color: rgb(238, 54, 67);
@@ -319,13 +372,17 @@ body {
   background-color: rgb(186, 39, 50);
 }
 
-.mainpage-link.transparentbox {
+.offering-transparentbox {
+  color: #fff;
   background-color: rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  text-transform: uppercase;
+  text-decoration:none;
 }
-.mainpage-link.transparentbox:hover {
+.offering-transparentbox:hover {
   background-color: rgba(0, 0, 0, 0.2);
 }
-.mainpage-link.transparentbox:active {
+.offering-transparentbox:active {
   background-color: rgba(0, 0, 0, 0.3);
 }
 /* ---------------------------------------------------------------*/
@@ -780,7 +837,7 @@ body {
 
 /* ---------------------------------------------------------------*/
 
-/*верхняя чиняя часть футера*/
+/*------------------- верхняя cиняя часть футера -----------------*/
 .header-top ul {
   display: flex;
   flex-direction: row;
@@ -795,7 +852,9 @@ body {
   align-items: center;
   margin-left: 130px;
   width: 220px;
-  /* как сделать полосу снизу, чтобы выпадала */
+  border-bottom: 5px solid rgb(181, 41, 51);
+  margin-bottom: -5px;
+  /* так сделаем полосу снизу, чтобы выпадала */
 }
 .header-search {
   display: flex;
@@ -827,11 +886,11 @@ body {
   width: 150px;
 }
 
-/*средняя синяя часть футера*/
+/*--------------- средняя синяя часть футера ---------------*/
 .header-middle {
   display: flex;
   flex-direction: row;
-  min-height: 158px;
+  height: 158px;
   align-items: flex-start;
 }
 .header-middle p {
@@ -895,7 +954,95 @@ body {
   justify-content: center;
 }
 
+/*------------- главное меню --------------*/
+.header-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 121px;
+  /*border: 1px dashed red;*/
+}
 .mainmenu {
   display: flex;
   flex-direction: row;
+  width: 940px;
+  height: 56px;
+  border-bottom: 5px solid rgb(41, 52, 73);
+  justify-content: space-between;
+  padding-left: 52px;
+  padding-right: 52px;
+}
+
+.mainmenu-item {
+  display: flex;
+  align-items: center;
+}
+
+/* ---------------------------------------------------------------*/
+
+/*-------- Секция с блоками без названия - категории товаров ------*/
+
+/* ---------------------------------------------------------------*/
+
+.index-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width:1200px;
+  min-height: 100px;
+  border: 1px dashed red;
+}
+
+.offering {
+  display: flex;
+  flex-direction: row;
+  width: 940px;
+  height: 406px;
+  justify-content: space-between;
+  align-content: space-between;
+  flex-wrap: wrap;
+}
+.offering-item {
+  position: relative;
+  width: 300px;
+  height: 122px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.offering-category {
+  margin: 0;
+  margin-left: 24px;
+  margin-top: 18px;
+}
+.offering-transparentbox {
+  margin-left: 24px;
+  margin-bottom: 18px;
+  display: flex;
+  width: 137px;
+  height: 39px;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  border-radius: 3px;
+}
+.revolver {
+
+}
+.offering-aside {
+  display: flex;
+  height: 264px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mainpage-link {
+  display: flex;
+  height: 39px;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  border-radius: 3px;
 }
