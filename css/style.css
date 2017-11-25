@@ -503,7 +503,6 @@ body {
   text-transform: uppercase;
 
 }
-/* Здесь добавить псевдоэлемент - красный флажок" */
 
 /* Популярные производители */
 .vendor-list {
@@ -594,13 +593,18 @@ body {
   font-size: 36px;
   text-transform: uppercase;
 }
-.services-description p {
+.services-slogan, .services-description p {
+  font-family: 'PT Sans';
   font-size: 13px;
 }
 /*  Белая дополнительная секция - о компании Техномарт - и контакты*/
 .ourcompany, .ourcontacts {
   color:#000;
   background-color: #fff;
+
+}
+.ourcompany p, .ourcontacts p {
+  font-family: 'PT Sans';
   font-size: 13px;
 }
 /* почтовые компании */
@@ -608,6 +612,18 @@ body {
   font-size: 18px;
   padding: 0;
   list-style: none;
+}
+.transport-list li {
+  position: relative;
+}
+.transport-list li::before {
+  position: absolute;
+  content: "";
+  width: 25px;
+  height: 2px;
+  top:15px;
+  left: -32px;
+  background-color: rgb(238, 54, 67);
 }
 
 /* ---------------------------------------------------------------*/
@@ -1154,6 +1170,8 @@ body {
 /*надпись на заголовке*/
 .section-title-header {
   margin: 0;
+}
+.section-title .section-title-header {
   margin-left: 30px;
 }
 /*красная кнопка, отступ справа*/
@@ -1341,7 +1359,74 @@ body {
 .services-description p {
   margin-top: 42px;
 }
-
+/*видимый класс для блоков сервиса*/
 .show {
   display: block;
 }
+
+/*------------------------------------------------------------------*/
+/*       дополнительная информация в главной части экрана           */
+/*------------------------------------------------------------------*/
+/*обёртка*/
+.main-extrainfo {
+  display: flex;
+  justify-content: space-between;
+  width: 940px;
+  height: 537px;
+}
+/*о компании*/
+.ourcompany {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 521px;
+  margin-top: 72px;
+  margin-left: 0;
+  margin-right: auto;
+  border: 1px dashed red;
+}
+/*контакты*/
+.ourcontacts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  margin-top: 72px;
+  margin-left: auto;
+  margin-right: 0;
+  width: 300px;
+  border: 1px dashed red;
+}
+/*расстановка текста*/
+.ourcompany p, .ourcontacts p, .ourcontacts img {
+  display: block;
+  margin-top: 24px;
+  line-height: 24px;
+}
+.ourcontacts p {
+  width: 170px;
+}
+/*список транспортных компаний*/
+.transport-list {
+  line-height: 32px;
+  margin-left: 34px;
+}
+/*красные кнопки с линками*/
+.ourcompany .mainpage-link {
+  width: 220px;
+}
+.ourcontacts .mainpage-link {
+  width: 100%;
+}
+.ourcompany .mainpage-link, .ourcontacts .mainpage-link {
+  margin-top: auto;
+  margin-bottom: 80px;
+}
+/**************************************************************/
+/**************************************************************/
+
+/*                          Ф У Т Е Р                         */
+
+/**************************************************************/
+/**************************************************************/
