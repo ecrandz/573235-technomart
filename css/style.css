@@ -339,11 +339,14 @@ body {
   left: 0;
 }
 .revolver-header {
-
+  font-size: 36px;
+  text-transform: uppercase;
 }
 .revolver-description {
-  
+  font-family: 'PT Sans';
+  font-size: 18px;
 }
+
 .discount {
   color: #fff; background-color: rgb(142, 215, 143);
   background-image: url("../img/symbol_basket.png");
@@ -393,7 +396,7 @@ body {
   color: rgb(50, 66, 92);
   background-color: rgb(249, 245, 240);
 }
-.section-title {
+.section-title-header {
   font-size: 30px;
   text-transform: uppercase;
 }
@@ -408,44 +411,75 @@ body {
   font-family: "PT Sans Bold", "Arial", sans-serif;
   font-size: 18px;
 }
-.product-card:hover {
-    /* сделать тень и кнопки вместо фото*/
+/*псевдоэлемент флага нового продукта*/
+.newproduct::after {
+  content: "";
+  position:absolute;
+  background-image: url("../img/label_new_text.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  top:-1px;
+  right:-1px;
+  width:60px;
+  height:60px;
+  z-index: 100;
 }
-
 /* Модальный блок с кнопками */
-
-/* Кнопка "Купить" */
-.buy-button {
-  color: #fff;
-  background-color: rgb(99, 166, 62);
+.buy-block {
+  background-color:rgba(255,255,255,0.9);
+  z-index:10;
+  display: none;
+}
+/*...появляeтся при наведении на карточку товара*/
+.product-card:hover .buy-block {
+  display: block;
+}
+.buy-button, .to-favorities-button {
+  position: relative;
   font-family: "Cuprum", "Arial", sans-serif;
   font-size: 14px;
+  line-height: 18px;
   text-transform: uppercase;
-  border: none;
-  padding:0;
+  text-decoration: none;
+  color: #fff;
+  background-color: rgb(99, 166, 62);
+  border:3px solid rgb(99, 166, 62);
+  padding: 7px 0;
+  border-radius:3px;
 }
+
+.buy-button {
+  border-bottom-color:rgb(81, 133, 52);
+}
+/* Кнопка "Купить" */
 .buy-button::before {
-  content: url("../img/icon-cart.svg");
+  position: absolute;
+  content: "";
+  background: url("../img/icon-cart.svg");
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+  left: 10px;
+  top:8px;
   /*color: rgb(146, 193, 120);*/
 }
 .buy-button:hover {
   color: #fff;
   background-color: rgb(95, 187, 45);
+  border-color: rgb(95, 187, 45);
+  border-bottom-color:rgb(81, 133, 52);
 }
 .buy-button:active {
   color: #fff;
   background-color: rgb(81, 133, 52);
+  border-color: rgb(81, 133, 52);
 }
 
 /* Кнопка "Добавить в закладки" */
 .to-favorities-button {
   color: rgb(50, 66, 92);
   background-color: #fff;
-  font-family: "Cuprum", "Arial", sans-serif;
-  font-size: 14px;
-  text-transform: uppercase;
-  border-color: rgb(99, 166, 62);
-  padding:0;
+
 }
 .to-favorities-button:hover {
   border-color: rgb(50, 66, 92);
@@ -496,7 +530,7 @@ body {
   background-image: url("../img/delivery.png"),
                     url("../img/delivery_shade.png");
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: 870px 270px, 610px 270px;
   font-family: "Cuprum", "Arial", sans-serif;
   font-size: 13px;
   line-height: 24px;
@@ -520,6 +554,9 @@ body {
   font-family: "Cuprum Bold", "Arial", sans-serif;
   font-size: 21px;
 }
+.services-menu-item-inactive:nth-child(2) {
+  border-bottom: 1px solid rgb(78, 99, 124);
+}
 /* Не нажатая кнопка реагирует на hover */
 .services-menu-item-inactive:hover {
   color: #fff;
@@ -534,6 +571,21 @@ body {
   color:inherit;
   background-color: inherit;
   text-decoration: none;
+}
+
+/*декоративный элемент - полоска справа*/
+.services-menu::after {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 260px;
+  top:-40px;
+  right: 0;
+  /*background-color: #000;*/
+  background-image: url("../img/vertical_bar.png");
+  background-repeat: no-repeat;
+  background-size: 10px 260px;
+  z-index: 10;
 }
 /*  Описание сервиса */
 .services-description h3 {
@@ -832,19 +884,25 @@ body {
 
 
 /* ****************************************************************/
+/* ****************************************************************/
+
 
 /* --------------              С Е Т К А            --------------*/
 
+
+/* ****************************************************************/
+/* ****************************************************************/
 /* ---------------------------------------------------------------*/
 
 /*------------------- верхняя cиняя часть футера -----------------*/
+.header-top{
+  width:1200px;
+}
 .header-top ul {
   display: flex;
   flex-direction: row;
-  width:1200px;
   min-height: 42px;
 }
-
 /*логотип Техномарт*/
 .header-logo-item {
   display: flex;
@@ -852,10 +910,11 @@ body {
   align-items: center;
   margin-left: 130px;
   width: 220px;
+  /* сделаем полосу снизу, чтобы выпадала */
   border-bottom: 5px solid rgb(181, 41, 51);
   margin-bottom: -5px;
-  /* так сделаем полосу снизу, чтобы выпадала */
 }
+/*поле поиска с лупой*/
 .header-search {
   display: flex;
   justify-content: center;
@@ -864,6 +923,7 @@ body {
   margin-right:auto;
   width: 270px;
 }
+/*в закладки и корзина*/
 .header-shortcuts, .header-basket {
   display: flex;
   justify-content: center;
@@ -877,7 +937,7 @@ body {
 .header-basket::before {
   margin-right: 15px;
 }
-
+/*оформить заказ*/
 .header-makeorder {
   display: flex;
   justify-content: center;
@@ -890,26 +950,26 @@ body {
 .header-middle {
   display: flex;
   flex-direction: row;
+  width: 1200px;
   height: 158px;
   align-items: flex-start;
 }
-.header-middle p {
-  margin: 0;
-}
-/*миссия*/
+/* красная миссия*/
 .header-mission {
-  /*border: 1px dashed black;*/
+  display: block;
   width: 197px;
+  margin: 0;
   margin-top: 50px;
   margin-left: 180px;
+  /*border: 1px dashed black;*/
 }
-/*телефон*/
+/*обертка для телефона и адреса*/
 .header-address {
   margin-top: 50px;
   margin-left: 68px;
   width: 264px;
-  /*border: 1px dashed black;*/
 }
+/*рамка с телефоном*/
 .header-calllink {
   display: block;
   position: relative;
@@ -923,7 +983,6 @@ body {
   margin-top: 10px;
   text-align: center;
 }
-
 /*обёртка для "войти" и "регистрация"*/
 .not-logged-in {
   display: flex;
@@ -932,6 +991,7 @@ body {
   margin-top: 50px;
   /*border: 1px dashed black;*/
 }
+/*кнопка войти*/
 .header-enterlink {
   position: relative;
   display: flex;
@@ -940,7 +1000,7 @@ body {
   align-items: center;
   justify-content: flex-end;
 }
-/*войти*/
+/*надпись на кнопке войти*/
 .header-enterlink span {
   margin-right: 25px;
 }
@@ -955,13 +1015,16 @@ body {
 }
 
 /*------------- главное меню --------------*/
+/*контейнер главного меню с серым фоном*/
 .header-bottom {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  width: 1200px;
   height: 121px;
+  justify-content: center;
   /*border: 1px dashed red;*/
 }
+/*главное меню с синим фоном*/
 .mainmenu {
   display: flex;
   flex-direction: row;
@@ -969,21 +1032,27 @@ body {
   height: 56px;
   border-bottom: 5px solid rgb(41, 52, 73);
   justify-content: space-between;
-  padding-left: 52px;
-  padding-right: 52px;
 }
-
+/*пункт главного меню*/
 .mainmenu-item {
   display: flex;
   align-items: center;
 }
+.mainmenu-item:first-child {
+  margin-left: 52px;
+}
+.mainmenu-item:last-child {
+  margin-right: 52px;
+}
 
 /* ---------------------------------------------------------------*/
 
-/*-------- Секция с блоками без названия - категории товаров ------*/
+
+/*--------                Главный экран                     ------*/
+
 
 /* ---------------------------------------------------------------*/
-
+/*контейнер главного экрана*/
 .index-container {
   display: flex;
   flex-direction: column;
@@ -992,7 +1061,7 @@ body {
   min-height: 100px;
   border: 1px dashed red;
 }
-
+/*-------- Секция с блоками без названия - категории товаров ------*/
 .offering {
   display: flex;
   flex-direction: row;
@@ -1001,7 +1070,9 @@ body {
   justify-content: space-between;
   align-content: space-between;
   flex-wrap: wrap;
+  margin-bottom: 54px;
 }
+/*блок на секции без названия*/
 .offering-item {
   position: relative;
   width: 300px;
@@ -1012,11 +1083,13 @@ body {
   justify-content: space-between;
   align-items: flex-start;
 }
+/*заголовок на блоке*/
 .offering-category {
   margin: 0;
   margin-left: 24px;
   margin-top: 18px;
 }
+/*кнопка с линком на блоке*/
 .offering-transparentbox {
   margin-left: 24px;
   margin-bottom: 18px;
@@ -1028,9 +1101,40 @@ body {
   padding: 0;
   border-radius: 3px;
 }
+/*большой слайдер*/
 .revolver {
-
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
 }
+/*заголовок*/
+.revolver-header {
+  margin: 0;
+  margin-left: 24px;
+  margin-top: 18px;
+}
+/*подпись к слайдеру*/
+.revolver-description {
+  margin-left: 24px;
+  margin-top: 2px;
+  margin-bottom: auto;
+}
+/*красные кнопки с линками*/
+.mainpage-link {
+  display: flex;
+  height: 39px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+}
+/*отступы красной кнопки*/
+.revolver .mainpage-link {
+  margin-left: 24px;
+  margin-bottom: 24px;
+  width: 195px;
+}
+/*два блока один под другим*/
 .offering-aside {
   display: flex;
   height: 264px;
@@ -1038,11 +1142,206 @@ body {
   justify-content: space-between;
 }
 
-.mainpage-link {
+/*----------  популярные товары -----------*/
+/*заголовок*/
+.section-title {
   display: flex;
-  height: 39px;
-  justify-content: center;
   align-items: center;
-  padding: 0;
-  border-radius: 3px;
+  width:940px;
+  height: 89px;
+  display: flex;
+}
+/*надпись на заголовке*/
+.section-title-header {
+  margin: 0;
+  margin-left: 30px;
+}
+/*красная кнопка, отступ справа*/
+.section-title .mainpage-link {
+  width: 254px;
+  margin-left: auto;
+  margin-right: 24px;
+}
+
+/* ------------ список из 4 карточек популярных товаров -------------*/
+.popular-list {
+  width: 940px;
+  display: flex;
+  flex-direction: row;
+  margin-left: -20px;
+  margin-bottom: 0;
+}
+
+/* ++++++++ карточка товара ++++++++*/
+.product-card {
+  position: relative;
+  display:inline-block;
+  width:218px;
+  margin-left:20px;
+  margin-bottom:20px;
+  border:1px solid #ccc;
+  text-align: center;
+}
+/*флаг нового продукта*/
+.newproduct {
+  position: relative;
+}
+/*изображение товара*/
+.product-image {
+  display: flex;
+  width:218px;
+  height:168px;
+  align-items: center;
+  justify-content: center;
+}
+
+/*кнопки в модальном блоке*/
+.buy-block {
+  position:absolute;
+  width:218px;
+  height: 88px;
+  top:0;
+  left:0;
+  padding:40px 0;
+}
+
+/*кнопки купить и добавить в закладки*/
+.buy-button, .to-favorities-button {
+  display:block;
+  width:129px;
+  margin:0 auto;
+  margin-bottom:7px;
+  padding:7px 0;
+}
+/*наименование товара*/
+.product-name {
+    min-height:40px;
+    padding:0 25px;
+    margin-top:10px;
+    margin-bottom:auto;
+}
+/*старая цена*/
+.product-oldprice {
+    min-height:20px;
+    margin-top:15px;
+    margin-bottom:10px;
+}
+/*актуальная цена*/
+.product-price {
+    display: block;
+    position:relative;
+    width:80px;
+    margin:10px auto;
+    margin-bottom:20px;
+    padding:10px 30px;
+    border-radius:3px;
+}
+/*флажок актуальной цены*/
+.product-price:after{
+    content:"";
+    position:absolute;
+    top:0;
+    right:-20px;
+    width:0;
+    height:0;
+    border:20px solid white;
+    border-left-color:#ee3643;
+}
+
+/*----------  популярные производители -----------*/
+.vendor-list {
+  width: 960px;
+  /*border: 1px dashed red;*/
+  margin-left: -20px;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+/*блок производителя*/
+.vendor-item {
+  width: 218px;
+  height: 144px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  border:1px solid #ccc;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+}
+/*логотип производителя*/
+.vendor-item img {
+  margin: auto;
+}
+
+/**************************************************************/
+
+/*----------------------- Сервисы ----------------------------*/
+
+/**************************************************************/
+/*контейнер*/
+.services {
+  width: 940px;
+  height: 520px;
+  padding-left: 130px;
+  padding-right: 130px;
+}
+/*заголовок раздела*/
+.services .section-title-header {
+  margin-left: 0;
+  margin-top: 70px;
+}
+/*девиз*/
+.services-slogan {
+  margin-top: 40px;
+  width: 400px;
+  margin-bottom: 75px;
+  border: 1px dashed red;
+}
+/*контейнер содержимого раздела сервисов*/
+.services-block {
+  display: flex;
+  border: 1px dashed green;
+  width: 592px;
+  justify-content: flex-start;
+}
+/*список с кнопками*/
+.services-menu {
+  position: relative;
+  margin:0;
+  margin-right: auto;
+}
+/*кнопка-переключатель типа сервисов*/
+.services-link {
+  display: block;
+  width: 240px;
+  height: 60px;
+}
+/*кнопка переключения сервисов*/
+.services-link {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 20px;
+  align-items: center;
+}
+/*подблок описания услуги*/
+.services-description {
+  margin: 0;
+  margin-top: 10px;
+  width: 274px;
+  display: none;
+}
+/*его заголовок*/
+.services-description h3 {
+  margin: 0;
+}
+/*и текст*/
+.services-description p {
+  margin-top: 42px;
+}
+
+.show {
+  display: block;
 }
