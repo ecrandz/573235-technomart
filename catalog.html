@@ -366,13 +366,13 @@
             <li class="social-link"><a class="instagram" href="#" title="Инстаграм"></a></li>
           </ul>
         </div>
-        <div class="footer-links">
+        <div class="feedback">
           <p>
             Обратная связь:
             <a class="footer-highlightedlink" href="#">mail@htmlacademy.ru</a>
           </p>
         </div>
-        <div class="footer-links">
+        <div class="developed">
           <p>
             Разработано -
             <a class="footer-highlightedlink" href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a>
@@ -381,27 +381,35 @@
       </div>
 
       <!--Модальное окно-->
-      <div class="modal-window">
+      <section class="modal-window">
         <form name="write-us-form" method="post" action="#">
-          <!--Центральная белая часть-->
-          <div class="write-us-central">
+          <div class="write-us-wrapper">
+            <!-- имя и e-mail -->
             <div class="write-us-header">
-              <label class="write-us-label" for="write-us-name">Ваше имя:</label>
-              <input type="text" id="write-us-name" minlength="3" pattern="[A-я]+">
-              <label class="write-us-label" for="write-us-mail">Ваш e-mail:</label>
-              <input type="email" id="write-us-mail">
+              <div class="write-us-subheader">
+                <label class="write-us-label" for="write-us-name">Ваше имя:</label>
+                <input type="text" id="write-us-name" minlength="3" pattern="[A-я]+">
+              </div>
+              <div class="write-us-subheader">
+                <label class="write-us-label" for="write-us-mail">Ваш e-mail:</label>
+                <input type="email" id="write-us-mail">
+              </div>
             </div>
-            <label class="write-us-label" for="write-us-text">Текст письма:</label>
-            <textarea id="write-us-text" cols="60" rows="5"></textarea>
-          </div>
+            <!-- текстовое поле -->
+            <div class="write-us-central">
+              <label class="write-us-label" for="write-us-text">Текст письма:</label>
+              <textarea id="write-us-text" cols="58" rows="5"></textarea>
+            </div>
 
-          <!--Нижняя серая часть-->
-          <div class="write-us-bottom">
-            <button type="submit" class="write-us-button" name="write-us">Отправить</button>
+            <!--Нижняя серая часть-->
+            <div class="write-us-bottom">
+              <button type="submit" class="mainpage-link write-us-button" name="write-us">Отправить</button>
+            </div>
+
           </div>
+          <button class="modal-window-close" name="close-write-us"></button>
         </form>
-        <button class="modal-window-close" name="close-write-us"></button>
-      </div>
+      </section>
 
     </footer>
   </body>
