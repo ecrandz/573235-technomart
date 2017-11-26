@@ -43,9 +43,9 @@
             <span>Равшан Джамшутович</span>
             <a class="logout-icon" href="logout.html" title="Выйти"></a>
           </div>
-          <div>
-            <a class="user-links" href="#">Мои заказы</a>
-            <a class="user-links" href="#">Личный кабинет</a>
+          <div class="user-links">
+            <a class="user-link test-el" href="#">Мои заказы</a>
+            <a class="user-link" href="#">Личный кабинет</a>
           </div>
         </div>
 
@@ -67,22 +67,23 @@
     </header>
 
     <!--  ********  Основное содержимое   ********  -->
-    <main class="catalog-container">
-      <h1 class="visually-hidden">Каталог товаров</h1>
-      <!--Дерево каталога-->
-      <nav class="breadcrumbs">
-        <ul>
-          <li class="breadcrumbs-item-home"><a href="catalog.html" title="Домой"></a></li>
-          <li class="breadcrumbs-item"><a href="catalog.html">Каталог</a></li>
-          <li class="breadcrumbs-item"><a href="#">Инструмент</a></li>
-          <li class="breadcrumbs-item"><a href="#">Перфораторы</a></li>
-        </ul>
-      </nav>
+    <h1 class="visually-hidden">Каталог товаров</h1>
+    <!--Дерево каталога-->
+    <nav class="breadcrumbs">
+      <ul>
+        <li class="breadcrumbs-item-home"><a href="catalog.html" title="Домой"></a></li>
+        <li class="breadcrumbs-item"><a href="catalog.html">Каталог</a></li>
+        <li class="breadcrumbs-item"><a href="#">Инструмент</a></li>
+        <li class="breadcrumbs-item"><a href="#">Перфораторы</a></li>
+      </ul>
+    </nav>
 
-      <!--Текущий раздел-->
-      <div class="catalog-header-box">
-        <h2 class="section-title catalog-section">Перфораторы</h2>
-      </div>
+    <!--Текущий раздел-->
+    <div class="catalog-header-box">
+      <h2 class="section-title-header catalog-section-header">Перфораторы</h2>
+    </div>
+
+    <main class="catalog-container">
       <!--aside - Фильтр-->
       <aside class="catalog-filter">
         <div class="catalog-header">
@@ -92,17 +93,21 @@
           <!-- Фильтр по цене -->
           <div class="filter-price">
             <p class="filter-display-name">Цена:</p>
-            <input type="range" id="price-slider-min" min="0" max="30000" step="100">
-            <input type="range" id="price-slider-max" min="0" max="30000" step="100">
-            <input type="number" class="price-minvalue" name="filter-minprice" value="0">
-            <span class="price-dash">-</span>
-            <input type="number" class="price-maxvalue" name="filter-maxprice" value="30000">
+            <div class="filter-sliderbox">
+              <input type="range" id="price-slider-min" min="0" max="30000" step="100">
+              <input type="range" id="price-slider-max" min="0" max="30000" step="100">
+            </div>
+            <div class="filter-rangebox">
+              <input type="number" class="price-minvalue" name="filter-minprice" value="0">
+              <span>-</span>
+              <input type="number" class="price-maxvalue" name="filter-maxprice" value="30000">
+            </div>
           </div>
 
           <!-- Фильтр по производителю -->
           <!-- Если мы специально не укажем атрибут value в элементе, то получим переменную с значение "on" -->
-          <div class="filter-section">
-            <p class="filter-display-name">Производители</p>
+          <div class="filter-section-vendor">
+            <p class="filter-display-name">Производители:</p>
             <ul class="filter-list">
               <li class="filter-item">
                 <input class="filter-input-checkbox" type="checkbox" id="filter-vendor-Bosch" name="filter-by-vendor-Bosch">
@@ -128,8 +133,8 @@
           </div>
 
           <!-- Фильтр по питанию -->
-          <div class="filter-section">
-            <p class="filter-display-name">Питание</p>
+          <div class="filter-section-price">
+            <p class="filter-display-name">Питание:</p>
             <ul class="filter-list">
               <li class="filter-item">
                 <input class="filter-input-radio" type="radio" id="filter-poweroption-battery" name="filter-by-poweroption" value="battery">
@@ -147,31 +152,32 @@
         </form>
       </aside>
 
+      <!-- правая часть экрана с товарами -->
+      <div class="catalog-right">
+
         <!--Сортировка-->
-      <section class="catalog-header">
-        <h3>Сортировка:</h3>
-        <ul class="sorter-list">
-          <li class="sorter-item">
-            <a class="sorter-radio sorter-selected" href="#">По цене</a>
-          </li>
-          <li class="sorter-item">
-            <a class="sorter-radio" href="#">По типу</a>
-          </li>
-          <li class="sorter-item">
-            <a class="sorter-radio" href="#">По функционалу</a>
-          </li>
-          <li class="sorter-item">
-            <a class="sorter-ascending order-selected" href="#" title="По возрастанию"></a>
-          </li>
-          <li class="sorter-item">
-            <a class="sorter-descending" href="#" title="sorter-descending"></a>
-          </li>
-        </ul>
-      </section>
+        <section class="catalog-header">
+          <h3>Сортировка:</h3>
+          <ul class="sorter-list">
+            <li class="sorter-item sorter-price">
+              <a class="sorter-radio sorter-selected" href="#">По цене</a>
+            </li>
+            <li class="sorter-item sorter-type">
+              <a class="sorter-radio" href="#">По типу</a>
+            </li>
+            <li class="sorter-item sorter-func">
+              <a class="sorter-radio" href="#">По функционалу</a>
+            </li>
+            <li class="sorter-item">
+              <a class="sorter-ascending order-selected" href="#" title="По возрастанию"></a>
+            </li>
+            <li class="sorter-item">
+              <a class="sorter-descending" href="#" title="sorter-descending"></a>
+            </li>
+          </ul>
+        </section>
 
-
-      <!--Детали товара, главная центральная часть экрана-->
-      <div class="catalog-main">
+        <!--Детали товара, главная центральная часть экрана-->
         <section class="catalog-details">
           <h3 class="visually-hidden">Детальное описание товаров</h3>
           <ul class="catalog-list">
@@ -179,7 +185,7 @@
             <li class="catalog-item">
               <article class="product-card">
                 <a class="product-image" href="#">
-                  <img class="product-image" src="img/BFG_3000.png" width="126" height="112" alt="Изображение товара">
+                  <img src="img/BFG_3000.png" width="126" height="112" alt="Изображение товара">
                 </a>
                 <div class="buy-block">
                   <button type="button" class="buy-button">Купить</button>
@@ -193,7 +199,7 @@
             <li class="catalog-item">
               <article class="product-card">
                 <a class="product-image" href="#">
-                  <img class="product-image" src="img/BFG_6000.png" width="144" height="128" alt="Изображение товара">
+                  <img src="img/BFG_6000.png" width="144" height="128" alt="Изображение товара">
                 </a>
                 <div class="buy-block">
                   <button type="button" class="buy-button">Купить</button>
@@ -207,7 +213,7 @@
             <li class="catalog-item newproduct">
               <article class="product-card">
                 <a class="product-image" href="#">
-                  <img class="product-image" src="img/BFG_2000.png" width="126" height="112" alt="Изображение товара">
+                  <img src="img/BFG_2000.png" width="126" height="112" alt="Изображение товара">
                 </a>
                 <div class="buy-block">
                   <button type="button" class="buy-button">Купить</button>
@@ -218,6 +224,7 @@
                 <p class="product-price">12500 Р.</p>
               </article>
             </li>
+
             <li class="catalog-item">
               <article class="product-card">
                 <a class="product-image" href="#">
@@ -305,7 +312,6 @@
           </ul>
         </section>
 
-
         <!--Навигация по страницам-->
         <nav class="pagenumber">
           <ul class="pagenumber-list">
@@ -318,18 +324,20 @@
         </nav>
 
       </div>
-      <!-- конец главной части эерана -->
-
-      <!--Комментарий к категории товаров-->
-      <section class="category-comment">
-      <h2 class="section-title catalog-section">Пара слов о перфораторах</h2>
-        <p>
-          Перфоратор - универсальный строительный инструмент. Предназначен для сверления и долбления отверстий в кирпиче, бетоне и камне.
-          Существуют электромеханические и пневматические перфораторы. Современные модели могут выполнять функции дрели, шуруповёрта и отбойного молотка.
-          В ассортиментном ряду есть выбор "трёхрежимников": в одном устройстве будут совмещены отбойный молоток и ударная дрель.
-        </p>
-      </section>
+      <!-- конец правой полосы с товарами -->
     </main>
+    <!-- конец главной части эерана -->
+
+    <!--Комментарий к категории товаров-->
+    <section class="category-comment">
+      <h2 class="section-title-header category-comment-header">Пара слов о перфораторах</h2>
+      <p class="category-comment-text">
+        Перфоратор - универсальный строительный инструмент. Предназначен для сверления и долбления отверстий в кирпиче, бетоне и камне.
+        Существуют электромеханические и пневматические перфораторы. Современные модели могут выполнять функции дрели, шуруповёрта и отбойного молотка.
+        В ассортиментном ряду есть выбор "трёхрежимников": в одном устройстве будут совмещены отбойный молоток и ударная дрель.
+      </p>
+    </section>
+
     <!--Футер-->
     <footer class="main-footer">
       <div class="footer-top">
@@ -337,6 +345,7 @@
         <aside class="main-footer-aside">
           <a class="main-footer-logo" href="index.html" title="Логотип Техномарт">Техномарт</a>
           <p class="footer-address">г. Санкт-Петербург, ул. Б. Конюшенная, д.19/8</p>
+          <p class="footer-address">+7 (812) 555-05-55</p>
         </aside>
         <!--Меню в футере-->
         <nav class="footer-navigation">
@@ -355,10 +364,10 @@
       </div>
       <div class="footer-bottom">
         <!--Копирайт-->
-        <p class="copyright">
+        <div class="copyright">
           (c) 2010-2017 Компания «Техномарт»
           Все права защищены
-        </p>
+        </div>
         <div class="footer-social">
           <ul>
             <li class="social-link"><a class="vkontante" href="#" title="Вконтакте"></a></li>
@@ -367,21 +376,18 @@
           </ul>
         </div>
         <div class="feedback">
-          <p>
-            Обратная связь:
-            <a class="footer-highlightedlink" href="#">mail@htmlacademy.ru</a>
-          </p>
+          Обратная связь:
+          <a class="footer-highlightedlink" href="#">mail@htmlacademy.ru</a>
         </div>
         <div class="developed">
-          <p>
-            Разработано -
-            <a class="footer-highlightedlink" href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a>
-          </p>
+          Разработано -
+          <a class="footer-highlightedlink" href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a>
         </div>
       </div>
 
       <!--Модальное окно-->
       <section class="modal-window">
+        <h3 style="visually-hidden">Напишите нам</h3>
         <form name="write-us-form" method="post" action="#">
           <div class="write-us-wrapper">
             <!-- имя и e-mail -->

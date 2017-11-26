@@ -201,6 +201,7 @@ body {
 .header-middle, .header-bottom {
   color: #fff;
   background-color: rgb(241, 245, 247);
+  /*border: 1px dashed red;*/
 }
 /* Миссия */
 .header-mission {
@@ -770,26 +771,68 @@ body {
 /* ---------------------------------------------------------------*/
 /* --------------             Заголовок             --------------*/
 /* ****************************************************************/
+/*блок залогиненного пользователя*/
+.logged-in {
+  width: 300px;
+  margin-right: 130px;
+  margin-left: 50px;
+  /*border: 1px dashed red;*/
+}
 /* окно с залогиненным пользователем*/
 .header-username {
+  position: relative;
+  display: flex;
+  align-items: center;
   color:#000;
   background-color: #fff;
   font-size: 21px;
+  text-decoration: none;
+  height: 45px;
+  padding-left: 48px;
 }
 .header-username::before {
-  content: url("../img/icon-user.png");
+  position: absolute;
+  content: "";
+  background-image: url("../img/icon-user.png");
+  background-repeat: no-repeat;
+  width:20px;
+  height: 20px;
+  top:14px;
+  left: 15px;
 }
-.logout-icon::before {
-  content: url("../img/icon-logout.png");
+.logout-icon {
+  position: relative;
+  display: block;
+}
+.logout-icon::after {
+  position: absolute;
+  content: "";
+  background-image: url("../img/icon-logout.png");
+  background-repeat: no-repeat;
+  width:20px;
+  height: 20px;
+  top:-10px;
+  right: -50px;
 }
 /* линки на мои заказы и личный кабинет*/
-.user-links {
+.user-link {
+  position: relative;
   color: rgb(50, 66, 92);
-  background-color: #fff;
   font-size:16px;
   text-decoration: underline;
 }
 
+.user-link:last-child::before {
+  position: absolute;
+  content: "";
+  display: block;
+  background-color: rgb(50, 66, 92);
+  width: 5px;
+  height: 5px;
+  top:7px;
+  left: -23px;
+  border-radius: 50%;
+}
 /* ---------------------------------------------------------------*/
 /* --------------     Центральная часть экрана      --------------*/
 /* ---------------------------------------------------------------*/
@@ -814,6 +857,7 @@ body {
   /* content: url("../img/icon-right-small.png"); -заменено по рекомендации наставника */
   content: ">";
   color: rgb(193, 198, 206);
+  margin-right: 18px;
 }
 .breadcrumbs-item-home::before {
   content: url("../img/icon-home.png");
@@ -836,6 +880,26 @@ body {
 }
 
 /* фильтры */
+/*бокс для слайдера*/
+.filter-sliderbox {
+  background-color: rgb(247, 243, 236);
+}
+.filter-rangebox span {
+  display: flex;
+  align-items: center;
+}
+/*мин. и макс. значение цены*/
+.price-minvalue, .price-maxvalue {
+  font-family: "PT Sans", "Arial", sans-serif;
+  background-color: rgb(247, 243, 236);
+  border: none;
+  display: block;
+  width: 96px;
+  height: 37px;
+  text-align: center;
+  -moz-appearance:textfield;
+}
+/*класс для фильтра по производителям и по типу*/
 .filter-list {
   padding: 0;
   list-style: none;
@@ -847,6 +911,18 @@ body {
   font-size: 14px;
 }
 /*непонятно, как заменить стандартные чекбоксы и радиокнопки на картинки*/
+
+/*кнопка подтверждения фильтра*/
+.filter-submit {
+  width: 140px;
+  height: 37px;
+  background-color: #fff;
+  font-family: "PT Sans", "Arial", sans-serif;
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  border: 1px solid rgb(247, 243, 236);
+}
 
 /* сортировка */
 .sorter-list {
@@ -870,17 +946,26 @@ body {
   opacity: 1;
 }
 
-/*сюда вставить треугольники*/
+/*треугольники для выбора порядка сортировки*/
+.sorter-ascending, .sorter-descending {
+  display: block;
+  width: 0;
+  height: 0;
+  border: 0 solid transparent;
+  border-right-width: 5px;
+  border-left-width: 5px;
+}
 .sorter-ascending {
-
+  border-bottom: 10px solid rgb(197, 197, 197);
 }
-
 .sorter-descending {
-
+  border-top: 10px solid rgb(197, 197, 197);
 }
-
-.order-selected {
-
+.sorter-ascending.order-selected {
+  border-bottom: 10px solid rgb(238, 64, 67);
+}
+.sorter-descending.order-selected {
+  border-top: 10px solid rgb(238, 64, 67);
 }
 
 /* ----------- Детали товара, главная центральная часть экрана -------- */
@@ -918,7 +1003,6 @@ body {
 .category-comment {
   text-transform: none;
 }
-
 
 /* ****************************************************************/
 /* ****************************************************************/
@@ -998,13 +1082,13 @@ body {
   display: block;
   width: 197px;
   margin: 0;
-  margin-top: 50px;
+  margin-top: 47px;
   margin-left: 180px;
   /*border: 1px dashed black;*/
 }
 /*обертка для телефона и адреса*/
 .header-address {
-  margin-top: 50px;
+  margin-top: 47px;
   margin-left: 68px;
   width: 264px;
 }
@@ -1027,7 +1111,7 @@ body {
   display: flex;
   flex-direction: row;
   margin-left: 67px;
-  margin-top: 50px;
+  margin-top: 47px;
   /*border: 1px dashed black;*/
 }
 /*кнопка войти*/
@@ -1069,8 +1153,10 @@ body {
 .mainmenu {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   width: 940px;
   height: 56px;
+  /*!!!  УЧЕСТЬ ТЕСТ НА ПЕРЕПОЛНЕНИЕ КОНТЕНТОМ  !!!*/
   border-bottom: 5px solid rgb(41, 52, 73);
   justify-content: space-between;
 }
@@ -1397,6 +1483,7 @@ body {
   justify-content: space-between;
   width: 940px;
   height: 537px;
+  /*!!!  УЧЕСТЬ ТЕСТ НА ПЕРЕПОЛНЕНИЕ КОНТЕНТОМ  !!!*/
 }
 /*о компании*/
 .ourcompany {
@@ -1577,4 +1664,201 @@ padding: 0;
 .write-us-subheader {
   display: flex;
   flex-direction: column;
+}
+
+/***************************************************************************/
+
+/*                     C A T A L O G . H T M L                             */
+
+/***************************************************************************/
+/*блок пользователя*/
+.logged-in {
+  margin-top: 47px;
+}
+/* линки на мои заказы и личный кабинет*/
+.user-links {
+  margin-top: 20px;
+}
+/* линки на мои заказы и личный кабинет*/
+.user-link {
+  margin-right: 19px;
+  margin-left: 19px;
+}
+
+/*breadcrumbs*/
+.breadcrumbs {
+  width: 940px;
+}
+
+.breadcrumbs ul {
+  margin: 0;
+  height: 60px;
+  display: flex;
+  margin-left: 130px;
+  justify-content: flex-start;
+  align-items: center;
+}
+.breadcrumbs-item {
+  /*border: 1px dashed red;*/
+  margin-left: 18px;
+}
+/*заголовок текущего раздела*/
+.catalog-header-box {
+  margin: 0;
+  width: 940px;
+  height: 90px;
+  margin-left: 130px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  /*border: 1px dashed red;*/
+}
+/*текст внутри заголовка*/
+.catalog-section-header {
+  margin-left: 30px;
+}
+
+/*********************** основной раздел с товарами ************************/
+.catalog-container {
+  display: flex;
+  width: 940px;
+  margin-top: 20px;
+  margin-left: 130px;
+  justify-content: space-between;
+  /*border: 1px dashed red;*/
+}
+/*фильтр. контейнер*/
+.catalog-filter {
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  /*border: 1px dashed red;*/
+}
+/*двойной слайдер в фильтре*/
+.filter-sliderbox {
+  height: 80px;
+}
+/*поля для ввода мин. и макс. значений цены*/
+.filter-rangebox {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 9px;
+}
+/*секции фильтра по производителя и по цене*/
+.filter-section-vendor, .filter-section-price {
+  border-top: 1px solid rgb(247, 243, 236);
+}
+.filter-section-vendor {
+  margin-top: 26px;
+}
+/*списки в этих секциях*/
+.filter-list {
+  padding: 0;
+  /*border: 1px dashed red;*/
+}
+/*пункты фильтров*/
+.filter-item {
+  margin-bottom: 18px;
+}
+.filter-item:last-child {
+  margin-bottom: 0;
+}
+/*кнопка подтверждения фильтра*/
+.filter-submit {
+  margin-top: 75px;
+}
+
+/***********************  правая часть каталога с товарами *********************/
+/*включает в себя сортировку, окно с карточками товаров и блок листания страниц*/
+.catalog-right {
+  width: 700px;
+  margin-right: 0;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+}
+/*блок сортировки*/
+.catalog-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+/*надписи в блоке сортировки*/
+.catalog-header h3 {
+  margin-left: 18px;
+  margin-right: auto;
+}
+/*то же, члены списка блока сортировки*/
+.sorter-list {
+  margin-left: auto;
+  margin-right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.sorter-price {
+  margin-right: 72px;
+}
+.sorter-type {
+  margin-right: 64px;
+}
+.sorter-func {
+  margin-right: 46px;
+}
+.sorter-ascending {
+  margin-right: 22px;
+}
+.sorter-descending {
+  margin-right: 18px;
+}
+/*окно с карточками товаров*/
+.catalog-details ul {
+  margin-top: 20px;
+  margin-left: -20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+/*кнопки листания страниц*/
+.pagenumber-list {
+  margin: 0;
+  margin-top: 17px;
+  display: flex;
+}
+.pagenumber-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 38px;
+  margin-right: 10px;
+  margin-bottom: 42px;
+  padding-left: 17px;
+  padding-right: 17px;
+  border-radius: 3px;
+}
+
+/************* комментарий к разделу ***************/
+/*контейнер комментария*/
+.category-comment {
+  display: flex;
+  flex-direction: column;
+  width: 1200px;
+  min-height: 262px;
+}
+/*заголовок комментария*/
+.category-comment-header {
+  margin-left: 130px;
+  margin-top: 65px;
+}
+/*текст комментария*/
+.category-comment-text {
+  margin-left: 130px;
+  margin-top: 40px;
+  margin-right: 130px;
+  margin-bottom: 75px;
 }
