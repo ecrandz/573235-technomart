@@ -1546,6 +1546,7 @@ body {
 }
 /*расстановка текста*/
 .ourcompany h2, .ourcontacts h2 {
+  margin-top: 0;
   margin-bottom: 20px;
 }
 .ourcontacts-description {
