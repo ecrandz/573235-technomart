@@ -13,6 +13,7 @@
 
       <!--Логотип и кнопки быстрого перехода-->
       <div class="header-top">
+      <div class="header-top-wrapper">
         <ul>
           <li class="header-logo-item">
             <a class="header-logo" href="index.html" title="Логотип Техномарт">Техномарт</a>
@@ -28,14 +29,14 @@
           <li class="header-makeorder highlighted"><a href="#">Оформить заказ</a></li>
         </ul>
       </div>
+      </div>
 
       <!--Адрес магазина и кнопки авторизации-->
       <div class="header-middle">
-        <p class="header-mission">Интернет-магазин строительных материалов и инструментов для ремонта</p>
+      <div class="header-middle-wrapper">
+        <p class="header-mission">Интернет-магазин строительных материалов<br>и инструментов для ремонта</p>
         <div class="header-address">
-          <div class="header-call">
-            <a class="header-calllink" href="call.html">+7 (812) 555-05-55</a>
-          </div>
+          <a class="header-calllink" href="call.html">+7 (812) 555-05-55</a>
           <p>г. Санкт-Петербург, ул. Б. Конюшенная, д.19/8</p>
         </div>
         <div class="logged-in">
@@ -48,7 +49,7 @@
             <a class="user-link" href="#">Личный кабинет</a>
           </div>
         </div>
-
+      </div>
       </div>
 
       <!--Главное меню в хедере-->
@@ -67,23 +68,25 @@
     </header>
 
     <!--  ********  Основное содержимое   ********  -->
-    <h1 class="visually-hidden">Каталог товаров</h1>
-    <!--Дерево каталога-->
-    <nav class="breadcrumbs">
-      <ul>
-        <li class="breadcrumbs-item-home"><a href="catalog.html" title="Домой"></a></li>
-        <li class="breadcrumbs-item"><a href="catalog.html">Каталог</a></li>
-        <li class="breadcrumbs-item"><a href="#">Инструмент</a></li>
-        <li class="breadcrumbs-item"><a href="#">Перфораторы</a></li>
-      </ul>
-    </nav>
-
-    <!--Текущий раздел-->
-    <div class="catalog-header-box">
-      <h2 class="section-title-header catalog-section-header">Перфораторы</h2>
-    </div>
-
     <main class="catalog-container">
+    <div class="catalog-container-wrapper">
+      <h1 class="visually-hidden">Каталог товаров</h1>
+      <!--Дерево каталога-->
+      <nav class="breadcrumbs">
+        <ul>
+          <li class="breadcrumbs-item-home"><a href="catalog.html" title="Домой"></a></li>
+          <li class="breadcrumbs-item"><a href="catalog.html">Каталог</a></li>
+          <li class="breadcrumbs-item"><a href="#">Инструмент</a></li>
+          <li class="breadcrumbs-item"><a href="#">Перфораторы</a></li>
+        </ul>
+      </nav>
+
+      <!--Текущий раздел-->
+      <div class="catalog-header-box">
+        <h2 class="section-title-header catalog-section-header">Перфораторы</h2>
+      </div>
+
+      <div class="catalog-content">
       <!--aside - Фильтр-->
       <aside class="catalog-filter">
         <div class="catalog-header">
@@ -325,22 +328,29 @@
 
       </div>
       <!-- конец правой полосы с товарами -->
+      </div>
+      <!-- конец контента каталога -->
+    </div>
     </main>
     <!-- конец главной части эерана -->
 
     <!--Комментарий к категории товаров-->
     <section class="category-comment">
+    <div class="category-comment-wrapper">
       <h2 class="section-title-header category-comment-header">Пара слов о перфораторах</h2>
       <p class="category-comment-text">
         Перфоратор - универсальный строительный инструмент. Предназначен для сверления и долбления отверстий в кирпиче, бетоне и камне.
         Существуют электромеханические и пневматические перфораторы. Современные модели могут выполнять функции дрели, шуруповёрта и отбойного молотка.
         В ассортиментном ряду есть выбор "трёхрежимников": в одном устройстве будут совмещены отбойный молоток и ударная дрель.
       </p>
+    </div>
     </section>
 
     <!--Футер-->
     <footer class="main-footer">
-      <div class="footer-top">
+    <div class="footer-top">
+    <div class="footer-top-wrapper">
+
         <!--Логотип и кнопки быстрого перехода-->
         <aside class="main-footer-aside">
           <a class="main-footer-logo" href="index.html" title="Логотип Техномарт">Техномарт</a>
@@ -362,7 +372,9 @@
           </ul>
         </nav>
       </div>
+      </div>
       <div class="footer-bottom">
+      <div class="footer-bottom-wrapper">
         <!--Копирайт-->
         <div class="copyright">
           (c) 2010-2017 Компания «Техномарт»
@@ -383,6 +395,7 @@
           Разработано -
           <a class="footer-highlightedlink" href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a>
         </div>
+      </div>
       </div>
 
       <!--Модальное окно-->

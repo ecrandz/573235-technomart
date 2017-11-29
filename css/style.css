@@ -325,7 +325,7 @@ body {
   background-repeat: no-repeat;
   width: 620px;
   height: 264px;
-  z-index: -2;
+  z-index: 1;
 }
 .revolver::after {
   position: absolute;
@@ -527,21 +527,34 @@ body {
 .services {
   color: #000;
   background-color: rgb(242, 246, 248);
-  background-image: url("../img/delivery.png"),
-                    url("../img/delivery_shade.png");
-  background-repeat: no-repeat;
-  background-position: 870px 270px, 610px 270px;
   font-family: "Cuprum", "Arial", sans-serif;
   font-size: 13px;
   line-height: 24px;
 }
-
+.services-delivery {
+  background-image: url("../img/delivery.png"),
+                    url("../img/delivery_shade.png");
+  background-repeat: no-repeat;
+  background-position: 870px 270px, 610px 270px;
+}
+.services-warranty {
+  background-image: url("../img/warranty.png"),
+                    url("../img/warranty_shade.png");
+  background-repeat: no-repeat;
+  background-position: 870px 250px, 652px 260px;
+}
+.services-loan {
+  background-image: url("../img/loan.png"),
+                    url("../img/loan_shade.png");
+  background-repeat: no-repeat;
+  background-position: 900px 250px, 615px 250px;
+}
 .services-menu {
   list-style: none;
   padding:0;
 }
 /* Нажатая кнопка на hover не реагирует */
-.services-menu-item {
+.services-menu-item-active {
   color: rgb(50, 66, 92);
   background-color: #fff;
   font-family: "Cuprum Bold", "Arial", sans-serif;
@@ -553,10 +566,11 @@ body {
   background-color: rgb(50, 66, 92);
   font-family: "Cuprum Bold", "Arial", sans-serif;
   font-size: 21px;
-}
-.services-menu-item-inactive:nth-child(2) {
   border-bottom: 1px solid rgb(78, 99, 124);
 }
+/*.services-menu-item-inactive:nth-child(2) {
+  border-bottom: 1px solid rgb(78, 99, 124);
+}*/
 /* Не нажатая кнопка реагирует на hover */
 .services-menu-item-inactive:hover {
   color: #fff;
@@ -593,22 +607,28 @@ body {
   background-color: rgb(242, 246, 248);
   font-size: 36px;
   text-transform: uppercase;
+
 }
 .services-slogan, .services-description p {
   font-family: 'PT Sans';
   font-size: 13px;
+  line-height: 24px;
 }
-/*  Белая дополнительная секция - о компании Техномарт - и контакты*/
+.loan-link {
+  width: 196px;
+}
+/*  ************* Белая дополнительная секция - о компании Техномарт - и контакты ************  */
 .ourcompany, .ourcontacts {
   color:#000;
   background-color: #fff;
 
 }
-.ourcompany p, .ourcontacts p {
+.ourcompany-description, .ourcontacts-description {
   font-family: 'PT Sans';
   font-size: 13px;
+  line-height: 24px;
 }
-/* почтовые компании */
+/* транспортные компании */
 .transport-list {
   font-size: 18px;
   padding: 0;
@@ -626,7 +646,19 @@ body {
   left: -32px;
   background-color: rgb(238, 54, 67);
 }
-
+/*малая карта проезда*/
+.ourcontacts-map {
+  margin-top: 20px;
+}
+/*кнопка "подробнее о компании"*/
+.ourcompany-link {
+  margin-top: 15px;
+}
+/*кнопка "заблудились"*/
+.ourcontacts-link {
+  margin-bottom: 0;
+  margin-top: auto;
+}
 /* ---------------------------------------------------------------*/
 /* --------------              Футер                --------------*/
 /* ---------------------------------------------------------------*/
@@ -771,13 +803,7 @@ body {
 /* ---------------------------------------------------------------*/
 /* --------------             Заголовок             --------------*/
 /* ****************************************************************/
-/*блок залогиненного пользователя*/
-.logged-in {
-  width: 300px;
-  margin-right: 130px;
-  margin-left: 50px;
-  /*border: 1px dashed red;*/
-}
+
 /* окно с залогиненным пользователем*/
 .header-username {
   position: relative;
@@ -1019,7 +1045,11 @@ body {
 .header-top{
   width:1200px;
 }
-.header-top ul {
+.header-top-wrapper {
+  width:940px;
+  margin: 0 auto;
+}
+.header-top-wrapper ul {
   display: flex;
   flex-direction: row;
   min-height: 42px;
@@ -1029,7 +1059,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 130px;
   width: 220px;
   /* сделаем полосу снизу, чтобы выпадала */
   border-bottom: 5px solid rgb(181, 41, 51);
@@ -1063,16 +1092,19 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right:130px;
   width: 150px;
 }
 
 /*--------------- средняя синяя часть футера ---------------*/
 .header-middle {
+  width: 1200px;
+}
+.header-middle-wrapper {
   display: flex;
   flex-direction: row;
-  width: 1200px;
-  height: 158px;
+  width: 940px;
+  margin: 0 auto;
+  min-height: 158px;
   align-items: flex-start;
   justify-content: space-between;
   /*border: 1px dashed red;*/
@@ -1081,9 +1113,7 @@ body {
 .header-mission {
   display: block;
   width: 197px;
-  margin: 0;
-  margin-top: 47px;
-  margin-left: 180px;
+  margin: 47px 0 40px 50px;
   /*border: 1px dashed black;*/
 }
 /*обертка для телефона и адреса*/
@@ -1134,18 +1164,17 @@ body {
   width: 150px;
   height: 45px;
   margin-left: 10px;
-  margin-right: 130px;
   align-items: center;
   justify-content: center;
 }
 
 /*------------- главное меню --------------*/
 /*контейнер главного меню с серым фоном*/
+
 .header-bottom {
   display: flex;
   flex-direction: row;
   width: 1200px;
-  height: 121px;
   justify-content: center;
   /*border: 1px dashed red;*/
 }
@@ -1155,23 +1184,27 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   width: 940px;
-  height: 56px;
-  /*!!!  УЧЕСТЬ ТЕСТ НА ПЕРЕПОЛНЕНИЕ КОНТЕНТОМ  !!!*/
+  min-height: 56px;
+  margin-bottom: 60px;
   border-bottom: 5px solid rgb(41, 52, 73);
   justify-content: space-between;
 }
 /*пункт главного меню*/
 .mainmenu-item {
   display: flex;
+  justify-content: center;
   align-items: center;
+  min-height: 56px;
+}
+.mainmenu-item a {
+  margin: 0 30px;
 }
 .mainmenu-item:first-child {
-  margin-left: 52px;
+  margin-left: 20px;
 }
 .mainmenu-item:last-child {
-  margin-right: 52px;
+  margin-right: 20px;
 }
-
 /* ---------------------------------------------------------------*/
 
 
@@ -1185,7 +1218,7 @@ body {
   flex-direction: column;
   align-items: center;
   width:1200px;
-  min-height: 100px;
+
   /*border: 1px dashed red;*/
 }
 /*-------- Секция с блоками без названия - категории товаров ------*/
@@ -1193,8 +1226,8 @@ body {
   display: flex;
   flex-direction: row;
   width: 940px;
-  height: 406px;
-  justify-content: space-between;
+  margin: 60px auto 54px auto;
+  justify-content: flex-start;
   align-content: space-between;
   flex-wrap: wrap;
   margin-bottom: 54px;
@@ -1204,11 +1237,18 @@ body {
   position: relative;
   width: 300px;
   height: 122px;
+
   padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+}
+.materials, .tools {
+  margin: 0 20px 20px 0;
+}
+.revolver {
+  margin-right: 20px;
 }
 /*заголовок на блоке*/
 .offering-category {
@@ -1237,9 +1277,7 @@ body {
 }
 /*заголовок*/
 .revolver-header {
-  margin: 0;
-  margin-left: 24px;
-  margin-top: 18px;
+  margin: 18px 0 0 24px;
 }
 /*подпись к слайдеру*/
 .revolver-description {
@@ -1274,42 +1312,43 @@ body {
 .section-title {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   width:940px;
   height: 89px;
-  display: flex;
+  margin: 0 auto 20px auto;
+  padding: 0 30px;
 }
-/*надпись на заголовке*/
-.section-title-header {
-  margin: 0;
-}
-.section-title .section-title-header {
-  margin-left: 30px;
-}
-/*красная кнопка, отступ справа*/
+
+/*красная кнопка*/
 .section-title .mainpage-link {
   width: 254px;
-  margin-left: auto;
-  margin-right: 24px;
 }
 
 /* ------------ список из 4 карточек популярных товаров -------------*/
-.popular-list {
+.popular {
   width: 940px;
+  margin: 0 auto;
+}
+.popular-list {
   display: flex;
-  flex-direction: row;
-  margin-left: -20px;
+  flex-wrap: wrap;
+  padding: 0;
   margin-bottom: 0;
 }
-
+.popular-item {
+  margin:0 20px 20px 0;
+}
 /* ++++++++ карточка товара ++++++++*/
 .product-card {
   position: relative;
   display:inline-block;
   width:218px;
-  margin-left:20px;
-  margin-bottom:20px;
   border:1px solid #ccc;
   text-align: center;
+}
+/*у крайней справа убираем отступ справа*/
+.popular-item:last-child {
+  margin-right: 0;
 }
 /*флаг нового продукта*/
 .newproduct {
@@ -1379,7 +1418,7 @@ body {
 
 /*----------  популярные производители -----------*/
 .vendor-list {
-  width: 960px;
+  /*width: 960px;*/
   /*border: 1px dashed red;*/
   margin-left: -20px;
   margin-bottom: 60px;
@@ -1412,10 +1451,12 @@ body {
 /**************************************************************/
 /*контейнер*/
 .services {
+  width: 1200px;
+  min-height: 520px;
+}
+.services-wrapper {
   width: 940px;
-  height: 520px;
-  padding-left: 130px;
-  padding-right: 130px;
+  margin: 0 auto;
 }
 /*заголовок раздела*/
 .services .section-title-header {
@@ -1427,7 +1468,6 @@ body {
   margin-top: 40px;
   width: 400px;
   margin-bottom: 75px;
-  /*border: 1px dashed red;*/
 }
 /*контейнер содержимого раздела сервисов*/
 .services-block {
@@ -1457,7 +1497,6 @@ body {
 /*подблок описания услуги*/
 .services-description {
   margin: 0;
-  margin-top: 10px;
   width: 274px;
   display: none;
 }
@@ -1467,7 +1506,8 @@ body {
 }
 /*и текст*/
 .services-description p {
-  margin-top: 42px;
+  margin-top: 30px;
+  margin-bottom: 28px;
 }
 /*видимый класс для блоков сервиса*/
 .show {
@@ -1479,43 +1519,36 @@ body {
 /*------------------------------------------------------------------*/
 /*обёртка*/
 .main-extrainfo {
+  width: 1200px;
+  min-height: 537px;
+}
+.main-extrainfo-wrapper {
   display: flex;
   justify-content: space-between;
   width: 940px;
-  height: 537px;
+  margin: 72px auto 87px auto;
+
   /*!!!  УЧЕСТЬ ТЕСТ НА ПЕРЕПОЛНЕНИЕ КОНТЕНТОМ  !!!*/
 }
 /*о компании*/
 .ourcompany {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: flex-start;
   width: 521px;
-  margin-top: 72px;
-  margin-left: 0;
-  margin-right: auto;
-  /*border: 1px dashed red;*/
 }
 /*контакты*/
 .ourcontacts {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-
-  margin-top: 72px;
-  margin-left: auto;
-  margin-right: 0;
   width: 300px;
   /*border: 1px dashed red;*/
 }
 /*расстановка текста*/
-.ourcompany p, .ourcontacts p, .ourcontacts img {
-  display: block;
-  margin-top: 24px;
-  line-height: 24px;
+.ourcompany h2, .ourcontacts h2 {
+  margin-bottom: 20px;
 }
-.ourcontacts p {
+.ourcontacts-description {
   width: 170px;
 }
 /*список транспортных компаний*/
@@ -1524,16 +1557,13 @@ body {
   margin-left: 34px;
 }
 /*красные кнопки с линками*/
-.ourcompany .mainpage-link {
+.ourcompany-link {
   width: 220px;
 }
-.ourcontacts .mainpage-link {
+.ourcontacts-link {
   width: 100%;
 }
-.ourcompany .mainpage-link, .ourcontacts .mainpage-link {
-  margin-top: auto;
-  margin-bottom: 80px;
-}
+
 /**************************************************************/
 /**************************************************************/
 
@@ -1543,13 +1573,18 @@ body {
 /**************************************************************/
 /*контейнер для верхнего футера*/
 .footer-top {
-  display: flex;
   width: 1200px;
-  height: 193px;
+}
+.footer-top-wrapper {
+  display: flex;
+  width: 940px;
+  min-height: 193px;
+  margin: 0 auto;
+  justify-content: space-between;
 }
 /*левая часть верхнего футера*/
 .main-footer-aside {
-  margin-left: 130px;
+  /*border: 1px dashed red;*/
 }
 /*логотип в футере*/
 .main-footer-logo {
@@ -1569,19 +1604,14 @@ body {
 /*меню в правой части верхнего футера*/
 .footer-navigation {
   margin-top: 43px;
-  margin-right: 130px;
-  margin-left: auto;
   /*border: 1px dashed red;*/
-
 }
 .footer-navigation ul {
   margin: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  align-items:flex-start;
   width: 550px;
-  /*border: 1px dashed red;*/
 }
 /*элементы меню верхнего футера*/
 .footer-navigation li {
@@ -1600,14 +1630,16 @@ padding: 0;
 /*-------------------------------------------------------*/
 .footer-bottom {
   width: 1200px;
+}
+.footer-bottom-wrapper {
+  width: 940px;
   height: 107px;
   display: flex;
   align-items: center;
+  margin: 0 auto;
 }
 .copyright {
   width: 230px;
-  /*margin-top: 37px;*/
-  margin-left: 130px;
 }
 
 /*социальные сети*/
@@ -1635,7 +1667,6 @@ padding: 0;
   display: flex;
   flex-direction: column;
   margin-left: 49px;
-  margin-right: 130px;
   /*border: 1px dashed red;*/
 }
 
@@ -1671,62 +1702,67 @@ padding: 0;
 /*                     C A T A L O G . H T M L                             */
 
 /***************************************************************************/
-/*блок пользователя*/
+.header-middle-wrapper {
+
+}/*блок залогиненного пользователя*/
 .logged-in {
+  width: 300px;
+  margin-left: 50px;
   margin-top: 47px;
+  /*border: 1px dashed red;*/
 }
+
 /* линки на мои заказы и личный кабинет*/
 .user-links {
   margin-top: 20px;
 }
-/* линки на мои заказы и личный кабинет*/
+
+/* каждый линк на мои заказы и личный кабинет*/
 .user-link {
   margin-right: 19px;
   margin-left: 19px;
 }
 
-/*breadcrumbs*/
-.breadcrumbs {
+
+/*********************** основной раздел с товарами ************************/
+.catalog-container {
+  width: 1200px;
+}
+.catalog-container-wrapper {
   width: 940px;
+  margin: 20px auto 0 auto;
 }
 
+/* *************  breadcrumbs **************/
+.breadcrumbs {
+  /*width: 940px;*/
+}
 .breadcrumbs ul {
   margin: 0;
   height: 60px;
   display: flex;
-  margin-left: 130px;
   justify-content: flex-start;
   align-items: center;
 }
 .breadcrumbs-item {
-  /*border: 1px dashed red;*/
   margin-left: 18px;
 }
-/*заголовок текущего раздела*/
+/* ********** заголовок текущего раздела *********** */
 .catalog-header-box {
-  margin: 0;
-  width: 940px;
+  margin-bottom: 20px;
   height: 90px;
-  margin-left: 130px;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
   align-items: center;
-  /*border: 1px dashed red;*/
 }
 /*текст внутри заголовка*/
 .catalog-section-header {
   margin-left: 30px;
 }
-
-/*********************** основной раздел с товарами ************************/
-.catalog-container {
+/*контейнер для фильтра и содержимого каталога*/
+.catalog-content {
   display: flex;
-  width: 940px;
-  margin-top: 20px;
-  margin-left: 130px;
   justify-content: space-between;
-  /*border: 1px dashed red;*/
 }
 /*фильтр. контейнер*/
 .catalog-filter {
@@ -1775,7 +1811,6 @@ padding: 0;
 .catalog-right {
   width: 700px;
   margin-right: 0;
-  margin-left: auto;
   display: flex;
   flex-direction: column;
 }
@@ -1815,15 +1850,22 @@ padding: 0;
   margin-right: 18px;
 }
 /*окно с карточками товаров*/
-.catalog-details ul {
+.catalog-list {
   margin-top: 20px;
-  margin-left: -20px;
+  /*margin-left: -20px;*/
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   flex-wrap: wrap;
 }
-
+/*плейсхолдер для карточки товара*/
+.catalog-item {
+  margin: 0 20px 20px 0;
+}
+/*обнуляем у крайних справа карточек товара правый отступ*/
+.catalog-item:nth-child(3n) {
+  margin-right: 0;
+}
 /*кнопки листания страниц*/
 .pagenumber-list {
   margin: 0;
@@ -1845,20 +1887,22 @@ padding: 0;
 /************* комментарий к разделу ***************/
 /*контейнер комментария*/
 .category-comment {
+  width: 1200px;
+}
+.category-comment-wrapper {
   display: flex;
   flex-direction: column;
-  width: 1200px;
+  width: 940px;
   min-height: 262px;
+  margin: 0 auto;
+  /*border: 1px dashed red;*/
 }
 /*заголовок комментария*/
 .category-comment-header {
-  margin-left: 130px;
   margin-top: 65px;
 }
 /*текст комментария*/
 .category-comment-text {
-  margin-left: 130px;
   margin-top: 40px;
-  margin-right: 130px;
   margin-bottom: 75px;
 }

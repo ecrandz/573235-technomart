@@ -16,6 +16,7 @@
 
       <!--Логотип и кнопки быстрого перехода-->
       <div class="header-top">
+      <div class="header-top-wrapper">
         <ul>
           <li class="header-logo-item">
             <a class="header-logo" href="index.html" title="Логотип Техномарт">Техномарт</a>
@@ -31,10 +32,14 @@
           <li class="header-makeorder highlighted"><a href="#">Оформить заказ</a></li>
         </ul>
       </div>
+      </div>
 
       <!--Адрес магазина и кнопки авторизации-->
       <div class="header-middle">
-        <p class="header-mission">Интернет-магазин строительных материалов<br>и инструментов для ремонта</p>
+      <div class="header-middle-wrapper">
+        <p class="header-mission">
+          Интернет-магазин строительных материалов<br>и инструментов для ремонта
+        </p>
         <div class="header-address">
           <a class="header-calllink" href="call.html">+7 (812) 555-05-55</a>
           <p>г. Санкт-Петербург, ул. Б. Конюшенная, д.19/8</p>
@@ -43,6 +48,7 @@
           <a class="header-enterlink" href="enter.html"><span>Войти</span></a>
           <a class="header-registerlink" href="register.html">Регистрация</a>
         </div>
+      </div>
       </div>
 
       <!--Главное меню в хедере-->
@@ -55,6 +61,7 @@
           <li class="mainmenu-item"><a href="special.html">Спецпредложения</a></li>
           <li class="mainmenu-item"><a href="delivery.html">Доставка</a></li>
           <li class="mainmenu-item"><a href="contacts.html">Контакты</a></li>
+
         </ul>
       </nav>
 
@@ -214,7 +221,8 @@
       </section>
 
       <!--Сервисы-->
-      <section class="services">
+      <section class="services services-delivery">
+      <div class="services-wrapper">
         <h2 class="section-title-header">Сервисы</h2>
         <p class="services-slogan">
           Хороший интернет-магазин отличается от плохого не только ценами!
@@ -222,7 +230,7 @@
         </p>
         <div class="services-block">
           <ul class="services-menu">
-            <li class="services-menu-item">
+            <li class="services-menu-item-active">
               <a class="services-link" href="delivery.html">Доставка</a>
             </li>
             <li class="services-menu-item-inactive">
@@ -246,18 +254,22 @@
           <div class="services-description">
             <h3>Кредит</h3>
             <p>Залезть в долговую яму стало проще! Кредитные консультанты придут вам на помощь.</p>
+            <a class="mainpage-link loan-link" href="loan.html">Отправить заявку</a>
           </div>
         </div>
+      </div>
       </section>
+
       <div class="main-extrainfo">
+      <div class="main-extrainfo-wrapper">
         <!--О компании Техномарт-->
         <section class="ourcompany">
           <h2 class="section-title-header">Компания «Техномарт»</h2>
-          <p>
+          <p class="ourcompany-description">
             Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для ремонта и
             строительства не оставит равнодушными любителей сэкономить на гастарбайтерах.
           </p>
-          <p>
+          <p class="ourcompany-description">
             Мы можем доставить ваш товар в самые отдалённые точки России!
             Техномарт работает со многими транспортными компаниями:
           </p>
@@ -266,20 +278,26 @@
             <li>Автотрейдинг</li>
             <li>ЖелДорЭкспедиция</li>
           </ul>
-          <a class="mainpage-link" href="ourcompany.html">Подробнее о компании</a>
+          <a class="mainpage-link ourcompany-link" href="ourcompany.html">Подробнее о компании</a>
         </section>
         <aside class="ourcontacts">
           <h2 class="section-title-header">Контакты</h2>
-          <p>Вы можете забрать товар сами, заехав в наш офис:</p>
-          <a href="#"><img src="img/map_small.jpg" width="300" height="158" alt="Расположение офиса на карте"></a>
-          <a class="mainpage-link" href="feedback.html">Заблудились? Напишите нам!</a>
+          <p class="ourcontacts-description">
+            Вы можете забрать товар сами, заехав в наш офис:
+          </p>
+          <a class="ourcontacts-map" href="#"><img src="img/map_small.jpg" width="300" height="158" alt="Расположение офиса на карте"></a>
+          <a class="mainpage-link ourcontacts-link" href="feedback.html">Заблудились? Напишите нам!</a>
         </aside>
       </div>
+      </div>
+
+    <!-- main -->
     </main>
 
     <!--Футер-->
     <footer class="main-footer">
       <div class="footer-top">
+      <div class="footer-top-wrapper">
         <!--Логотип и кнопки быстрого перехода-->
         <aside class="main-footer-aside">
           <a class="main-footer-logo" href="index.html" title="Логотип Техномарт">Техномарт</a>
@@ -301,7 +319,9 @@
           </ul>
         </nav>
       </div>
+      </div>
       <div class="footer-bottom">
+      <div class="footer-bottom-wrapper">
         <!--Копирайт-->
         <div class="copyright">
           (c) 2010-2017 Компания «Техномарт»
@@ -322,6 +342,7 @@
           Разработано -
           <a class="footer-highlightedlink" href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a>
         </div>
+      </div>
       </div>
 
       <!--Модальное окно-->
