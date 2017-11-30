@@ -1313,12 +1313,16 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width:940px;
-  height: 89px;
+  width:880px;
+/*ширина=940px-2*30px padding*/
   margin: 0 auto 20px auto;
-  padding: 0 30px;
+  padding: 22px 30px;
+  /*высота блока составит 39px+2*22px=83px*/
 }
-
+/*обнуляем маржины у внутренних элементов*/
+.section-title-header {
+  margin: 0;
+}
 /*красная кнопка*/
 .section-title .mainpage-link {
   width: 254px;
@@ -1347,7 +1351,7 @@ body {
   text-align: center;
 }
 /*у крайней справа убираем отступ справа*/
-.popular-item:last-child {
+.popular-item:nth-child(4n) {
   margin-right: 0;
 }
 /*флаг нового продукта*/
@@ -1519,16 +1523,12 @@ body {
 /*------------------------------------------------------------------*/
 /*обёртка*/
 .main-extrainfo {
-  width: 1200px;
-  min-height: 537px;
-}
-.main-extrainfo-wrapper {
+  width: 940px;
+  min-height: 378px;
+  /*минимальная высота должна быть = 537px - 72px - 87px = 378px*/
+  padding: 72px 130px 87px 130px;
   display: flex;
   justify-content: space-between;
-  width: 940px;
-  margin: 72px auto 87px auto;
-
-  /*!!!  УЧЕСТЬ ТЕСТ НА ПЕРЕПОЛНЕНИЕ КОНТЕНТОМ  !!!*/
 }
 /*о компании*/
 .ourcompany {
