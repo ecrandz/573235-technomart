@@ -535,19 +535,19 @@ body {
   background-image: url("../img/delivery.png"),
                     url("../img/delivery_shade.png");
   background-repeat: no-repeat;
-  background-position: 870px 270px, 610px 270px;
+  background-position: 730px 270px, 470px 270px;
 }
 .services-warranty {
   background-image: url("../img/warranty.png"),
                     url("../img/warranty_shade.png");
   background-repeat: no-repeat;
-  background-position: 870px 250px, 652px 260px;
+  background-position: 770px 250px, 552px 260px;
 }
 .services-loan {
   background-image: url("../img/loan.png"),
                     url("../img/loan_shade.png");
   background-repeat: no-repeat;
-  background-position: 900px 250px, 615px 250px;
+  background-position: 750px 250px, 465px 250px;
 }
 .services-menu {
   list-style: none;
@@ -1041,9 +1041,9 @@ body {
 /* ****************************************************************/
 /* ---------------------------------------------------------------*/
 
-/*------------------- верхняя cиняя часть футера -----------------*/
+/*------------------- верхняя cиняя часть заголовка -----------------*/
 .header-top{
-  width:1200px;
+  /*width:1200px;*/
 }
 .header-top-wrapper {
   width:940px;
@@ -1095,9 +1095,9 @@ body {
   width: 150px;
 }
 
-/*--------------- средняя синяя часть футера ---------------*/
+/*--------------- средняя синяя часть заголовка ---------------*/
 .header-middle {
-  width: 1200px;
+  /*width: 1200px;*/
 }
 .header-middle-wrapper {
   display: flex;
@@ -1174,7 +1174,7 @@ body {
 .header-bottom {
   display: flex;
   flex-direction: row;
-  width: 1200px;
+  /*width: 1200px;*/
   justify-content: center;
   /*border: 1px dashed red;*/
 }
@@ -1217,7 +1217,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width:1200px;
+  /*width:1200px;*/
 
   /*border: 1px dashed red;*/
 }
@@ -1346,9 +1346,10 @@ body {
 .product-card {
   position: relative;
   display:inline-block;
-  width:218px;
+  width:220px;
   border:1px solid #ccc;
   text-align: center;
+  box-sizing: border-box;
 }
 /*у крайней справа убираем отступ справа*/
 .popular-item:nth-child(4n) {
@@ -1417,6 +1418,7 @@ body {
     width:0;
     height:0;
     border:20px solid white;
+
     border-left-color:#ee3643;
 }
 
@@ -1433,8 +1435,9 @@ body {
 }
 /*блок производителя*/
 .vendor-item {
-  width: 218px;
-  height: 144px;
+  width: 220px;
+  height: 146px;
+  box-sizing: border-box;
   margin-left: 20px;
   margin-bottom: 20px;
   border:1px solid #ccc;
@@ -1455,10 +1458,13 @@ body {
 /**************************************************************/
 /*контейнер*/
 .services {
-  width: 1200px;
+  /*width: 1200px;*/
   min-height: 520px;
+  /*border: 1px dashed red;*/
 }
 .services-wrapper {
+  display: flex;
+  flex-direction: column;
   width: 940px;
   margin: 0 auto;
 }
@@ -1525,6 +1531,7 @@ body {
 .main-extrainfo {
   width: 940px;
   min-height: 378px;
+  margin: 0 auto;
   /*минимальная высота должна быть = 537px - 72px - 87px = 378px*/
   padding: 72px 130px 87px 130px;
   display: flex;
@@ -1574,7 +1581,7 @@ body {
 /**************************************************************/
 /*контейнер для верхнего футера*/
 .footer-top {
-  width: 1200px;
+  /*width: 1200px;*/
 }
 .footer-top-wrapper {
   display: flex;
@@ -1630,7 +1637,7 @@ padding: 0;
 /*------------------- нижний футер-----------------------*/
 /*-------------------------------------------------------*/
 .footer-bottom {
-  width: 1200px;
+  /*width: 1200px;*/
 }
 .footer-bottom-wrapper {
   width: 940px;
@@ -1727,7 +1734,7 @@ padding: 0;
 
 /*********************** основной раздел с товарами ************************/
 .catalog-container {
-  width: 1200px;
+  /*width: 1200px;*/
 }
 .catalog-container-wrapper {
   width: 940px;
@@ -1888,7 +1895,7 @@ padding: 0;
 /************* комментарий к разделу ***************/
 /*контейнер комментария*/
 .category-comment {
-  width: 1200px;
+  /*width: 1200px;*/
 }
 .category-comment-wrapper {
   display: flex;
