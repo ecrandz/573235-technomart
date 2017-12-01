@@ -1313,8 +1313,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width:880px;
-/*ширина=940px-2*30px padding*/
+  width: 940px;
+  box-sizing: border-box;
   margin: 0 auto 20px auto;
   padding: 22px 30px;
   /*высота блока составит 39px+2*22px=83px*/
@@ -1530,9 +1530,7 @@ body {
 /*обёртка*/
 .main-extrainfo {
   width: 940px;
-  min-height: 378px;
   margin: 0 auto;
-  /*минимальная высота должна быть = 537px - 72px - 87px = 378px*/
   padding: 72px 130px 87px 130px;
   display: flex;
   justify-content: space-between;
