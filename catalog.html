@@ -97,8 +97,15 @@
           <div class="filter-price">
             <p class="filter-display-name">Цена:</p>
             <div class="filter-sliderbox">
-              <input type="range" id="price-slider-min" min="0" max="30000" step="100">
-              <input type="range" id="price-slider-max" min="0" max="30000" step="100">
+              <input class="slider-min" type="range" id="price-slider-min" min="0" max="30000" step="100">
+              <input class="slider-max" type="range" id="price-slider-max" min="0" max="30000" step="100">
+              <!-- линия № 9-->
+              <div class="slider-background">
+                <!-- линия № 2 -->
+                <div class="minprice"></div>
+                <div class="slider-foreground"></div>
+                <div class="maxprice"></div>          
+              </div>
             </div>
             <div class="filter-rangebox">
               <input type="number" class="price-minvalue" name="filter-minprice" value="0">
@@ -113,24 +120,34 @@
             <p class="filter-display-name">Производители:</p>
             <ul class="filter-list">
               <li class="filter-item">
-                <label class="filter-label-checkbox" for="filter-vendor-Bosch">Bosch</label>
-                <input class="filter-input-checkbox" type="checkbox" id="filter-vendor-Bosch" name="filter-by-vendor-Bosch">
+                <label class="filter-label-checkbox" for="filter-vendor-Bosch">Bosch
+                  <input class="filter-input-checkbox" type="checkbox" id="filter-vendor-Bosch" name="filter-by-vendor-Bosch">
+                  <span class="checkbox-indicator"></span>
+                </label>
               </li>
               <li class="filter-item">
-                <label class="filter-label-checkbox" for="filter-vendor-Interskol">Интерскол</label>
-                <input class="filter-input-checkbox" type="checkbox" id="filter-vendor-Interskol" name="filter-by-vendor-Interskol">
+                <label class="filter-label-checkbox" for="filter-vendor-Interskol">Интерскол
+                  <input class="filter-input-checkbox" type="checkbox" id="filter-vendor-Interskol" name="filter-by-vendor-Interskol">
+                  <span class="checkbox-indicator"></span>
+                </label>
               </li>
               <li class="filter-item">
-                <label class="filter-label-checkbox" for="filter-vendor-Makita">Makita</label>
-                <input class="filter-input-checkbox" type="checkbox" id="filter-vendor-Makita" name="filter-by-vendor-Makita">
+                <label class="filter-label-checkbox" for="filter-vendor-Makita">Makita
+                  <input class="filter-input-checkbox" type="checkbox" id="filter-vendor-Makita" name="filter-by-vendor-Makita">
+                  <span class="checkbox-indicator"></span>
+                </label>
               </li>
               <li class="filter-item">
-                <label class="filter-label-checkbox" for="filter-vendor-Dewalt">Dewalt</label>
-                <input class="filter-input-checkbox" type="checkbox" id="filter-vendor-Dewalt" name="filter-by-vendor-Dewalt">
+                <label class="filter-label-checkbox" for="filter-vendor-Dewalt">Dewalt
+                  <input class="filter-input-checkbox" type="checkbox" id="filter-vendor-Dewalt" name="filter-by-vendor-Dewalt">
+                  <span class="checkbox-indicator"></span>
+                </label>
               </li>
               <li class="filter-item">
-                <label class="filter-label-checkbox" for="filter-vendor-Hitachi">Hitachi</label>
-                <input class="filter-input-checkbox" type="checkbox" id="filter-vendor-Hitachi" name="filter-by-vendor-Hitachi">
+                <label class="filter-label-checkbox" for="filter-vendor-Hitachi">Hitachi
+                  <input class="filter-input-checkbox" type="checkbox" id="filter-vendor-Hitachi" name="filter-by-vendor-Hitachi">
+                  <span class="checkbox-indicator"></span>
+                </label>
               </li>
             </ul>
           </div>
@@ -140,12 +157,16 @@
             <p class="filter-display-name">Питание:</p>
             <ul class="filter-list">
               <li class="filter-item">
-                <label class="filter-label-radio" for="filter-poweroption-battery">Аккумуляторные</label>
+                <label class="filter-label-radio" for="filter-poweroption-battery">Аккумуляторные
                 <input class="filter-input-radio" type="radio" id="filter-poweroption-battery" name="filter-by-poweroption" value="battery">
+                <span class="checkbox-indicator"></span>
+              </label>
               </li>
               <li class="filter-item">
-                <label class="filter-label-radio" for="filter-poweroption-grid">Сетевые</label>
+                <label class="filter-label-radio" for="filter-poweroption-grid">Сетевые
                 <input class="filter-input-radio" type="radio" id="filter-poweroption-grid" name="filter-by-poweroption" value="grid" checked>
+                <span class="checkbox-indicator"></span>
+              </label>
               </li>
             </ul>
           </div>
@@ -400,37 +421,20 @@
       </div>
 
       <!--Модальное окно-->
-      <section class="modal-window">
-        <h3 style="visually-hidden">Напишите нам</h3>
-        <form name="write-us-form" method="post" action="#">
-          <div class="write-us-wrapper">
-            <!-- имя и e-mail -->
-            <div class="write-us-header">
-              <div class="write-us-subheader">
-                <label class="write-us-label" for="write-us-name">Ваше имя:</label>
-                <input type="text" id="write-us-name" minlength="3" pattern="[A-я]+">
-              </div>
-              <div class="write-us-subheader">
-                <label class="write-us-label" for="write-us-mail">Ваш e-mail:</label>
-                <input type="email" id="write-us-mail">
-              </div>
-            </div>
-            <!-- текстовое поле -->
-            <div class="write-us-central">
-              <label class="write-us-label" for="write-us-text">Текст письма:</label>
-              <textarea id="write-us-text" cols="58" rows="5"></textarea>
-            </div>
-
-            <!--Нижняя серая часть-->
-            <div class="write-us-bottom">
-              <button type="submit" class="mainpage-link write-us-button" name="write-us">Отправить</button>
-            </div>
-
+      <section class="basket">
+        <form name="basket-form" method="post" action="#">
+          <!-- центральная белая часть -->
+          <div class="basket-wrapper">
+            <h3 class="basket-header">Товар добавлен в корзину!</h3>
+            <button type="button" class="modal-close basket-close" name="close-basket"></button>
           </div>
-          <button class="modal-window-close" name="close-write-us"></button>
+          <!--Нижняя серая часть-->
+          <div class="basket-bottom">
+            <button type="button" class="mainpage-link basket-button" name="ordered">Оформить заказ</button>
+            <button type="button" class="mainpage-link basket-button-inactive" name="continue">Продолжить покупки</button>
+          </div>
         </form>
       </section>
-
     </footer>
   </body>
 </html>

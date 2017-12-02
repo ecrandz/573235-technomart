@@ -21,21 +21,24 @@
   font-style: italic;
   font-weight: 400;
   src:  url('../fonts/cuprum.woff2') format('woff2'),
-        url('../fonts/cuprum.woff') format('woff');
+        url('../fonts/cuprum.woff') format('woff'),
+        url('../fonts/cuprum.ttf');
 }
 @font-face {
   font-family: 'Cuprum Italic';
   font-style: italic;
   font-weight: 400;
   src:  url('../fonts/cuprumitalic.woff2') format('woff2'),
-        url('../fonts/cuprumitalic.woff') format('woff');
+        url('../fonts/cuprumitalic.woff') format('woff'),
+        url('../fonts/cuprumitalic.ttf');
 }
 @font-face {
   font-family: 'Cuprum Bold';
   font-style: normal;
   font-weight: 700;
   src:  url('../fonts/cuprumbold.woff2') format('woff2'),
-        url('../fonts/cuprumbold.woff') format('woff');
+        url('../fonts/cuprumbold.woff') format('woff'),
+        url('../fonts/cuprumbold.ttf');
 }
 
 /* ---------------------------------------------------------------*/
@@ -120,10 +123,10 @@ body {
   color: #000;
   background-color: #fff;
 }
-.header-search:active {
+/*.header-search:active {
   color: rgb(234, 58, 67);
   background-color: #fff;
-}
+}*/
 .header-search-item {
   position: relative;
 }
@@ -133,14 +136,20 @@ body {
   content: "";
   background-image: url("../img/icon-search.svg");
   background-repeat: no-repeat;
+  opacity: 0.6;
   width: 16px;
   height: 16px;
   left: 18px;
   top:12px;
 
 }
-
-/* непонятно, как сделать буквы в поле поиска белыми по умолчанию */
+.header-search-item:hover::after {
+  opacity: 1;
+}
+/* ???? переделать ?????????? */
+.header-search-item:active::after {
+  background-image: url("../img/icon-search-red.svg");
+}
 
 /* Закладки и корзина */
 .header-shortcuts, .header-basket {
@@ -420,7 +429,7 @@ body {
   right:-1px;
   width:60px;
   height:60px;
-  z-index: 100;
+  z-index: 30;
 }
 /* Модальный блок с кнопками */
 .buy-block {
@@ -431,6 +440,10 @@ body {
 /*...появляeтся при наведении на карточку товара*/
 .product-card:hover .buy-block {
   display: block;
+}
+/*...и тень*/
+.product-card:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 .buy-button, .to-favorities-button {
   position: relative;
@@ -510,11 +523,13 @@ body {
 .vendor-item {
   background-color: white;
 }
+/*...и тень*/
 .vendor-item:hover {
-  /* сделать тень */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 .vendor-item:active {
   opacity: 0.3;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
   /* Написать что-то какой-то фильтр для старого IE */
 }
 
@@ -746,23 +761,36 @@ body {
 .footer-highlightedlink:hover {
   text-decoration: underline;
 }
-.footer-highlightedlink:hover {
+.footer-highlightedlink:active {
   text-decoration: none;
   color: rgb(238, 54, 67);
 }
 
 /* ---------------------------------------------------------------*/
-/* --------------          Модальное окно           --------------*/
+/* -------------    Модальное окно index write-us      -----------*/
 /* ---------------------------------------------------------------*/
 /* Красная линия */
-.modal-window {
+.write-us {
+  position: absolute;
+  top:0;
+  left:0
   color:#000;
   background-color: #fff;
-  border-top: 3px solid rgb(255, 83, 87);
+  border-top: 7px solid rgb(255, 83, 87);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+  z-index: 100;
 }
-
+.write-us-wrapper {
+  position: relative;
+}
 .write-us-label {
   font-size: 18px;
+}
+.write-us-header input, .write-us-central textarea {
+  display: block;
+   font-size: 12px;
+   border: 1px solid rgb(222, 227, 228);
+   border-radius: 2px;
 }
 
 .write-us-bottom {
@@ -777,9 +805,54 @@ body {
   padding: 0;
   border: none;
 }
-/* дописать крест для закрытия окна */
-.modal-window-close {
+/* крест для закрытия окна */
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  font-size: 0;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.modal-close::before,
+.modal-close::after {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: 8px;
+  width: 27px;
+  height: 5px;
+  border-radius: 2px;
+  background-color: rgb(255, 83, 87);
+}
 
+.modal-close::before {
+  transform: rotate(45deg);
+}
+
+.modal-close::after {
+  transform: rotate(-45deg);
+}
+/* ---------------------------------------------------------------*/
+/* -------------      Модальное окно index map         -----------*/
+/* ---------------------------------------------------------------*/
+
+.map {
+  position: absolute;
+  top:0;
+  left:0
+  color:#000;
+  background-color: #ccc;
+  background-image: url("../img/map_big.jpg");
+  min-width: 940px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+  z-index: 50;
+}
+.map-wrapper {
+  position: relative;
 }
 /* ****************************************************************/
 /* --------------      Правила для catalog.html       ------------*/
@@ -891,10 +964,79 @@ body {
 }
 
 /* фильтры */
-/*бокс для слайдера*/
+/*******************   СЛАЙДЕР    *******************/
 .filter-sliderbox {
   background-color: rgb(247, 243, 236);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+.slider-min, .slider-max {
+  display: none;
+}
+/*линия № 9*/
+.slider-background {
+  width: 180px;
+  height: 2px;
+  background-color: #aaa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/*линия № 2*/
+.slider-foreground {
+  height: 2px;
+  min-width: 1px;
+  flex-grow: 1;
+  background-color: rgb(0, 202, 116);
+}
+.minprice, .maxprice {
+  position: relative;
+  width: 0;
+  height: 0;
+  background-color: #000;
+}
+/*указатели наименьшей и наибольшей цены*/
+.minprice {
+  margin-left: 0px;
+}
+.maxprice {
+  margin-right: 30px;
+}
+.minprice::before, .maxprice::before {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  top: -10px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.7);
+  z-index: 50;
+}
+.minprice::before {
+  left:0;
+}
+.maxprice::before {
+  right:0;
+}
+.minprice::after {
+  left: 7px;
+}
+.maxprice::after {
+  right:7px;
+}
+.minprice::after, .maxprice::after {
+  position: absolute;
+  content: "";
+  width: 6px;
+  height: 6px;
+  top: -3px;
+  background-color: #aaa;
+  border-radius: 50%;
+  z-index: 51;
+}
+
 .filter-rangebox span {
   display: flex;
   align-items: center;
@@ -911,6 +1053,7 @@ body {
   text-align: center;
   -moz-appearance:textfield;
 }
+/****************************************************/
 
 /*класс для фильтра по производителям и по типу*/
 .filter-list {
@@ -923,8 +1066,79 @@ body {
 .filter-label-radio {
   font-size: 14px;
 }
-/*непонятно, как заменить стандартные чекбоксы и радиокнопки на картинки*/
+/* заменяю стандартные чекбоксы и радиокнопки на укрупнённые*/
+/**************************************************************************/
+.filter-item {
+  position: relative;
+}
+.filter-input-checkbox + .checkbox-indicator {
+  position: absolute;
+  top: -2px;
+  left: -32px;
+  width: 17px;
+  height: 17px;
+  border: 2px solid #aaa;
+  border-radius: 2px;
+}
+/*.filter-item input[type="checkbox"]:checked + .checkbox-indicator::before {*/
+.filter-input-checkbox:checked + .checkbox-indicator::before,  .filter-input-checkbox:checked + .checkbox-indicator::after {
+  content: "";
+  position: absolute;
 
+  background-color: #000000;
+}
+.filter-input-checkbox:checked + .checkbox-indicator::before {
+  top: 8px;
+  left: 1px;
+  width: 10px;
+  height: 3px;
+  background-color: #aaa;
+  transform: rotate(45deg);
+  z-index: 61;
+}
+.filter-input-checkbox:checked + .checkbox-indicator::after {
+  top: 5px;
+  left: 5px;
+  width: 18px;
+  height: 3px;
+  background-color: #aaa;
+  border: 1px solid white;
+  transform: rotate(-45deg);
+  z-index: 51;
+}
+.filter-input-checkbox {
+  display: none;
+}
+/*************************** то же, radio *********************************/
+.filter-input-radio + .checkbox-indicator {
+  position: absolute;
+  top: -2px;
+  left: -33px;
+  width: 19px;
+  height: 19px;
+  border: 2px solid #aaa;
+  border-radius: 50%;
+}
+/*.filter-item input[type="checkbox"]:checked + .checkbox-indicator::before {*/
+.filter-input-radio:checked + .checkbox-indicator::before {
+  content: "";
+  position: absolute;
+
+  background-color: #000000;
+}
+.filter-input-radio:checked + .checkbox-indicator::before {
+  top: 5px;
+  left: 5px;
+  width: 9px;
+  height: 9px;
+  background-color: #aaa;
+  border-radius: 50%;
+}
+
+.filter-input-checkbox, .filter-input-radio {
+  display: none;
+}
+/**************************************************************************/
 /*кнопка подтверждения фильтра*/
 .filter-submit {
   width: 140px;
@@ -1017,6 +1231,55 @@ body {
   text-transform: none;
 }
 
+/* ---------------------------------------------------------------*/
+/* -------------    Модальное окно catalog basket      -----------*/
+/* ---------------------------------------------------------------*/
+/* Красная линия */
+.basket {
+  position: absolute;
+  top:0;
+  left:0
+  color:#000;
+  background-color: #fff;
+  border-top: 6px solid rgb(255, 83, 87);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+  z-index: 100;
+}
+.basket-wrapper {
+  position: relative;
+}
+.basket-header {
+  position: relative;
+}
+.basket-header::before {
+  position: absolute;
+  content: "";
+  background-image: url("../img/added_to_basket.png");
+  background-repeat: no-repeat;
+  width:80px;
+  height: 80px;
+  top:-14px;
+  left: -90px;
+}
+.basket-bottom {
+  color:#000;
+  background-color: rgb(244, 244, 244);
+}
+.basket-button, .basket-button-inactive  {
+  color:#fff;
+  width: 220px;
+  background-color: rgb(238, 54, 67);
+  text-transform: uppercase;
+  font-family: "Cuprum", "Arial", sans-serif;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+.basket-button-inactive {
+  background-color: #fff;
+  color: #000;
+}
+
 /* ****************************************************************/
 /* ****************************************************************/
 
@@ -1030,7 +1293,7 @@ body {
 
 /*------------------- верхняя cиняя часть заголовка -----------------*/
 .header-top{
-  /*width:1200px;*/
+  min-width:1200px;
 }
 .header-top-wrapper {
   width:940px;
@@ -1092,7 +1355,7 @@ body {
 
 /*--------------- средняя синяя часть заголовка ---------------*/
 .header-middle {
-  /*width: 1200px;*/
+  min-width: 1200px;
 }
 .header-middle-wrapper {
   display: flex;
@@ -1167,7 +1430,7 @@ body {
 .header-bottom {
   display: flex;
   flex-direction: row;
-  /*width: 1200px;*/
+  min-width: 1200px;
   justify-content: center;
   /*border: 1px dashed red;*/
 }
@@ -1210,7 +1473,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /*width:1200px;*/
+  min-width:1200px;
 
   /*border: 1px dashed red;*/
 }
@@ -1448,7 +1711,7 @@ body {
 /**************************************************************/
 /*контейнер*/
 .services {
-  /*width: 1200px;*/
+  min-width: 1200px;
   min-height: 520px;
   /*border: 1px dashed red;*/
 }
@@ -1581,7 +1844,7 @@ body {
 /**************************************************************/
 /*контейнер для верхнего футера*/
 .footer-top {
-  /*width: 1200px;*/
+  min-width: 1200px;
 }
 .footer-top-wrapper {
   display: flex;
@@ -1637,7 +1900,7 @@ padding: 0;
 /*------------------- нижний футер-----------------------*/
 /*-------------------------------------------------------*/
 .footer-bottom {
-  /*width: 1200px;*/
+  min-width: 1200px;
 }
 .footer-bottom-wrapper {
   width: 940px;
@@ -1678,33 +1941,84 @@ padding: 0;
   /*border: 1px dashed red;*/
 }
 
-/*---------------- модальное окно ----------------*/
+/*---------------- модальное окно index write us ----------------*/
 /*контейнер*/
-.modal-window {
-  position: absolute;
-  width: 620px;
-  height: 430px;
-  border: 1px dashed red;
+.write-us {
+  position: fixed;
+  min-width: 620px;
+  min-height: 430px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  box-sizing: border-box;
+  display: none;
+}
+.write-us-show {
+  display: block;
 }
 /*контейнер для содержимого окна*/
 .write-us-wrapper {
-  width: 460px;
-  margin: auto;
+  padding: 45px 80px 36px 80px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  border: 1px dashed red;
+  /*border: 1px dashed red;*/
 }
 /*заголовок-имя и email*/
 .write-us-header {
   display: flex;
-  justify-content: space-between;
 }
+
 .write-us-subheader {
   display: flex;
   flex-direction: column;
 }
+.email-address {
+  /*отступ слева фиксированный - нужно для растягивания окна*/
+  margin-left: 20px;
+}
+.write-us-header input, .write-us-central textarea {
+   box-sizing: border-box;
+   padding: 10px 15px;
+}
+.write-us-header input {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 220px;
+  height: 37px;
+}
+.write-us-central textarea {
+  margin-top: 10px;
+  margin-bottom: 0;
+  width: 460px;
+  height: 113px;
+}
+.write-us-bottom {
+  height: 114px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.write-us-button {
+  /*margin: */
+  width: 460px;
+  cursor: pointer;
+}
 
+/*---------------- модальное окно index map ----------------*/
+/*контейнер*/
+.map {
+  position: fixed;
+  min-width: 940px;
+  min-height: 446px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  box-sizing: border-box;
+  display: none;
+}
+.map-show {
+  display: block;
+}
 /***************************************************************************/
 
 /*                     C A T A L O G . H T M L                             */
@@ -1840,13 +2154,11 @@ padding: 0;
 }
 /*надписи в блоке сортировки*/
 .catalog-header h3 {
-  margin-left: 18px;
-  margin-right: auto;
+  margin: 10px auto 10px 18px;
 }
 /*то же, члены списка блока сортировки*/
 .sorter-list {
-  margin-left: auto;
-  margin-right: 0;
+  margin: 10px 0 10px auto;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -1923,4 +2235,42 @@ padding: 0;
 .category-comment-text {
   margin-top: 32px;
   margin-bottom: 65px;
+}
+
+/*---------------- модальное окно catalog basket ----------------*/
+/*контейнер*/
+.basket {
+  position: fixed;
+  min-width: 620px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  box-sizing: border-box;
+  display: none;
+}
+.basket-show {
+  display: block;
+}
+/*контейнер для содержимого окна*/
+.basket-wrapper {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+/*заголовок*/
+.basket-header {
+  font-size: 30px;
+  margin: 63px 120px 65px auto;
+}
+
+.basket-bottom {
+  height: 114px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.basket-button {
+  margin-right: 20px;
 }
