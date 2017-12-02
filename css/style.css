@@ -100,50 +100,47 @@ body {
   text-transform: uppercase;
   text-decoration: none;
 }
-/* Поле поиска - иконка*/
-.header-search-label {
+/* Поле поиска*/
+.header-search  {
   position: relative;
+  display: block;
   color: #fff;
-  /*лупа должна быть бледно серая*/
+  font-family: "Cuprum", "Arial", sans-serif;
+  border: none;
   background-color: rgb(41, 52, 73);
+  /*лупа должна быть бледно серая*/
+
 }
-.header-search-label:hover {
+.header-search:hover {
   color: #fff;
   /*становится белая, бекграунд более синий*/
   background-color: rgb(33,42,58);
 }
-.header-search-label:active {
+.header-search:focus {
+  color: #000;
+  background-color: #fff;
+}
+.header-search:active {
   color: rgb(234, 58, 67);
   background-color: #fff;
 }
-.header-search-label::before {
+.header-search-item {
+  position: relative;
+}
+/* Поле поиска - иконка*/
+.header-search-item::after {
   position: absolute;
   content: "";
   background-image: url("../img/icon-search.svg");
   background-repeat: no-repeat;
   width: 16px;
   height: 16px;
-  left: -30px;
-  top:2px;
+  left: 18px;
+  top:12px;
 
 }
-/* Поле поиска */
-.search {
-  color: #fff;
-  font-family: "Cuprum", "Arial", sans-serif;
-  background-color: rgb(41, 52, 73);
-  border: none;
-}
+
 /* непонятно, как сделать буквы в поле поиска белыми по умолчанию */
-.search:hover {
-  color: #fff;
-  background-color: rgb(33,42,58);
-}
-.search:focus {
-  color: #000;
-  background-color: #fff;
-}
-/*непонятно, как заставить менять цвет поле поиска при установке в него курсора*/
 
 /* Закладки и корзина */
 .header-shortcuts, .header-basket {
@@ -167,7 +164,7 @@ body {
   background-repeat: no-repeat;
   width: 16px;
   height: 16px;
-  left: 8px;
+  left: 30px;
   top: 12px;
 }
 .header-basket::before {
@@ -177,7 +174,7 @@ body {
   background-repeat: no-repeat;
   width: 16px;
   height: 16px;
-  left: 8px;
+  left: 16px;
   top: 12px;
 }
 .header-shortcuts a, .header-basket a, .header-makeorder a {
@@ -231,8 +228,8 @@ body {
   background-repeat: no-repeat;
   width: 19px;
   height: 19px;
-  left: 16px;
-  top:12px;
+  left: 12px;
+  top:10px;
 }
 
 /* Логин и регистрация */
@@ -306,12 +303,12 @@ body {
 .materials {
   color: #fff; background-color: rgb(255, 191, 71);
   background-image: url("../img/symbol_bucket.png");
-  background-position: right 45px top 30px;
+  background-position: right 44px top 30px;
 }
 .tools{
   color: #fff; background-color: rgb(59, 188, 227);
   background-image: url("../img/symbol_drill.png");
-  background-position: right 25px top 30px;
+  background-position: right 27px top 30px;
 }
 .machines {
   color: #fff; background-color: rgb(220, 145, 216);
@@ -351,12 +348,12 @@ body {
 .discount {
   color: #fff; background-color: rgb(142, 215, 143);
   background-image: url("../img/symbol_basket.png");
-  background-position: right 35px top 25px;
+  background-position: right 45px top 25px;
 }
 .delivery {
   color: #fff; background-color: rgb(255, 192, 71);
   background-image: url("../img/symbol_car.png");
-  background-position: right 30px top 30px;
+  background-position: right 30px top 31px;
 }
 .offering-category {
   font-size: 24px;
@@ -535,7 +532,7 @@ body {
   background-image: url("../img/delivery.png"),
                     url("../img/delivery_shade.png");
   background-repeat: no-repeat;
-  background-position: 730px 270px, 470px 270px;
+  background-position: 732px 262px, 472px 262px;
 }
 .services-warranty {
   background-image: url("../img/warranty.png"),
@@ -642,23 +639,11 @@ body {
   content: "";
   width: 25px;
   height: 2px;
-  top:15px;
-  left: -32px;
+  top:20px;
+  left: -36px;
   background-color: rgb(238, 54, 67);
 }
-/*малая карта проезда*/
-.ourcontacts-map {
-  margin-top: 20px;
-}
-/*кнопка "подробнее о компании"*/
-.ourcompany-link {
-  margin-top: 15px;
-}
-/*кнопка "заблудились"*/
-.ourcontacts-link {
-  margin-bottom: 0;
-  margin-top: auto;
-}
+
 /* ---------------------------------------------------------------*/
 /* --------------              Футер                --------------*/
 /* ---------------------------------------------------------------*/
@@ -713,8 +698,8 @@ body {
 .social-link {
   color: #fff;
   background-color: rgb(33, 42, 58);
-  width: 35px;
-  height:35px;
+  width: 40px;
+  height:40px;
   border-radius: 50%;
 }
 .social-link:hover {
@@ -729,8 +714,8 @@ body {
   content: "";
   background-image: url("../img/icon-vk.png");
   background-repeat: no-repeat;
-  top: 25px;
-  left:4px;
+  top: 30px;
+  left:9px;
   width: 30px;
   height:30px;
 }
@@ -739,8 +724,8 @@ body {
   content: "";
   background-image: url("../img/icon-fb.png");
   background-repeat: no-repeat;
-  top: 21px;
-  left:11px;
+  top: 26px;
+  left:15px;
   width: 30px;
   height:30px;
 }
@@ -749,8 +734,8 @@ body {
   content: "";
   background-image: url("../img/icon-insta.png");
   background-repeat: no-repeat;
-  top: 22px;
-  left:7px;
+  top: 26px;
+  left:8px;
   width: 30px;
   height:30px;
 }
@@ -823,7 +808,7 @@ body {
   background-repeat: no-repeat;
   width:20px;
   height: 20px;
-  top:14px;
+  top:13px;
   left: 15px;
 }
 .logout-icon {
@@ -838,7 +823,7 @@ body {
   width:20px;
   height: 20px;
   top:-10px;
-  right: -50px;
+  right: -58px;
 }
 /* линки на мои заказы и личный кабинет*/
 .user-link {
@@ -853,10 +838,10 @@ body {
   content: "";
   display: block;
   background-color: rgb(50, 66, 92);
-  width: 5px;
-  height: 5px;
-  top:7px;
-  left: -23px;
+  width: 4px;
+  height: 4px;
+  top:8px;
+  left: -18px;
   border-radius: 50%;
 }
 /* ---------------------------------------------------------------*/
@@ -917,14 +902,16 @@ body {
 /*мин. и макс. значение цены*/
 .price-minvalue, .price-maxvalue {
   font-family: "PT Sans", "Arial", sans-serif;
+  font-size: 18px;
   background-color: rgb(247, 243, 236);
   border: none;
   display: block;
-  width: 96px;
+  width: 94px;
   height: 37px;
   text-align: center;
   -moz-appearance:textfield;
 }
+
 /*класс для фильтра по производителям и по типу*/
 .filter-list {
   padding: 0;
@@ -1071,27 +1058,35 @@ body {
   align-items: center;
   margin-left:0;
   margin-right:auto;
-  width: 270px;
+  width: 260px;
+  height: 42px;
+  padding-left: 50px;
+  padding-right: 20px;
 }
 /*в закладки и корзина*/
-.header-shortcuts, .header-basket {
+.header-shortcuts {
   display: flex;
-  justify-content: center;
   align-items: center;
+  box-sizing: border-box;
+  padding-left: 56px;
+  margin-right: 0;
+  width: 165px;
+}
+.header-basket {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding-left: 48px;
   margin-right: 0;
   width: 150px;
 }
-.header-shortcuts::before {
-  margin-right: 15px;
-}
-.header-basket::before {
-  margin-right: 15px;
-}
+
+
 /*оформить заказ*/
 .header-makeorder {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items:center;
   width: 150px;
 }
 
@@ -1113,12 +1108,12 @@ body {
 .header-mission {
   display: block;
   width: 197px;
-  margin: 47px 0 40px 50px;
+  margin: 48px 0 40px 52px;
   /*border: 1px dashed black;*/
 }
 /*обертка для телефона и адреса*/
 .header-address {
-  margin-top: 47px;
+  margin-top: 48px;
   margin-left: 68px;
   width: 264px;
 }
@@ -1127,14 +1122,12 @@ body {
   display: block;
   position: relative;
   border: 3px solid white;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 72px;
+  padding: 6px 20px 8px 70px;
 }
 /*адрес*/
 .header-address p {
-  margin-top: 10px;
-  text-align: center;
+  margin-top: 2px;
+  text-align:center;
 }
 /*обёртка для "войти" и "регистрация"*/
 .not-logged-in {
@@ -1200,10 +1193,10 @@ body {
   margin: 0 30px;
 }
 .mainmenu-item:first-child {
-  margin-left: 20px;
+  margin-left: 22px;
 }
 .mainmenu-item:last-child {
-  margin-right: 20px;
+  margin-right: 24px;
 }
 /* ---------------------------------------------------------------*/
 
@@ -1230,14 +1223,12 @@ body {
   justify-content: flex-start;
   align-content: space-between;
   flex-wrap: wrap;
-  margin-bottom: 54px;
 }
 /*блок на секции без названия*/
 .offering-item {
   position: relative;
   width: 300px;
   height: 122px;
-
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -1253,13 +1244,13 @@ body {
 /*заголовок на блоке*/
 .offering-category {
   margin: 0;
-  margin-left: 24px;
-  margin-top: 18px;
+  margin-left: 22px;
+  margin-top: 20px;
 }
 /*кнопка с линком на блоке*/
 .offering-transparentbox {
   margin-left: 24px;
-  margin-bottom: 18px;
+  margin-bottom: 22px;
   display: flex;
   width: 137px;
   height: 39px;
@@ -1281,8 +1272,8 @@ body {
 }
 /*подпись к слайдеру*/
 .revolver-description {
-  margin-left: 24px;
-  margin-top: 2px;
+  margin-left: 26px;
+  margin-top: 0px;
   margin-bottom: auto;
 }
 /*красные кнопки с линками*/
@@ -1295,8 +1286,8 @@ body {
 }
 /*отступы красной кнопки*/
 .revolver .mainpage-link {
-  margin-left: 24px;
-  margin-bottom: 24px;
+  margin-left: 27px;
+  margin-bottom: 20px;
   width: 195px;
 }
 /*два блока один под другим*/
@@ -1315,8 +1306,8 @@ body {
   justify-content: space-between;
   width: 940px;
   box-sizing: border-box;
-  margin: 0 auto 20px auto;
-  padding: 22px 30px;
+  margin: 2px auto 20px auto;
+  padding: 23px 22px 24px 28px;
   /*высота блока составит 39px+2*22px=83px*/
 }
 /*обнуляем маржины у внутренних элементов*/
@@ -1396,7 +1387,7 @@ body {
 /*старая цена*/
 .product-oldprice {
     min-height:20px;
-    margin-top:15px;
+    margin-top:10px;
     margin-bottom:10px;
 }
 /*актуальная цена*/
@@ -1404,8 +1395,7 @@ body {
     display: block;
     position:relative;
     width:80px;
-    margin:10px auto;
-    margin-bottom:20px;
+    margin:10px auto 18px auto;
     padding:10px 30px;
     border-radius:3px;
 }
@@ -1427,7 +1417,7 @@ body {
   /*width: 960px;*/
   /*border: 1px dashed red;*/
   margin-left: -20px;
-  margin-bottom: 60px;
+  margin-bottom: 63px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -1475,9 +1465,9 @@ body {
 }
 /*девиз*/
 .services-slogan {
-  margin-top: 40px;
+  margin-top: 28px;
   width: 400px;
-  margin-bottom: 75px;
+  margin-bottom: 70px;
 }
 /*контейнер содержимого раздела сервисов*/
 .services-block {
@@ -1494,7 +1484,7 @@ body {
 /*кнопка-переключатель типа сервисов*/
 .services-link {
   display: block;
-  width: 240px;
+  width: 220px;
   height: 60px;
 }
 /*кнопка переключения сервисов*/
@@ -1513,6 +1503,7 @@ body {
 /*его заголовок*/
 .services-description h3 {
   margin: 0;
+  margin-top: 5px;
 }
 /*и текст*/
 .services-description p {
@@ -1531,7 +1522,7 @@ body {
 .main-extrainfo {
   width: 940px;
   margin: 0 auto;
-  padding: 72px 130px 87px 130px;
+  padding: 80px 132px 84px 130px;
   display: flex;
   justify-content: space-between;
 }
@@ -1552,24 +1543,35 @@ body {
 /*расстановка текста*/
 .ourcompany h2, .ourcontacts h2 {
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .ourcontacts-description {
   width: 170px;
 }
 /*список транспортных компаний*/
 .transport-list {
-  line-height: 32px;
-  margin-left: 34px;
+    line-height: 40px;
+    margin-left: 36px;
+    margin-top: -3px;
 }
 /*красные кнопки с линками*/
+/*кнопка "подробнее о компании"*/
 .ourcompany-link {
   width: 220px;
-}
-.ourcontacts-link {
-  width: 100%;
+  margin-top: 10px;
 }
 
+/*малая карта проезда*/
+.ourcontacts-map {
+  margin-top: 20px;
+}
+
+/*кнопка "заблудились"*/
+.ourcontacts-link {
+  width: 100%;
+  margin-bottom: 0;
+  margin-top: auto;
+}
 /**************************************************************/
 /**************************************************************/
 
@@ -1600,16 +1602,16 @@ body {
   align-items: center;
   width: 220px;
   border-bottom: 5px solid rgb(181, 41, 51);
-  margin-bottom: 35px;
+  margin-bottom: 26px;
 }
 /*адрес и телефон в футере*/
 .footer-address {
   margin: 0;
-  line-height: 27px;
+  line-height: 24px;
 }
 /*меню в правой части верхнего футера*/
 .footer-navigation {
-  margin-top: 43px;
+  margin-top: 38px;
   /*border: 1px dashed red;*/
 }
 .footer-navigation ul {
@@ -1621,8 +1623,8 @@ body {
 }
 /*элементы меню верхнего футера*/
 .footer-navigation li {
-  margin-left: 53px;
-  margin-bottom: 42px;
+  margin-left: 59px;
+  margin-bottom: 37px;
   /*border: 1px dashed red;*/
 }
 .footer-navigation li:first-child, .footer-navigation li:nth-child(6) {
@@ -1650,7 +1652,7 @@ padding: 0;
 
 /*социальные сети*/
 .footer-social {
-  margin-left: 160px;
+  margin-left: 158px;
 }
 .footer-social ul{
   margin: 0;
@@ -1720,12 +1722,12 @@ padding: 0;
 
 /* линки на мои заказы и личный кабинет*/
 .user-links {
-  margin-top: 20px;
+  margin-top: 6px;
 }
 
 /* каждый линк на мои заказы и личный кабинет*/
 .user-link {
-  margin-right: 19px;
+  margin-right: 9px;
   margin-left: 19px;
 }
 
@@ -1745,14 +1747,20 @@ padding: 0;
 }
 .breadcrumbs ul {
   margin: 0;
-  height: 60px;
+  /*height: 60px;*/
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
   align-items: center;
 }
 .breadcrumbs-item {
-  margin-left: 18px;
+  /*margin-left: 18px;*/
+  margin: 2px 0 22px 16px;
 }
+.breadcrumbs-item-home {
+  margin: 2px 0 22px 0;
+}
+
 /* ********** заголовок текущего раздела *********** */
 .catalog-header-box {
   margin-bottom: 20px;
@@ -1763,7 +1771,7 @@ padding: 0;
 }
 /*текст внутри заголовка*/
 .catalog-section-header {
-  margin-left: 30px;
+  margin-left: 28px;
 }
 /*контейнер для фильтра и содержимого каталога*/
 .catalog-content {
@@ -1791,25 +1799,29 @@ padding: 0;
 /*секции фильтра по производителя и по цене*/
 .filter-section-vendor, .filter-section-price {
   border-top: 1px solid rgb(247, 243, 236);
+  padding: 3px 0 0 0;
 }
+
 .filter-section-vendor {
   margin-top: 26px;
 }
 /*списки в этих секциях*/
 .filter-list {
   padding: 0;
+  margin-top: 20px;
   /*border: 1px dashed red;*/
 }
 /*пункты фильтров*/
 .filter-item {
-  margin-bottom: 18px;
+  margin-left: 33px;
+  margin-bottom: 23px;
 }
 .filter-item:last-child {
-  margin-bottom: 0;
+  margin-bottom: 26px;
 }
 /*кнопка подтверждения фильтра*/
 .filter-submit {
-  margin-top: 75px;
+  margin-top: 82px;
 }
 
 /***********************  правая часть каталога с товарами *********************/
@@ -1884,7 +1896,7 @@ padding: 0;
   align-items: center;
   height: 38px;
   margin-right: 10px;
-  margin-bottom: 42px;
+  margin-bottom: 62px;
   padding-left: 17px;
   padding-right: 17px;
   border-radius: 3px;
@@ -1909,6 +1921,6 @@ padding: 0;
 }
 /*текст комментария*/
 .category-comment-text {
-  margin-top: 40px;
-  margin-bottom: 75px;
+  margin-top: 32px;
+  margin-bottom: 65px;
 }
