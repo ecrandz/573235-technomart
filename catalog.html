@@ -39,14 +39,18 @@
           <a class="header-calllink" href="call.html">+7 (812) 555-05-55</a>
           <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
         </div>
-        <div class="logged-in">
+        <div class="not-logged-in">
+          <a class="header-enterlink" href="enter.html"><span>Войти</span></a>
+          <a class="header-registerlink" href="register.html">Регистрация</a>
+        </div>
+        <div class="logged-in show">
           <div class="header-username">
-            <span>Равшан Джамшутович</span>
+            <a href="profile.html" class="username-link"><span>Равшан Джамшутович</span></a>
             <a class="logout-icon" href="logout.html" title="Выйти"></a>
           </div>
           <div class="user-links">
-            <a class="user-link test-el" href="#">Мои заказы</a>
-            <a class="user-link" href="#">Личный кабинет</a>
+            <a class="user-link" href="#">Мои заказы</a>
+            <a class="user-link" href="profile.html">Личный кабинет</a>
           </div>
         </div>
       </div>
@@ -436,5 +440,6 @@
         </form>
       </section>
     </footer>
+    <script src="js/catalog.js"></script>
   </body>
 </html>

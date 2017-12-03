@@ -44,9 +44,19 @@
           <a class="header-calllink" href="call.html">+7 (812) 555-05-55</a>
           <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
         </div>
-        <div class="not-logged-in">
+        <div class="not-logged-in show">
           <a class="header-enterlink" href="enter.html"><span>Войти</span></a>
           <a class="header-registerlink" href="register.html">Регистрация</a>
+        </div>
+        <div class="logged-in">
+          <div class="header-username">
+            <a href="profile.html" class="username-link"><span>Равшан Джамшутович</span></a>
+            <a class="logout-icon" href="logout.html" title="Выйти"></a>
+          </div>
+          <div class="user-links">
+            <a class="user-link" href="#">Мои заказы</a>
+            <a class="user-link" href="profile.html">Личный кабинет</a>
+          </div>
         </div>
       </div>
       </div>
@@ -74,38 +84,38 @@
       <!--Категории товаров-->
       <section class="offering">
         <h2 class="visually-hidden">Категории товаров</h2>
-        <a class="offering-item materials newproduct" href="materials.html">
+        <div class="offering-item materials newproduct">
           <h3 class="offering-category">Материалы</h3>
-          <p class="offering-transparentbox">На любой вкус</p>
-        </a>
-        <a class="offering-item tools" href="tools.html">
+          <a class="offering-transparentbox" href="materials.html">На любой вкус</a>
+        </div>
+        <div class="offering-item tools">
           <h3 class="offering-category">Инструмент</h3>
-          <p class="offering-transparentbox">На все случаи</p>
-        </a>
-        <a class="offering-item machines" href="machines.html">
+          <a class="offering-transparentbox" href="tools.html">На все случаи</a>
+        </div>
+        <div class="offering-item machines">
           <h3 class="offering-category">Техника</h3>
-          <p class="offering-transparentbox">Для стройки</p>
-        </a>
+          <a class="offering-transparentbox" href="machines.html">Для стройки</a>
+        </div>
         <div class="revolver perforator">
           <h3 class="revolver-header show">Перфораторы</h3>
           <p class="revolver-description show">Настоящие мужские игрушки</p>
           <h3 class="revolver-header">Дрели</h3>
           <p class="revolver-description">Соседям на радость!</p>
-          <a class="mainpage-link" href="#">Открыть каталог</a>
+          <a class="mainpage-link" href="catalog.html">Открыть каталог</a>
           <button type="button" class="scroll-left"></button>
           <button type="button" class="scroll-right"></button>
           <div class="scroll-indicator-left"></div>
           <div class="scroll-indicator-right active"></div>
         </div>
         <aside class="offering-aside">
-          <a class="offering-item discount" href="discount.html">
+          <div class="offering-item discount">
             <h3 class="offering-category">Скидки 50%</h3>
-            <p class="offering-transparentbox">На 350 товаров</p>
-          </a>
-          <a class="offering-item delivery" href="delivery.html">
+            <a class="offering-transparentbox" href="discount.html">На 350 товаров</a>
+          </div>
+          <div class="offering-item delivery">
             <h3 class="offering-category">Доставка</h3>
-            <p class="offering-transparentbox">Бесплатно</p>
-          </a>
+            <a class="offering-transparentbox" href="delivery.html">Бесплатно</a>
+          </div>
         </aside>
       </section>
 
@@ -296,12 +306,9 @@
         <a class="ourcontacts-map" href="#"><img src="img/map_small.jpg" width="300" height="158" alt="Расположение офиса на карте"></a>
         <a class="mainpage-link ourcontacts-link" href="feedback.html">Заблудились? Напишите нам!</a>
         <!--Модальное окно с картой-->
-        <!-- <div class="map show"> -->
-        <div class="map">
-          <h3 class="visually-hidden">Карта, где мы находимся</h3>
-          <div class="map-wrapper">
-            <button type="button" class="modal-close map-close" name="close-map"></button>
-          </div>
+        <div class="map-wrapper">
+          <a class="map" href="https://yandex.ru/maps/-/CBaGUHGa3A" title="Карта, где мы находимся"></a>
+          <button type="button" class="modal-close map-close" name="close-map"></button>
         </div>
       </aside>
     </div>
@@ -387,9 +394,24 @@
             <button type="submit" class="mainpage-link write-us-button" name="write-us">Отправить</button>
           </div>
         </form>
-
       </section>
 
+      <!--Модальное окно-->
+      <section class="basket">
+        <form name="basket-form" method="post" action="#">
+          <!-- центральная белая часть -->
+          <div class="basket-wrapper">
+            <h3 class="basket-header">Товар добавлен в корзину!</h3>
+            <button type="button" class="modal-close basket-close" name="close-basket"></button>
+          </div>
+          <!--Нижняя серая часть-->
+          <div class="basket-bottom">
+            <button type="button" class="mainpage-link basket-button" name="ordered">Оформить заказ</button>
+            <button type="button" class="mainpage-link basket-button-inactive" name="continue">Продолжить покупки</button>
+          </div>
+        </form>
+      </section>
     </footer>
+    <script src="js/technomart.js"></script>
   </body>
 </html>
