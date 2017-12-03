@@ -27,6 +27,21 @@ var purchase_counter = 0;
 var favorities_counter = 0;
 var purchase_counter_indicator = document.querySelector(".header-basket span");
 var favorities_counter_indicator = document.querySelector(".header-shortcuts span");
+// оживление слайдера revolver
+var relolver = document.querySelector(".revolver");
+var revolver_scroll = document.querySelectorAll(".revolver-scroll");
+var header_1 = document.querySelector(".revolver-header.slide-1");
+var description_1 = document.querySelector(".revolver-description.slide-1");
+var header_2 = document.querySelector(".revolver-header.slide-2");
+var description_2 = document.querySelector(".revolver-description.slide-2");
+var scroll_indicator_left = document.querySelector(".scroll-indicator-left");
+var scroll_indicator_right = document.querySelector(".scroll-indicator-right");
+var revolver_slide_number = 0;
+// оживление блока сервисов
+var services_wrapper = document.querySelector(".services-wrapper");
+var service = document.querySelectorAll(".services-menu li");
+var service_description = document.querySelectorAll(".services-block div");
+var services_link = document.querySelectorAll(".services-link");
 
 // ********************** действия ****************************
 
@@ -90,3 +105,79 @@ for(var i = 0; i < to_favorities_button.length; i++) {
     favorities_counter_indicator.innerHTML= favorities_counter;
   });
 }
+
+// оживление слайдера revolver
+for(var i = 0; i < 2; i++) {
+  revolver_scroll[i].addEventListener("click", function (evt) {
+    evt.preventDefault();
+    if ( revolver_slide_number > 0 ) {
+      revolver_slide_number = 0;
+      relolver.classList.remove("drill");
+      relolver.classList.add("perforator");
+      header_2.classList.remove("show");
+      description_2.classList.remove("show");
+      header_1.classList.add("show");
+      description_1.classList.add("show");
+      scroll_indicator_right.classList.remove("active");
+      scroll_indicator_left.classList.add("active");
+    }
+    else {
+      revolver_slide_number = 1;
+      relolver.classList.remove("perforator");
+      relolver.classList.add("drill");
+      header_1.classList.remove("show");
+      description_1.classList.remove("show");
+      header_2.classList.add("show");
+      description_2.classList.add("show");
+      scroll_indicator_left.classList.remove("active");
+      scroll_indicator_right.classList.add("active");
+    }
+  });
+}
+
+// оживление блока сервисов
+services_link[0].addEventListener("click", function (evt) {
+  evt.preventDefault();
+  services_wrapper.classList.remove("services-warranty");
+  services_wrapper.classList.remove("services-loan");
+  services_wrapper.classList.add("services-delivery");
+  service[1].classList.remove("services-menu-item-active");
+  service[1].classList.add("services-menu-item-inactive");
+  service[2].classList.remove("services-menu-item-active");
+  service[2].classList.add("services-menu-item-inactive");
+  service[0].classList.remove("services-menu-item-inactive");
+  service[0].classList.add("services-menu-item-active");
+  service_description[1].classList.remove("show");
+  service_description[2].classList.remove("show");
+  service_description[0].classList.add("show");
+});
+services_link[1].addEventListener("click", function (evt) {
+  evt.preventDefault();
+  services_wrapper.classList.remove("services-delivery");
+  services_wrapper.classList.remove("services-loan");
+  services_wrapper.classList.add("services-warranty");
+  service[0].classList.remove("services-menu-item-active");
+  service[0].classList.add("services-menu-item-inactive");
+  service[2].classList.remove("services-menu-item-active");
+  service[2].classList.add("services-menu-item-inactive");
+  service[1].classList.remove("services-menu-item-inactive");
+  service[1].classList.add("services-menu-item-active");
+  service_description[0].classList.remove("show");
+  service_description[2].classList.remove("show");
+  service_description[1].classList.add("show");
+});
+services_link[2].addEventListener("click", function (evt) {
+  evt.preventDefault();
+  services_wrapper.classList.remove("services-delivery");
+  services_wrapper.classList.remove("services-warranty");
+  services_wrapper.classList.add("services-loan");
+  service[0].classList.remove("services-menu-item-active");
+  service[0].classList.add("services-menu-item-inactive");
+  service[1].classList.remove("services-menu-item-active");
+  service[1].classList.add("services-menu-item-inactive");
+  service[2].classList.remove("services-menu-item-inactive");
+  service[2].classList.add("services-menu-item-active");
+  service_description[0].classList.remove("show");
+  service_description[1].classList.remove("show");
+  service_description[2].classList.add("show");
+});

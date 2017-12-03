@@ -336,7 +336,10 @@ body {
   background-image: url("../img/slider_1-min.jpg");
 }
 .drill {
-  background-image: url("../img/slider_2-min.jpg");
+  background-image: url("../img/layer125.png"),
+                    url("../img/slider_2-min.jpg");
+  background-position: 289px 0, 0 0;
+
 }
 .revolver::after {
   position: absolute;
@@ -358,11 +361,13 @@ body {
 .revolver-header {
   font-size: 36px;
   text-transform: uppercase;
+  z-index: 100;
   display: none;
 }
 .revolver-description {
   font-family: 'PT Sans';
   font-size: 18px;
+  z-index: 100;
   display: none;
 }
 .revolver-header.show, .revolver-description.show {
@@ -612,6 +617,7 @@ body {
   font-size: 13px;
   line-height: 24px;
 }
+
 .services-delivery {
   background-image: url("../img/delivery.png"),
                     url("../img/delivery_shade.png");
@@ -1811,7 +1817,9 @@ body {
   display: flex;
   flex-direction: column;
   width: 940px;
+  min-height: 520px;
   margin: 0 auto;
+  /*border:1px dashed red;*/
 }
 /*заголовок раздела*/
 .services .section-title-header {
