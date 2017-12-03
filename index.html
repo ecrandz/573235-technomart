@@ -55,12 +55,12 @@
       <nav class="header-bottom">
         <ul class="mainmenu">
           <li class="mainmenu-item"><a href="index.html">Главная</a></li>
-          <li class="mainmenu-item"><a href="company.html">Компания</a></li>
+          <li class="mainmenu-item"><a href="index.html#company">Компания</a></li>
           <li class="mainmenu-item"><a href="catalog.html">Каталог</a></li>
           <li class="mainmenu-item"><a href="news.html">Новости</a></li>
           <li class="mainmenu-item"><a href="special.html">Спецпредложения</a></li>
           <li class="mainmenu-item"><a href="delivery.html">Доставка</a></li>
-          <li class="mainmenu-item"><a href="contacts.html">Контакты</a></li>
+          <li class="mainmenu-item"><a href="index.html#contacts">Контакты</a></li>
 
         </ul>
       </nav>
@@ -86,9 +86,11 @@
           <h3 class="offering-category">Техника</h3>
           <p class="offering-transparentbox">Для стройки</p>
         </a>
-        <div class="revolver">
-          <h3 class="revolver-header">Перфораторы</h3>
-          <p class="revolver-description">Настоящие мужские игрушки</p>
+        <div class="revolver perforator">
+          <h3 class="revolver-header show">Перфораторы</h3>
+          <p class="revolver-description show">Настоящие мужские игрушки</p>
+          <h3 class="revolver-header">Дрели</h3>
+          <p class="revolver-description">Соседям на радость!</p>
           <a class="mainpage-link" href="#">Открыть каталог</a>
           <button type="button" class="scroll-left"></button>
           <button type="button" class="scroll-right"></button>
@@ -270,7 +272,7 @@
     <div class="main-extrainfo">
       <!--О компании Техномарт-->
       <section class="ourcompany">
-        <h2 class="section-title-header">Компания «Техномарт»</h2>
+        <h2 class="section-title-header" id="company">Компания «Техномарт»</h2>
         <p class="ourcompany-description">
           Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для ремонта и
           строительства не оставит равнодушными любителей сэкономить на гастарбайтерах.
@@ -286,7 +288,7 @@
         </ul>
         <a class="mainpage-link ourcompany-link" href="ourcompany.html">Подробнее о компании</a>
       </section>
-      <aside class="ourcontacts">
+      <aside class="ourcontacts" id="contacts">
         <h2 class="section-title-header">Контакты</h2>
         <p class="ourcontacts-description">
           Вы можете забрать товар сами, заехав в наш офис:
@@ -294,13 +296,13 @@
         <a class="ourcontacts-map" href="#"><img src="img/map_small.jpg" width="300" height="158" alt="Расположение офиса на карте"></a>
         <a class="mainpage-link ourcontacts-link" href="feedback.html">Заблудились? Напишите нам!</a>
         <!--Модальное окно с картой-->
-        <!-- <div class="map map-show"> -->
-          <div class="map map">
+        <!-- <div class="map show"> -->
+        <div class="map">
           <h3 class="visually-hidden">Карта, где мы находимся</h3>
           <div class="map-wrapper">
             <button type="button" class="modal-close map-close" name="close-map"></button>
           </div>
-        <div>
+        </div>
       </aside>
     </div>
 
@@ -317,11 +319,11 @@
         <!--Меню в футере-->
         <nav class="footer-navigation">
           <ul>
-            <li><a class="footer-navigation-item" href="company.html">Компания</a></li>
+            <li><a class="footer-navigation-item" href="index.html#company">Компания</a></li>
             <li><a class="footer-navigation-item" href="news.html">Новости</a></li>
             <li><a class="footer-navigation-item" href="catalog.html">Каталог</a></li>
             <li><a class="footer-navigation-item" href="delivery.html">Доставка</a></li>
-            <li><a class="footer-navigation-item" href="contacts.html">Контакты</a></li>
+            <li><a class="footer-navigation-item" href="index.html#contacts">Контакты</a></li>
             <li><a class="footer-navigation-item footernav-highlighted" href="materials.html">Материалы</a></li>
             <li><a class="footer-navigation-item footernav-highlighted" href="machines.html">Техника</a></li>
             <li><a class="footer-navigation-item footernav-highlighted" href="tools.html">Инструмент</a></li>

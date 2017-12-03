@@ -323,16 +323,20 @@ body {
 .revolver {
   position: relative;
   color: #fff; background-color: rgb(157, 140, 119);
-  background-image: url("../img/slider_1-min.jpg");
   background-repeat: no-repeat;
   width: 620px;
   height: 264px;
   z-index: 1;
 }
+.perforator {
+  background-image: url("../img/slider_1-min.jpg");
+}
+.drill {
+  background-image: url("../img/slider_2-min.jpg");
+}
 .revolver::after {
   position: absolute;
   content: "";
-  background-image: url("../img/slider_1_mask.png");
   background-repeat: no-repeat;
   z-index: -1;
   width: 620px;
@@ -341,14 +345,26 @@ body {
   top:0;
   left: 0;
 }
+.perforator::after {
+  background-image: url("../img/slider_1_mask.png");
+}
+.drill::after {
+  background-image: url("../img/slider_2_mask.png");
+}
 .revolver-header {
   font-size: 36px;
   text-transform: uppercase;
+  display: none;
 }
 .revolver-description {
   font-family: 'PT Sans';
   font-size: 18px;
+  display: none;
 }
+.revolver-header.show, .revolver-description.show {
+  display: block;
+}
+
 .scroll-left, .scroll-right {
   position: absolute;
   content: "";
@@ -358,6 +374,7 @@ body {
   width: 40px;
   height: 40px;
   top: 113px;
+  cursor: pointer;
 }
 .scroll-left {
   background-image: url("../img/icon-left.svg");
@@ -367,6 +384,13 @@ body {
   background-image: url("../img/icon-right.svg");
   right: 2px;
 }
+.scroll-left:active {
+  transform: translateX(-3px);
+}
+.scroll-right:active {
+  transform: translateX(3px);
+}
+
 .scroll-indicator-left, .scroll-indicator-right {
   position: absolute;
   content: "";
@@ -818,7 +842,7 @@ body {
 .write-us {
   position: absolute;
   top:0;
-  left:0
+  left:0;
   color:#000;
   background-color: #fff;
   border-top: 7px solid rgb(255, 83, 87);
@@ -888,7 +912,7 @@ body {
 .map {
   position: absolute;
   top:0;
-  left:0
+  left:0;
   color:#000;
   background-color: #ccc;
   background-image: url("../img/map_big.jpg");
@@ -1283,7 +1307,7 @@ body {
 .basket {
   position: absolute;
   top:0;
-  left:0
+  left:0;
   color:#000;
   background-color: #fff;
   border-top: 6px solid rgb(255, 83, 87);
@@ -1819,7 +1843,7 @@ body {
   margin-bottom: 28px;
 }
 /*видимый класс для блоков сервиса*/
-.show {
+.services-description.show {
   display: block;
 }
 
@@ -1998,7 +2022,7 @@ padding: 0;
   box-sizing: border-box;
   display: none;
 }
-.write-us-show {
+.write-us.show {
   display: block;
 }
 /*контейнер для содержимого окна*/
@@ -2061,7 +2085,7 @@ padding: 0;
   box-sizing: border-box;
   display: none;
 }
-.map-show {
+.map.show {
   display: block;
 }
 /***************************************************************************/
@@ -2293,7 +2317,7 @@ padding: 0;
   box-sizing: border-box;
   display: none;
 }
-.basket-show {
+.basket.show {
   display: block;
 }
 /*контейнер для содержимого окна*/
