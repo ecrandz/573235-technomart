@@ -103,10 +103,9 @@ body {
   text-transform: uppercase;
   text-decoration: none;
 }
-/* Поле поиска*/
-.header-search  {
+/* ***************** Поле поиска ********************/
+.header-search-input  {
   position: relative;
-  display: block;
   color: #fff;
   font-family: "Cuprum", "Arial", sans-serif;
   border: none;
@@ -114,24 +113,20 @@ body {
   /*лупа должна быть бледно серая*/
 
 }
-.header-search:hover {
+.header-search-input:hover {
   color: #fff;
   /*становится белая, бекграунд более синий*/
   background-color: rgb(33,42,58);
 }
-.header-search:focus {
+.header-search-input:focus {
   color: #000;
   background-color: #fff;
 }
-/*.header-search:active {
-  color: rgb(234, 58, 67);
-  background-color: #fff;
-}*/
-.header-search-item {
+.header-search-label {
   position: relative;
 }
 /* Поле поиска - иконка*/
-.header-search-item::after {
+.header-search-label::before {
   position: absolute;
   content: "";
   background-image: url("../img/icon-search.svg");
@@ -140,16 +135,17 @@ body {
   width: 16px;
   height: 16px;
   left: 18px;
-  top:12px;
-
+  top: -12px;
+  z-index: 20;
 }
-.header-search-item:hover::after {
+.header-search-input:hover + .header-search-label::before {
   opacity: 1;
 }
-/* ???? переделать ?????????? */
-.header-search-item:active::after {
+.header-search-input:focus + .header-search-label::before {
   background-image: url("../img/icon-search-red.svg");
+  opacity: 1;
 }
+/*******************************************************/
 
 /* Закладки и корзина */
 .header-shortcuts, .header-basket {
@@ -353,7 +349,49 @@ body {
   font-family: 'PT Sans';
   font-size: 18px;
 }
-
+.scroll-left, .scroll-right {
+  position: absolute;
+  content: "";
+  background-color: transparent;
+  border: none;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  top: 113px;
+}
+.scroll-left {
+  background-image: url("../img/icon-left.svg");
+  left: 25px;
+}
+.scroll-right {
+  background-image: url("../img/icon-right.svg");
+  right: 2px;
+}
+.scroll-indicator-left, .scroll-indicator-right {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  top: 219px;
+}
+.scroll-indicator-left {
+  left: 296px;
+}
+.scroll-indicator-right {
+  left: 315px;
+}
+.scroll-indicator-left.active::after, .scroll-indicator-right.active::after {
+  position: absolute;
+  content: "";
+  width: 6px;
+  height: 6px;
+  background-color: rgba(238, 54, 67, 0.5);
+  border-radius: 50%;
+  top:2px;
+  left: 2px;
+}
 .discount {
   color: #fff; background-color: rgb(142, 215, 143);
   background-image: url("../img/symbol_basket.png");
@@ -406,6 +444,7 @@ body {
 .section-title-header {
   font-size: 30px;
   text-transform: uppercase;
+  letter-spacing: -0.02em;
 }
 .popular-list {
   padding: 0;
@@ -619,12 +658,15 @@ body {
   background-color: rgb(242, 246, 248);
   font-size: 36px;
   text-transform: uppercase;
-
+  letter-spacing: -0.01em;
 }
 .services-slogan, .services-description p {
   font-family: 'PT Sans';
   font-size: 13px;
   line-height: 24px;
+}
+.services-description p {
+  /*letter-spacing: 0.01em;*/
 }
 .loan-link {
   width: 196px;
@@ -676,7 +718,10 @@ body {
   text-transform: uppercase;
   text-decoration: none;
 }
-
+.footer-address {
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
 .footer-navigation ul {
   padding: 0;
   list-style: none;
@@ -1315,7 +1360,7 @@ body {
   margin-bottom: -5px;
 }
 /*поле поиска с лупой*/
-.header-search {
+.header-search-input {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1929,7 +1974,7 @@ padding: 0;
 .feedback {
   display: flex;
   flex-direction: column;
-  margin-left: 119px;
+  margin-left: 120px;
   /*border: 1px dashed red;*/
   padding: 0;
 }
@@ -1937,7 +1982,7 @@ padding: 0;
 .developed {
   display: flex;
   flex-direction: column;
-  margin-left: 49px;
+  margin-left: 53px;
   /*border: 1px dashed red;*/
 }
 
