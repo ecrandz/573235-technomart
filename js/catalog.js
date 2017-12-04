@@ -14,7 +14,7 @@ var continue_selection = document.querySelector(".basket-button-inactive");
 var to_favorities_button = document.querySelectorAll(".to-favorities-button");
 var header_favorities = document.querySelector(".header-shortcuts");
 // счётчики покупок
-var purchase_counter = 0;
+var purchase_counter = 10;
 var favorities_counter = 0;
 var purchase_counter_indicator = document.querySelector(".header-basket span");
 var favorities_counter_indicator = document.querySelector(".header-shortcuts span");
