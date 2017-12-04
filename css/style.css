@@ -124,6 +124,9 @@ body {
 }
 .header-search-label {
   position: relative;
+  display: block;
+  width: 0;
+  height: 0;
 }
 /* Поле поиска - иконка*/
 .header-search-label::before {
@@ -135,7 +138,7 @@ body {
   width: 16px;
   height: 16px;
   left: 18px;
-  top: -12px;
+  top: -27px;
   z-index: 20;
 }
 .header-search-input:hover + .header-search-label::before {
@@ -804,13 +807,16 @@ body {
 }
 .vkontante, .facebook, .instagram {
   position: relative;
+  display: block;
+  width: 0;
+  height: 0;
 }
 .vkontante::before {
   position: absolute;
   content: "";
   background-image: url("../img/icon-vk.png");
   background-repeat: no-repeat;
-  top: 30px;
+  top: 14px;
   left:9px;
   width: 30px;
   height:30px;
@@ -820,7 +826,7 @@ body {
   content: "";
   background-image: url("../img/icon-fb.png");
   background-repeat: no-repeat;
-  top: 26px;
+  top: 10px;
   left:15px;
   width: 30px;
   height:30px;
@@ -830,7 +836,7 @@ body {
   content: "";
   background-image: url("../img/icon-insta.png");
   background-repeat: no-repeat;
-  top: 26px;
+  top: 10px;
   left:8px;
   width: 30px;
   height:30px;
