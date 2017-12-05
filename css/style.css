@@ -138,7 +138,7 @@ body {
   width: 16px;
   height: 16px;
   left: 18px;
-  top: -27px;
+  top: -29px;
   z-index: 20;
 }
 .header-search-input:hover + .header-search-label::before {
@@ -170,20 +170,28 @@ body {
   content: "";
   background-image: url("../img/icon-bookmark.svg");
   background-repeat: no-repeat;
+  opacity: 0.5;
   width: 16px;
   height: 16px;
   left: 30px;
   top: 12px;
+}
+.header-shortcuts:hover::before {
+  opacity: 1;
 }
 .header-basket::before {
   position: absolute;
   content: "";
   background-image: url("../img/icon-cart.svg");
   background-repeat: no-repeat;
+  opacity: 0.5;
   width: 16px;
   height: 16px;
   left: 16px;
   top: 12px;
+}
+.header-basket:hover::before {
+  opacity: 1;
 }
 /*кнопка становится красной, если какой-то товар добавлен в корзину или в закладки*/
 .header-item-active {
@@ -269,12 +277,16 @@ body {
   content: "";
   background-image: url("../img/icon-login.svg");
   background-repeat: no-repeat;
+  /*fill="#c5c5c5" в svg заменён на #333*/
+  opacity: 0.5;
   width:20px;
   height: 20px;
   top:14px;
   left: 10px;
 }
-
+.header-enterlink:hover::before {
+  opacity: 1;
+}
 /* --------------            Главное меню           --------------*/
 .mainmenu {
   color: #fff;
@@ -974,12 +986,17 @@ body {
 .username-link::before {
   position: absolute;
   content: "";
-  background-image: url("../img/icon-user.png");
+  background-image: url("../img/icon-user.svg");
   background-repeat: no-repeat;
+  /*fill="#c5c5c5" в svg заменён на #333*/
+  opacity: 0.5;
   width:20px;
   height: 20px;
   top:13px;
   left: 15px;
+}
+.username-link:hover::before {
+  opacity: 1;
 }
 .logout-icon {
   position: relative;
@@ -988,12 +1005,17 @@ body {
 .logout-icon::after {
   position: absolute;
   content: "";
-  background-image: url("../img/icon-logout.png");
+  background-image: url("../img/icon-logout.svg");
   background-repeat: no-repeat;
+  /*fill="#c5c5c5" в svg заменён на #333*/
+  opacity: 0.5;
   width:20px;
   height: 20px;
   top:-10px;
   right: -58px;
+}
+.username-link:hover + .logout-icon::after, .logout-icon:hover::after {
+  opacity: 1;
 }
 /* линки на мои заказы и личный кабинет*/
 .user-link {
@@ -1013,6 +1035,13 @@ body {
   top:8px;
   left: -18px;
   border-radius: 50%;
+}
+.user-link:hover {
+  color: rgb(238, 54, 67);
+}
+.user-link:active {
+  color: rgb(50, 66, 92);
+  opacity: 0.5;
 }
 /* ---------------------------------------------------------------*/
 /* --------------     Центральная часть экрана      --------------*/
@@ -1179,6 +1208,9 @@ body {
   border-radius: 2px;
   cursor: pointer;
 }
+.filter-input-checkbox + .checkbox-indicator:hover {
+  border: 2px solid #888;
+}
 /*.filter-item input[type="checkbox"]:checked + .checkbox-indicator::before {*/
 .filter-input-checkbox:checked + .checkbox-indicator::before,  .filter-input-checkbox:checked + .checkbox-indicator::after {
   content: "";
@@ -1205,6 +1237,9 @@ body {
   transform: rotate(-45deg);
   z-index: 51;
 }
+.filter-input-checkbox:checked + .checkbox-indicator:hover::before, .filter-input-checkbox:checked + .checkbox-indicator:hover::after {
+  background-color: #888;
+}
 .filter-input-checkbox {
   display: none;
 }
@@ -1219,20 +1254,31 @@ body {
   border-radius: 50%;
   cursor: pointer;
 }
-/*.filter-item input[type="checkbox"]:checked + .checkbox-indicator::before {*/
+.filter-input-radio + .checkbox-indicator:hover {
+  border: 2px solid #888;
+}
 .filter-input-radio:checked + .checkbox-indicator::before {
   content: "";
   position: absolute;
-
-  background-color: #000000;
-}
-.filter-input-radio:checked + .checkbox-indicator::before {
   top: 5px;
   left: 5px;
   width: 9px;
   height: 9px;
   background-color: #aaa;
   border-radius: 50%;
+}
+.filter-input-radio:checked + .checkbox-indicator:hover::before {
+  background-color: #888;
+}
+/* **************** можно включить класс inactive для неактивных чекбоксов ***************** */
+.filter-label-checkbox.inactive, .filter-label-radio.inactive {
+  color: #ddd;
+}
+.checkbox-indicator.inactive, .checkbox-indicator:hover.inactive {
+  border-color: #ddd;
+}
+.filter-input-checkbox:checked + .checkbox-indicator.inactive::before, .filter-input-checkbox:checked + .checkbox-indicator.inactive::after, .filter-input-radio:checked + .checkbox-indicator.inactive::before {
+  background-color: #ddd;
 }
 
 .filter-input-checkbox, .filter-input-radio {
@@ -1268,6 +1314,9 @@ body {
   color: #000;
   opacity: 0.3;
 }
+.sorter-radio:hover {
+  opacity: 1;
+}
 .sorter-selected {
   text-decoration: none;
   color: rgb(238, 64, 67);
@@ -1288,6 +1337,12 @@ body {
 }
 .sorter-descending {
   border-top: 10px solid rgb(197, 197, 197);
+}
+.sorter-ascending:hover {
+  border-bottom: 10px solid #333;
+}
+.sorter-descending:hover {
+  border-top: 10px solid #333;
 }
 .sorter-ascending.order-selected {
   border-bottom: 10px solid rgb(238, 64, 67);
@@ -1312,11 +1367,19 @@ body {
   color: #000;
   background-color: #fff;
   border: 1px solid rgb(229, 229, 229);
+  border-radius: 3px;
   text-decoration: none;
 }
-.pagenumber-active {
+.pagenumber-item:hover {
+  border: 1px solid #888;
+}
+.pagenumber-item:active {
+  border: 1px solid rgb(238, 54, 67);
+}
+.pagenumber-active, .pagenumber-active:hover {
   color: #fff;
   background-color: rgb(238, 54, 67);
+  border: 1px solid rgb(238, 54, 67);
 }
 
 
@@ -1417,9 +1480,9 @@ body {
 }
 /*поле поиска с лупой*/
 .header-search-input {
-  display: flex;
+  /*display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center;*/
   margin-left:0;
   margin-right:auto;
   width: 260px;
@@ -2121,6 +2184,7 @@ padding: 0;
   transform: translate(-50%,-50%);
   box-sizing: border-box;
   display: none;
+  z-index: 100;
 }
 .map-wrapper.show {
   display: block;
