@@ -1187,101 +1187,102 @@ body {
   padding: 0;
   list-style: none;
 }
-.filter-label-checkbox {
+.filter-label {
   font-size: 15px;
+  position: relative;
+  cursor: pointer;
 }
-.filter-label-radio {
+.filter-label.for-radio {
   font-size: 14px;
 }
 /* заменяю стандартные чекбоксы и радиокнопки на укрупнённые*/
 /**************************************************************************/
-.filter-item {
-  position: relative;
-}
-.filter-input-checkbox + .checkbox-indicator {
+/*квадратная рамка*/
+.filter-input-checkbox + .filter-label::before {
+  content: "";
   position: absolute;
-  top: -2px;
-  left: -32px;
+  top: 0px;
+  left: -33px;
   width: 17px;
   height: 17px;
   border: 2px solid #aaa;
   border-radius: 2px;
-  cursor: pointer;
 }
-.filter-input-checkbox + .checkbox-indicator:hover {
-  border: 2px solid #888;
+.filter-input-checkbox + .filter-label:hover::before {
+  border-color: #888;
 }
-/*.filter-item input[type="checkbox"]:checked + .checkbox-indicator::before {*/
-.filter-input-checkbox:checked + .checkbox-indicator::before,  .filter-input-checkbox:checked + .checkbox-indicator::after {
+/*галочка*/
+.filter-input-checkbox:checked + .filter-label::after {
   content: "";
   position: absolute;
-
-  background-color: #000000;
-}
-.filter-input-checkbox:checked + .checkbox-indicator::before {
-  top: 8px;
-  left: 1px;
-  width: 10px;
-  height: 3px;
-  background-color: #aaa;
+  width: 8px;
+  height: 15px;
+  top: -3px;
+  left: -24px;
+  background-color: transparent;
+  border-bottom: 3px solid #aaa;
+  border-right: 3px solid #aaa;
+  box-shadow: inset -1px 0px 0 0 #fff, 1px 0px 0 0 #fff;
   transform: rotate(45deg);
-  z-index: 61;
 }
-.filter-input-checkbox:checked + .checkbox-indicator::after {
-  top: 5px;
-  left: 5px;
-  width: 18px;
-  height: 3px;
-  background-color: #aaa;
-  border: 1px solid white;
-  transform: rotate(-45deg);
-  z-index: 51;
+.filter-input-checkbox:checked + .filter-label:hover::after {
+  border-bottom-color: #888;
+  border-right-color: #888;
 }
-.filter-input-checkbox:checked + .checkbox-indicator:hover::before, .filter-input-checkbox:checked + .checkbox-indicator:hover::after {
-  background-color: #888;
+/* *************** можно деактивировать чекбоксы, задав им disabled ****************/
+.filter-input-checkbox:disabled + .filter-label, .filter-input-radio:disabled + .filter-label {
+  color: #ddd;
 }
+.filter-input-checkbox:disabled + .filter-label::before {
+  border-color: #ddd;
+}
+.filter-input-checkbox:disabled + .filter-label::after, .filter-input-checkbox:disabled + .filter-label:hover::after {
+  border-bottom-color: #ddd;
+  border-right-color: #ddd;
+}
+ /* ...и выключаем основной чекбокс*/
 .filter-input-checkbox {
   display: none;
 }
 /*************************** то же, radio *********************************/
-.filter-input-radio + .checkbox-indicator {
+/*внешний круг*/
+.filter-input-radio + .filter-label::before {
+  content: "";
   position: absolute;
   top: -2px;
-  left: -33px;
+  left: -34px;
   width: 19px;
   height: 19px;
   border: 2px solid #aaa;
   border-radius: 50%;
   cursor: pointer;
 }
-.filter-input-radio + .checkbox-indicator:hover {
-  border: 2px solid #888;
+.filter-input-radio + .filter-label:hover::before {
+  border-color: #888;
 }
-.filter-input-radio:checked + .checkbox-indicator::before {
+/*внутренняя точка*/
+.filter-input-radio:checked + .filter-label::after {
   content: "";
   position: absolute;
   top: 5px;
-  left: 5px;
+  left: -27px;
   width: 9px;
   height: 9px;
   background-color: #aaa;
   border-radius: 50%;
 }
-.filter-input-radio:checked + .checkbox-indicator:hover::before {
+.filter-input-radio:checked + .filter-label:hover::after {
   background-color: #888;
 }
-/* **************** можно включить класс inactive для неактивных чекбоксов ***************** */
-.filter-label-checkbox.inactive, .filter-label-radio.inactive {
-  color: #ddd;
-}
-.checkbox-indicator.inactive, .checkbox-indicator:hover.inactive {
+/* *************** можно деактивировать чекбоксы, задав им disabled ****************/
+.filter-input-radio:disabled + .filter-label::before {
   border-color: #ddd;
 }
-.filter-input-checkbox:checked + .checkbox-indicator.inactive::before, .filter-input-checkbox:checked + .checkbox-indicator.inactive::after, .filter-input-radio:checked + .checkbox-indicator.inactive::before {
+.filter-input-radio:disabled + .filter-label::after, .filter-input-radio:disabled + .filter-label:hover::after {
   background-color: #ddd;
 }
-
-.filter-input-checkbox, .filter-input-radio {
+/* ...и выключаем основной чекбокс*/
+.filter-input-radio {
   display: none;
 }
 /**************************************************************************/
@@ -1439,7 +1440,7 @@ body {
   border: none;
   cursor: pointer;
 }
-.basket-button-inactive {
+.basket-button-inactive, .basket-button-inactive:hover {
   background-color: #fff;
   color: #000;
 }
@@ -1742,6 +1743,7 @@ body {
 }
 /*обнуляем маржины у внутренних элементов*/
 .section-title-header {
+  font-family: "Cuprum", "Arial", sans-serif;
   margin: 0;
 }
 /*красная кнопка*/
@@ -1864,11 +1866,11 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-content: center;
+  align-items: center;
 }
 /*логотип производителя*/
 .vendor-item img {
-  margin: auto;
+  margin: 0;
 }
 
 /**************************************************************/
@@ -1941,6 +1943,7 @@ body {
 .services-description p {
   margin-top: 30px;
   margin-bottom: 28px;
+  line-height: 17px;
 }
 /*видимый класс для блоков сервиса*/
 .services-description.show {
@@ -1960,25 +1963,33 @@ body {
 }
 /*о компании*/
 .ourcompany {
-  display: flex;
+  /*display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-start;*/
+  display: block;
   width: 521px;
 }
 /*контакты*/
 .ourcontacts {
-  display: flex;
-  flex-direction: column;
+  /*display: flex;
+  flex-direction: column;*/
+  display: block;
   width: 300px;
   /*border: 1px dashed red;*/
 }
 /*расстановка текста*/
 .ourcompany h2, .ourcontacts h2 {
   margin-top: 0;
-  margin-bottom: 10px;
+  /*margin-bottom: 10px;*/
+  margin-bottom: 24px;
+}
+.ourcompany p, ourcontacts p {
+  line-height: 24px;
+  margin-top: 24px;
 }
 .ourcontacts-description {
   width: 170px;
+  margin-bottom: 31px;
 }
 /*список транспортных компаний*/
 .transport-list {
@@ -1990,7 +2001,7 @@ body {
 /*кнопка "подробнее о компании"*/
 .ourcompany-link {
   width: 220px;
-  margin-top: 10px;
+  margin-top: 28px;
 }
 
 /*малая карта проезда*/
@@ -2002,7 +2013,7 @@ body {
 .ourcontacts-link {
   width: 100%;
   margin-bottom: 0;
-  margin-top: auto;
+  margin-top: 36px;
 }
 /**************************************************************/
 /**************************************************************/
@@ -2271,7 +2282,6 @@ padding: 0;
   width: 220px;
   display: flex;
   flex-direction: column;
-  align-content: flex-start;
   /*border: 1px dashed red;*/
 }
 /*двойной слайдер в фильтре*/
@@ -2352,6 +2362,9 @@ padding: 0;
 }
 .sorter-descending {
   margin-right: 18px;
+}
+.catalog-details {
+  text-transform: none;
 }
 /*окно с карточками товаров*/
 .catalog-list {
