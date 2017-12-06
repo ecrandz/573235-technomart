@@ -325,23 +325,27 @@ body {
   text-decoration: none;
 }
 .materials {
-  color: #fff; background-color: rgb(255, 191, 71);
+  color: #fff;
+  background-color: rgb(255, 191, 71);
   background-image: url("../img/symbol_bucket.png");
   background-position: right 44px top 30px;
 }
 .tools{
-  color: #fff; background-color: rgb(59, 188, 227);
+  color: #fff;
+  background-color: rgb(59, 188, 227);
   background-image: url("../img/symbol_drill.png");
   background-position: right 27px top 30px;
 }
 .machines {
-  color: #fff; background-color: rgb(220, 145, 216);
+  color: #fff;
+  background-color: rgb(220, 145, 216);
   background-image: url("../img/symbol_tractor.png");
   background-position: right 30px top 30px;
 }
 .revolver {
   position: relative;
-  color: #fff; background-color: rgb(157, 140, 119);
+  color: #fff;
+  background-color: rgb(157, 140, 119);
   background-repeat: no-repeat;
   width: 620px;
   height: 264px;
