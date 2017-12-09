@@ -63,11 +63,11 @@ write_us_close.addEventListener("click", function (evt) {
 
 // write_us error
 form.addEventListener("submit", function (evt) {
-  if (user_name.value.length = 0) {
+  if (user_name.value.length == 0) {
     evt.preventDefault();
     write_us_label[0].classList.add("value-error");
   }
-  if (user_email.value.length = 0) {
+  if (user_email.value.length == 0) {
     evt.preventDefault();
     write_us_label[1].classList.add("value-error");
   }
