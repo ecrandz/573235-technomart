@@ -2090,7 +2090,7 @@ body {
   margin-top: 24px;
 }
 .ourcontacts-description {
-  margin-bottom: 31px;
+  margin-bottom: 33px;
 }
 /*список транспортных компаний*/
 .transport-list {
@@ -2106,15 +2106,14 @@ body {
 }
 
 /*малая карта проезда*/
-.ourcontacts-map {
-  margin-top: 20px;
+.ourcontacts-map img {
+  display: block;
 }
-
 /*кнопка "заблудились"*/
 .ourcontacts-link {
   width: 100%;
   margin-bottom: 0;
-  margin-top: 36px;
+  margin-top: 40px;
   padding-left: 6px;
   box-sizing: border-box;
 }
