@@ -34,7 +34,7 @@
       <!--Адрес магазина и кнопки авторизации-->
       <div class="header-middle">
       <div class="header-middle-wrapper">
-        <p class="header-mission">Интернет-магазин строительных материалов<br>и инструментов для ремонта</p>
+        <p class="header-mission">Интернет-магазин строительных материалов и инструментов для ремонта</p>
         <div class="header-address">
           <a class="header-calllink" href="call.html">+7 (812) 555-05-55</a>
           <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
@@ -45,7 +45,9 @@
         </div>
         <div class="logged-in show">
           <div class="header-username">
-            <a href="profile.html" class="username-link">Равшан Джамшутович</a>
+            <a href="profile.html" class="username-link">Равшан Джамшутович
+              <!-- Интернет-магазин строительных материалов и инструментов для ремонта -->
+            </a>
             <a class="logout-icon" href="logout.html" title="Выйти"></a>
           </div>
           <div class="user-links">
@@ -81,7 +83,7 @@
           <li class="breadcrumbs-item-home"><a href="catalog.html" title="Домой"></a></li>
           <li class="breadcrumbs-item"><a href="catalog.html">Каталог</a></li>
           <li class="breadcrumbs-item"><a href="#">Инструмент</a></li>
-          <li class="breadcrumbs-item"><a href="#">Перфораторы</a></li>
+          <li class="breadcrumbs-item">Перфораторы</li>
         </ul>
       </nav>
 
@@ -101,20 +103,24 @@
           <div class="filter-price">
             <p class="filter-display-name">Цена:</p>
             <div class="filter-sliderbox">
+              <label class="visually-hidden" for="price-slider-min">Слайдер для минимальной цены:</label>
               <input class="slider-min" type="range" id="price-slider-min" min="0" max="30000" step="100">
+              <label class="visually-hidden" for="price-slider-max">Слайдер для максимальной цены:</label>
               <input class="slider-max" type="range" id="price-slider-max" min="0" max="30000" step="100">
               <!-- линия № 9-->
               <div class="slider-background">
                 <!-- линия № 2 -->
-                <div class="minprice"></div>
+                <div class="minprice" tabindex="0"></div>
                 <div class="slider-foreground"></div>
-                <div class="maxprice"></div>
+                <div class="maxprice" tabindex="0"></div>
               </div>
             </div>
             <div class="filter-rangebox">
-              <input type="number" class="price-minvalue" name="filter-minprice" value="0">
+              <label class="visually-hidden" for="price-minvalue">Поле ввода минимальной цены:</label>
+              <input type="number" class="price-minvalue" id="price-minvalue" name="filter-minprice" value="0">
               <span>-</span>
-              <input type="number" class="price-maxvalue" name="filter-maxprice" value="30000">
+              <label class="visually-hidden" for="price-maxvalue">Поле ввода максимальной цены:</label>
+              <input type="number" class="price-maxvalue" id="price-maxvalue" name="filter-maxprice" value="30000">
             </div>
           </div>
 
@@ -125,23 +131,23 @@
             <ul class="filter-list">
               <li class="filter-item">
                 <input class="filter-input-checkbox" type="checkbox" id="filter-vendor-Bosch" name="filter-by-vendor-Bosch">
-                <label class="filter-label" for="filter-vendor-Bosch">Bosch</label>
+                <label class="filter-label" for="filter-vendor-Bosch" tabindex="0">Bosch</label>
               </li>
               <li class="filter-item">
                 <input class="filter-input-checkbox" type="checkbox" id="filter-vendor-Interskol" name="filter-by-vendor-Interskol">
-                <label class="filter-label" for="filter-vendor-Interskol">Интерскол</label>
+                <label class="filter-label" for="filter-vendor-Interskol" tabindex="0">Интерскол</label>
               </li>
               <li class="filter-item">
                 <input class="filter-input-checkbox" type="checkbox" id="filter-vendor-Makita" name="filter-by-vendor-Makita">
-                <label class="filter-label" for="filter-vendor-Makita">Makita</label>
+                <label class="filter-label" for="filter-vendor-Makita" tabindex="0">Makita</label>
               </li>
               <li class="filter-item">
                 <input class="filter-input-checkbox" type="checkbox" id="filter-vendor-Dewalt" name="filter-by-vendor-Dewalt">
-                <label class="filter-label" for="filter-vendor-Dewalt">Dewalt</label>
+                <label class="filter-label" for="filter-vendor-Dewalt" tabindex="0">Dewalt</label>
               </li>
               <li class="filter-item">
                 <input class="filter-input-checkbox" type="checkbox" id="filter-vendor-Hitachi" name="filter-by-vendor-Hitachi">
-                <label class="filter-label" for="filter-vendor-Hitachi">Hitachi</label>
+                <label class="filter-label" for="filter-vendor-Hitachi" tabindex="0">Hitachi</label>
               </li>
             </ul>
           </div>
@@ -152,11 +158,11 @@
             <ul class="filter-list">
               <li class="filter-item">
                 <input class="filter-input-radio" type="radio" id="filter-poweroption-battery" name="filter-by-poweroption" value="battery">
-                <label class="filter-label for-radio" for="filter-poweroption-battery">Аккумуляторные</label>
+                <label class="filter-label for-radio" for="filter-poweroption-battery" tabindex="0">Аккумуляторные</label>
               </li>
               <li class="filter-item">
                 <input class="filter-input-radio" type="radio" id="filter-poweroption-grid" name="filter-by-poweroption" value="grid" checked>
-                <label class="filter-label for-radio" for="filter-poweroption-grid">Сетевые</label>
+                <label class="filter-label for-radio" for="filter-poweroption-grid" tabindex="0">Сетевые</label>
               </li>
             </ul>
           </div>
@@ -198,8 +204,8 @@
             <!-- каждый элемент списка содержит карточку товара -->
             <li class="catalog-item">
               <article class="product-card">
-                <a class="product-image" href="#">
-                  <img src="img/BFG_3000.png" width="126" height="112" alt="Изображение товара">
+                <a class="product-image bfg3000" href="#">
+                  <img src="img/bfg_3000.png" width="126" height="112" alt="Изображение товара">
                 </a>
                 <div class="buy-block">
                   <button type="button" class="buy-button">Купить</button>
@@ -212,8 +218,8 @@
             </li>
             <li class="catalog-item">
               <article class="product-card">
-                <a class="product-image" href="#">
-                  <img src="img/BFG_6000.png" width="144" height="128" alt="Изображение товара">
+                <a class="product-image bfg6000" href="#">
+                  <img src="img/bfg_6000.png" width="144" height="128" alt="Изображение товара">
                 </a>
                 <div class="buy-block">
                   <button type="button" class="buy-button">Купить</button>
@@ -226,8 +232,8 @@
             </li>
             <li class="catalog-item newproduct">
               <article class="product-card">
-                <a class="product-image" href="#">
-                  <img src="img/BFG_2000.png" width="126" height="112" alt="Изображение товара">
+                <a class="product-image bfg2000" href="#">
+                  <img src="img/bfg_2000.png" width="126" height="112" alt="Изображение товара">
                 </a>
                 <div class="buy-block">
                   <button type="button" class="buy-button">Купить</button>
@@ -241,8 +247,8 @@
 
             <li class="catalog-item">
               <article class="product-card">
-                <a class="product-image" href="#">
-                  <img src="img/BFG_3000.png" width="126" height="112" alt="Изображение товара">
+                <a class="product-image bfg3000" href="#">
+                  <img src="img/bfg_3000.png" width="126" height="112" alt="Изображение товара">
                 </a>
                 <div class="buy-block">
                   <button type="button" class="buy-button">Купить</button>
@@ -255,8 +261,8 @@
             </li>
             <li class="catalog-item newproduct">
               <article class="product-card">
-                <a class="product-image" href="#">
-                  <img src="img/BFG_6000.png" width="144" height="128" alt="Изображение товара">
+                <a class="product-image bfg6000" href="#">
+                  <img src="img/bfg_6000.png" width="144" height="128" alt="Изображение товара">
                 </a>
                 <div class="buy-block">
                   <button type="button" class="buy-button">Купить</button>
@@ -269,8 +275,8 @@
             </li>
             <li class="catalog-item">
               <article class="product-card">
-                <a class="product-image" href="#">
-                  <img src="img/BFG_2000.png" width="126" height="112" alt="Изображение товара">
+                <a class="product-image bfg2000" href="#">
+                  <img src="img/bfg_2000.png" width="126" height="112" alt="Изображение товара">
                 </a>
                 <div class="buy-block">
                   <button type="button" class="buy-button">Купить</button>
@@ -283,8 +289,8 @@
             </li>
             <li class="catalog-item">
               <article class="product-card">
-                <a class="product-image" href="#">
-                  <img src="img/BFG_3000.png" width="126" height="112" alt="Изображение товара">
+                <a class="product-image bfg3000" href="#">
+                  <img src="img/bfg_3000.png" width="126" height="112" alt="Изображение товара">
                 </a>
                 <div class="buy-block">
                   <button type="button" class="buy-button">Купить</button>
@@ -297,8 +303,8 @@
             </li>
             <li class="catalog-item">
               <article class="product-card">
-                <a class="product-image" href="#">
-                  <img src="img/BFG_6000.png" width="144" height="128" alt="Изображение товара">
+                <a class="product-image bfg6000" href="#">
+                  <img src="img/bfg_6000.png" width="144" height="128" alt="Изображение товара">
                 </a>
                 <div class="buy-block">
                   <button type="button" class="buy-button">Купить</button>
@@ -311,8 +317,8 @@
             </li>
             <li class="catalog-item">
               <article class="product-card">
-                <a class="product-image" href="#">
-                  <img src="img/BFG_2000.png" width="126" height="112" alt="Изображение товара">
+                <a class="product-image bfg2000" href="#">
+                  <img src="img/bfg_2000.png" width="126" height="112" alt="Изображение товара">
                 </a>
                 <div class="buy-block">
                   <button type="button" class="buy-button">Купить</button>
@@ -331,10 +337,10 @@
         <nav class="pagenumber">
           <ul class="pagenumber-list">
             <li class="visually-hidden"><a class="pagenumber-item" href="#">Предыдущая</a></li>
-            <li><a class="pagenumber-item pagenumber-active" href="#">1</a></li>
+            <li><div class="pagenumber-item pagenumber-active">1</div></li>
             <li><a class="pagenumber-item" href="#">2</a></li>
             <li><a class="pagenumber-item" href="#">3</a></li>
-            <li><a class="pagenumber-item" href="#">Следующая</a></li>
+            <li><a class="pagenumber-item pagenumber-next" href="#">Следующая</a></li>
           </ul>
         </nav>
 
@@ -351,7 +357,7 @@
     <div class="category-comment-wrapper">
       <h2 class="section-title-header category-comment-header">Пара слов о перфораторах</h2>
       <p class="category-comment-text">
-        Перфоратор - универсальный строительный инструмент. Предназначен для сверления и долбления отверстий в кирпиче, бетоне и камне.
+        Перфоратор - универсальный строительный инструмент. Предназначен для сверления и долбления отверстий в кирпиче, бетоне и камне.<br>
         Существуют электромеханические и пневматические перфораторы. Современные модели могут выполнять функции дрели, шуруповёрта и отбойного молотка.
         В ассортиментном ряду есть выбор "трёхрежимников": в одном устройстве будут совмещены отбойный молоток и ударная дрель.
       </p>
@@ -389,7 +395,7 @@
       <div class="footer-bottom-wrapper">
         <!--Копирайт-->
         <div class="copyright">
-          (c) 2010-2017 Компания «Техномарт»
+          &copy; 2010-2017 Компания «Техномарт»
           Все права защищены
         </div>
         <div class="footer-social">
@@ -420,8 +426,8 @@
           </div>
           <!--Нижняя серая часть-->
           <div class="basket-bottom">
-            <button type="button" class="mainpage-link basket-button" name="ordered">Оформить заказ</button>
-            <button type="button" class="mainpage-link basket-button-inactive" name="continue">Продолжить покупки</button>
+            <a class="mainpage-link basket-button" href="makeorder.html">Оформить заказ</a>
+            <a class="mainpage-link basket-button-inactive" href="#">Продолжить покупки</a>
           </div>
         </form>
       </section>
